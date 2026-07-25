@@ -336,7 +336,7 @@ export default function Home() {
                 <div className="w-28 h-28 rounded-full flex items-center justify-center shadow-2xl"
                   style={{ background: 'linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%)' }}>
                   <div className="text-white font-bold text-sm text-center leading-tight">
-                    {lang === 'ar' ? 'توريفا\nالمركزي' : 'TURRIVA\nCORE'}
+                    {lang === 'ar' ? 'تسامي\nالمركزي' : 'TASAMI\nCORE'}
                   </div>
                 </div>
               </div>
@@ -406,7 +406,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY TURRIVA */}
+      {/* WHY TASAMI */}
       <section className="section-padding bg-white relative overflow-hidden">
         <img src={turrivaMotif} aria-hidden="true" alt="" className="absolute pointer-events-none select-none" style={{ width: 300, opacity: 0.05, bottom: -40, left: -40, transform: 'rotate(-20deg)', zIndex: 0 }} />
         <div className="container-xl">

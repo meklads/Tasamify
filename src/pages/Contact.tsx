@@ -70,7 +70,7 @@ export default function Contact() {
                 <InfoCard
                   icon={<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2.5 5.5A1.5 1.5 0 0 1 4 4h12a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 16 16H4a1.5 1.5 0 0 1-1.5-1.5v-9Zm1.5 0v.8l6 3.6 6-3.6V5.5H4Zm0 2.2v6.8h12V7.7l-6 3.6-6-3.6Z" fill="var(--teal-deep)"/></svg>}
                   label={tx(t.contact.emailLabel, lang)}
-                  value="info@turriva.com"
+                  value="info@tasamify.com"
                   sub={isAr ? 'نرد خلال ٢٤ ساعة' : 'We reply within 24 hours'}
                 />
                 <InfoCard

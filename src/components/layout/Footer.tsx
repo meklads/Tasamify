@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../../lib/LanguageContext'
 import { t, tx } from '../../lib/translations'
+import TasamiLogo from '../TasamiLogo'
 
 export default function Footer() {
   const { lang, isAr } = useLang()
@@ -29,21 +30,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-teal-gradient flex items-center justify-center shadow-md flex-shrink-0">
-                <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 2L18 7V13L10 18L2 13V7L10 2Z" fill="white" opacity="0.9"/>
-                  <path d="M10 6L14 8.5V13.5L10 16L6 13.5V8.5L10 6Z" fill="white"/>
-                </svg>
-              </div>
-              <div>
-                <div className="font-bold text-xl tracking-tight">
-                  {isAr ? 'توريفا' : 'TURRIVA'}
-                </div>
-                <div className="text-xs text-gray-400 font-medium" style={{ letterSpacing: isAr ? '0' : '0.1em' }}>
-                  {isAr ? 'تجارب ذكية وذكاء اصطناعي' : 'SMART EXPERIENCES & AI'}
-                </div>
-              </div>
+            <div className="mb-6">
+              <TasamiLogo variant="footer" isAr={isAr} />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-8">
               {tx(t.footer.desc, lang)}
@@ -79,8 +67,8 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <span className="text-xs text-gray-500">{tx(t.footer.location, lang)}</span>
             <span className="text-xs text-gray-600">|</span>
-            <a href="mailto:info@turriva.com" className="text-xs text-gray-400 hover:text-white transition-colors">
-              info@turriva.com
+            <a href="mailto:info@tasamify.com" className="text-xs text-gray-400 hover:text-white transition-colors">
+              info@tasamify.com
             </a>
           </div>
         </div>

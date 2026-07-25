@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../../lib/LanguageContext'
 import { t, tx } from '../../lib/translations'
-import turrivaLogo from '../../assets/turriva-logo.png'
+import TasamiLogo from '../TasamiLogo'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -33,15 +33,10 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100"
     >
       <div className="container-xl">
-        <div className="flex items-center justify-between h-36">
+        <div className="flex items-center justify-between h-28 md:h-32">
           {/* Logo */}
-          <Link to="/" className="group" style={{ textDecoration: 'none', display: 'inline-flex' }}>
-            <img
-              src={turrivaLogo}
-              alt="Turriva"
-              className="group-hover:scale-105 transition-transform"
-              style={{ height: 135, width: 'auto' }}
-            />
+          <Link to="/" className="group transition-transform hover:scale-[1.02]" style={{ textDecoration: 'none' }}>
+            <TasamiLogo variant="navbar" isAr={isAr} />
           </Link>
 
           {/* Desktop Nav */}

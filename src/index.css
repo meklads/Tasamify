@@ -27,7 +27,7 @@
     --ring: 185 60% 28%;
     --radius: 0.75rem;
 
-    /* Turriva custom tokens */
+    /* Tasami custom tokens */
     --teal-deep: #0d5c63;
     --teal-mid: #1a8a94;
     --teal-light: #2ab5c2;
@@ -59,7 +59,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Turriva Custom Utilities ── */
+/* ── Tasami Custom Utilities ── */
 .text-teal { color: var(--teal-mid); }
 .text-teal-deep { color: var(--teal-deep); }
 .bg-teal { background-color: var(--teal-mid); }

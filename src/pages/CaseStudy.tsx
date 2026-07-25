@@ -98,13 +98,13 @@ export default function CaseStudy() {
           <div className="prose-custom space-y-4">
             <p className="text-gray-600 text-lg leading-relaxed">
               {ar
-                ? 'كُلّفت توريفا (تحت مظلة جرافيكس هاوي) بتصميم وتنفيذ معرض تجربة تفاعلية متكاملة لرابطة العالم الإسلامي. كان الهدف إيصال الرسالة العالمية للرابطة لزوار من خلفيات متنوعة عبر بيئة غامرة تجمع بين المادي والرقمي.'
-                : 'Turriva (under Graphics House) was commissioned to design and execute a fully integrated interactive experience exhibition for the Muslim World League. The goal was to communicate the League\'s global message to visitors from diverse backgrounds through an immersive environment combining physical and digital elements.'}
+                ? 'كُلّفت تسامي (تحت مظلة جرافيكس هاوي) بتصميم وتنفيذ معرض تجربة تفاعلية متكاملة لرابطة العالم الإسلامي. كان الهدف إيصال الرسالة العالمية للرابطة لزوار من خلفيات متنوعة عبر بيئة غامرة تجمع بين المادي والرقمي.'
+                : 'Tasami (under Graphics House) was commissioned to design and execute a fully integrated interactive experience exhibition for the Muslim World League. The goal was to communicate the League\'s global message to visitors from diverse backgrounds through an immersive environment combining physical and digital elements.'}
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
               {ar
-                ? 'المشروع يُجسّد منهجية توريفا الكاملة: تصميم مكاني احترافي + تقنية تفاعلية + ذكاء اصطناعي + تحليلات التجربة — كل ذلك في بيئة واحدة متكاملة.'
-                : 'This project embodies the full Turriva methodology: professional spatial design + interactive technology + AI + experience analytics — all in one integrated environment.'}
+                ? 'المشروع يُجسّد منهجية تسامي الكاملة: تصميم مكاني احترافي + تقنية تفاعلية + ذكاء اصطناعي + تحليلات التجربة — كل ذلك في بيئة واحدة متكاملة.'
+                : 'This project embodies the full Tasami methodology: professional spatial design + interactive technology + AI + experience analytics — all in one integrated environment.'}
             </p>
           </div>
         </div>
