@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLang } from '../../lib/LanguageContext'
 import { t, tx } from '../../lib/translations'
 import TasamiLogo from '../TasamiLogo'
@@ -12,37 +12,29 @@ const links = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { lang, isAr } = useLang()
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled ? 'rgba(16, 24, 42, 0.96)' : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(201, 162, 75, 0.18)' : '1px solid transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        background: '#10182A',
+        borderBottom: '1px solid rgba(201, 162, 75, 0.28)',
       }}
     >
       <div className="container-xl">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-16 md:h-[72px]">
           <a href="#top" className="hover:opacity-90 transition-opacity" style={{ textDecoration: 'none' }}>
             <TasamiLogo variant="navbar" isAr={isAr} />
           </a>
 
-          <nav className="hidden lg:flex items-center gap-9">
+          <nav className="hidden lg:flex items-center gap-8">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[13px] font-medium text-cream/70 hover:text-gold transition-colors"
+                className="text-[13px] font-medium text-cream/80 hover:text-gold transition-colors"
                 style={{ textDecoration: 'none', letterSpacing: isAr ? 0 : '0.04em' }}
               >
                 {tx(t.nav[link.key], lang)}
@@ -71,7 +63,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="lg:hidden border-t border-gold/20" style={{ background: '#10182A' }}>
-          <div className="container-xl py-4 flex flex-col">
+          <div className="container-xl py-3 flex flex-col">
             {links.map((link) => (
               <a
                 key={link.href}

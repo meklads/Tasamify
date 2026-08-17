@@ -13,6 +13,18 @@ const LanguageContext = createContext<LanguageContextType>({
   isAr: false,
 })
 
+function isLang(value: string | null): value is Lang {
+  return value === 'ar' || value === 'en'
+}
+
+function readInitialLang(): Lang {
+  if (typeof window === 'undefined') return 'en'
+  const fromQuery = new URLSearchParams(window.location.search).get('lang')
+  if (isLang(fromQuery)) return fromQuery
+  const saved = window.localStorage.getItem('tasami-lang')
+  return isLang(saved) ? saved : 'en'
+}
+
 function applyLang(l: Lang) {
   const root = document.documentElement
   root.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr')
@@ -26,20 +38,25 @@ function applyLang(l: Lang) {
   }
 }
 
+function persistLang(l: Lang) {
+  window.localStorage.setItem('tasami-lang', l)
+  const url = new URL(window.location.href)
+  url.searchParams.set('lang', l)
+  window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`)
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === 'undefined') return 'en'
-    return window.localStorage.getItem('tasami-lang') === 'ar' ? 'ar' : 'en'
-  })
+  const [lang, setLangState] = useState<Lang>(readInitialLang)
 
   const setLang = (l: Lang) => {
     setLangState(l)
-    window.localStorage.setItem('tasami-lang', l)
+    persistLang(l)
     applyLang(l)
   }
 
   useEffect(() => {
     applyLang(lang)
+    persistLang(lang)
   }, [lang])
 
   return (

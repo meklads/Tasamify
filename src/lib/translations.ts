@@ -66,7 +66,10 @@ export const t = {
       ar: 'وإدارة ميدانية كاملة حتى التسليم',
     },
     bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
-    bmRole: { en: 'Marketing & AI', ar: 'التسويق والذكاء الاصطناعي' },
+    bmRole: {
+      en: 'Creative content and AI digital transformation',
+      ar: 'المحتوى الإبداعي والتحول الرقمي بالذكاء الاصطناعي',
+    },
     bmBody: {
       en: 'A brand independent of real estate, built on two clear tracks: creative content production (film, motion graphics, animation, social media), and AI transformation and automation services — with healthcare as a priority focus across both.',
       ar: 'علامة مستقلة عن قطاع العقار، بقسمين واضحين: إنتاج محتوى إبداعي (أفلام، موشن جرافيك، كارتون، سوشيال ميديا)، وخدمات تحويل رقمي وأتمتة بالذكاء الاصطناعي — بأولوية للقطاع الطبي في الاثنين معًا.',
@@ -106,6 +109,7 @@ export const t = {
       ar: 'تحتاج فكرة، تنفيذ، تسويق، أو تحول رقمي؟ اختر العلامة المناسبة، أو تواصل معنا وسنوجهك للجهة الصحيحة داخل المجموعة.',
     },
     name: { en: 'Name', ar: 'الاسم' },
+    phone: { en: 'Phone', ar: 'الجوال' },
     email: { en: 'Email', ar: 'البريد الإلكتروني' },
     brand: { en: 'Brand', ar: 'العلامة' },
     brandAny: { en: 'Not sure — route me', ar: 'غير متأكد — وجّهوني' },
@@ -125,7 +129,7 @@ export const t = {
 export const brandSites = {
   graphicsHouse: 'https://3dgraphicshouse.com',
   turriva: 'https://turriva.com',
-  beesMotion: 'https://beesmotion.com',
+  beesMotion: 'https://www.beesmotion.com',
 } as const
 
 export function tx(key: { en: string; ar: string }, lang: Lang): string {

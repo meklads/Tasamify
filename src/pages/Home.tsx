@@ -3,6 +3,9 @@ import { useLang } from '../lib/LanguageContext'
 import { t, tx, brandSites } from '../lib/translations'
 import { useReveal } from '../hooks/useReveal'
 import TasamiMark from '../components/TasamiMark'
+import graphicsHouseLogo from '../assets/brands/graphics-house.png'
+import turrivaLogo from '../assets/brands/turriva.png'
+import beesMotionLogo from '../assets/brands/bees-motion.png'
 
 function Reveal({
   children,
@@ -21,30 +24,35 @@ function Reveal({
   )
 }
 
-function BrandIcon({ kind }: { kind: 'gh' | 'tu' | 'bm' }) {
-  const stroke = kind === 'gh' ? '#7A52B8' : kind === 'tu' ? '#E08A3C' : '#1E9AA6'
-  if (kind === 'gh') {
-    return (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <rect x="4" y="8" width="20" height="14" stroke={stroke} strokeWidth="1.4" />
-        <path d="M4 8L14 3L24 8" stroke={stroke} strokeWidth="1.4" strokeLinejoin="round" />
-        <path d="M14 12V22" stroke={stroke} strokeWidth="1.2" />
-      </svg>
-    )
-  }
-  if (kind === 'tu') {
-    return (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M5 21L14 6L23 21" stroke={stroke} strokeWidth="1.4" strokeLinejoin="round" />
-        <path d="M9.5 21V14H18.5V21" stroke={stroke} strokeWidth="1.4" />
-      </svg>
-    )
-  }
+function BrandLogo({
+  src,
+  href,
+  alt,
+  dark = false,
+}: {
+  src: string
+  href: string
+  alt: string
+  dark?: boolean
+}) {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <circle cx="10" cy="14" r="5.5" stroke={stroke} strokeWidth="1.4" />
-      <circle cx="18" cy="14" r="5.5" stroke={stroke} strokeWidth="1.4" />
-    </svg>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group/logo flex items-center justify-center h-[152px] px-8 mb-8 -mx-8 -mt-8 md:-mx-9 md:-mt-9"
+      style={{
+        background: dark ? '#10182A' : '#F3F0E8',
+        textDecoration: 'none',
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="max-h-[100px] max-w-[90%] w-auto h-auto object-contain transition-transform duration-300 group-hover/logo:scale-[1.03]"
+        decoding="async"
+      />
+    </a>
   )
 }
 
@@ -69,7 +77,7 @@ function VisitLink({ href, color, label }: { href: string; color: string; label:
 function ContactForm() {
   const { lang } = useLang()
   const [sent, setSent] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', brand: '', message: '' })
+  const [form, setForm] = useState({ name: '', phone: '', email: '', brand: '', message: '' })
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -97,16 +105,26 @@ function ContactForm() {
         />
       </label>
       <label className="block">
-        <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.email, lang)}</span>
+        <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.phone, lang)}</span>
         <input
           required
+          type="tel"
+          className={field}
+          value={form.phone}
+          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          style={{ direction: 'ltr' }}
+        />
+      </label>
+      <label className="block">
+        <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.email, lang)}</span>
+        <input
           type="email"
           className={field}
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
       </label>
-      <label className="block sm:col-span-2">
+      <label className="block">
         <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.brand, lang)}</span>
         <select
           className={`${field} bg-cream`}
@@ -155,7 +173,7 @@ export default function Home() {
     <div id="top" className="bg-cream">
       {/* HERO */}
       <section
-        className="relative min-h-[100svh] flex items-end overflow-hidden"
+        className="relative min-h-[72svh] md:min-h-[100svh] flex items-end overflow-hidden"
         style={{ background: '#10182A' }}
       >
         <div
@@ -174,18 +192,18 @@ export default function Home() {
           }}
         />
 
-        <div className="container-xl relative z-10 w-full pt-32 pb-20 md:pb-28">
+        <div className="container-xl relative z-10 w-full pt-24 pb-12 md:pt-32 md:pb-28">
           <div className="max-w-4xl">
-            <TasamiMark size={48} className="mb-10 opacity-90" />
+            <TasamiMark size={48} className="mb-6 md:mb-10 opacity-90" />
             <h1 className="wordmark m-0">{tx(t.hero.wordmark, lang)}</h1>
-            <p className="hero-subhead mt-8 mb-0">{tx(t.hero.subhead, lang)}</p>
-            <p className="hero-support mt-8 mb-0">{tx(t.hero.support, lang)}</p>
+            <p className="hero-subhead mt-5 md:mt-8 mb-0">{tx(t.hero.subhead, lang)}</p>
+            <p className="hero-support mt-5 md:mt-8 mb-0">{tx(t.hero.support, lang)}</p>
           </div>
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="anchor-target py-24 md:py-32">
+      <section id="about" className="anchor-target section-y">
         <div className="container-xl">
           <Reveal>
             <div className="gold-rule mb-6" />
@@ -196,23 +214,24 @@ export default function Home() {
       </section>
 
       {/* BRANDS */}
-      <section id="brands" className="anchor-target pb-24 md:pb-32">
+      <section id="brands" className="anchor-target pb-14 md:pb-32">
         <div className="container-xl">
           <Reveal>
             <div className="gold-rule mb-6" />
-            <p className="section-kicker mb-14">{tx(t.brands.kicker, lang)}</p>
+            <p className="section-kicker mb-8 md:mb-14">{tx(t.brands.kicker, lang)}</p>
           </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Graphics House */}
             <Reveal delay="reveal-delay-1">
-              <article className="brand-card h-full flex flex-col p-8 md:p-9">
-                <div
-                  className="h-[3px] w-12 mb-8"
-                  style={{ background: 'linear-gradient(90deg, #5B3B8C, #7A52B8)' }}
+              <article className="brand-card h-full flex flex-col p-8 md:p-9 overflow-hidden">
+                <BrandLogo
+                  src={graphicsHouseLogo}
+                  href={brandSites.graphicsHouse}
+                  alt="Graphics House"
+                  dark
                 />
-                <BrandIcon kind="gh" />
-                <h3 className="font-display text-[1.85rem] font-medium text-navy mt-5 mb-1 leading-tight">
+                <h3 className="font-display text-[1.85rem] font-medium text-navy mt-0 mb-1 leading-tight">
                   {tx(t.brands.ghName, lang)}
                 </h3>
                 <p className="text-[13px] tracking-[0.08em] uppercase m-0 mb-6" style={{ color: '#7A52B8' }}>
@@ -236,13 +255,13 @@ export default function Home() {
 
             {/* Turriva */}
             <Reveal delay="reveal-delay-2">
-              <article className="brand-card h-full flex flex-col p-8 md:p-9">
-                <div
-                  className="h-[3px] w-12 mb-8"
-                  style={{ background: 'linear-gradient(90deg, #B5651D, #E08A3C)' }}
+              <article className="brand-card h-full flex flex-col p-8 md:p-9 overflow-hidden">
+                <BrandLogo
+                  src={turrivaLogo}
+                  href={brandSites.turriva}
+                  alt="Turriva"
                 />
-                <BrandIcon kind="tu" />
-                <h3 className="font-display text-[1.85rem] font-medium text-navy mt-5 mb-1 leading-tight">
+                <h3 className="font-display text-[1.85rem] font-medium text-navy mt-0 mb-1 leading-tight">
                   {tx(t.brands.tuName, lang)}
                 </h3>
                 <p className="text-[13px] tracking-[0.08em] uppercase m-0 mb-6" style={{ color: '#B5651D' }}>
@@ -265,16 +284,16 @@ export default function Home() {
 
             {/* Bees Motion */}
             <Reveal delay="reveal-delay-3">
-              <article className="brand-card h-full flex flex-col p-8 md:p-9">
-                <div
-                  className="h-[3px] w-12 mb-8"
-                  style={{ background: 'linear-gradient(90deg, #14707A, #1E9AA6)' }}
+              <article className="brand-card h-full flex flex-col p-8 md:p-9 overflow-hidden">
+                <BrandLogo
+                  src={beesMotionLogo}
+                  href={brandSites.beesMotion}
+                  alt="Bees Motion"
                 />
-                <BrandIcon kind="bm" />
-                <h3 className="font-display text-[1.85rem] font-medium text-navy mt-5 mb-1 leading-tight">
+                <h3 className="font-display text-[1.85rem] font-medium text-navy mt-0 mb-1 leading-tight">
                   {tx(t.brands.bmName, lang)}
                 </h3>
-                <p className="text-[13px] tracking-[0.08em] uppercase m-0 mb-6" style={{ color: '#14707A' }}>
+                <p className="text-[13px] leading-snug m-0 mb-6" style={{ color: '#14707A' }}>
                   {tx(t.brands.bmRole, lang)}
                 </p>
                 <p className="text-[15px] leading-relaxed text-navy/70 m-0 mb-6">
@@ -306,14 +325,14 @@ export default function Home() {
       </section>
 
       {/* HOW WE WORK */}
-      <section id="together" className="anchor-target py-24 md:py-32" style={{ background: '#10182A' }}>
+      <section id="together" className="anchor-target section-y" style={{ background: '#10182A' }}>
         <div className="container-xl">
           <Reveal>
             <div className="gold-rule mb-6" />
             <p className="section-kicker mb-10" style={{ color: '#C9A24B' }}>
               {tx(t.together.kicker, lang)}
             </p>
-            <p className="max-w-3xl mb-16 md:mb-20 text-[17px] md:text-[19px] leading-[1.85] font-light m-0" style={{ color: 'rgba(246,243,236,0.72)' }}>
+            <p className="max-w-3xl mb-10 md:mb-20 text-[17px] md:text-[19px] leading-[1.85] font-light m-0" style={{ color: 'rgba(246,243,236,0.72)' }}>
               {tx(t.together.body, lang)}
             </p>
           </Reveal>
@@ -355,31 +374,38 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="anchor-target py-24 md:py-32">
+      <section id="contact" className="anchor-target section-y">
         <div className="container-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <div className="gold-rule mb-6" />
               <p className="section-kicker mb-10">{tx(t.contact.kicker, lang)}</p>
               <p className="prose-hold m-0 mb-10">{tx(t.contact.body, lang)}</p>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-5">
                 {[
-                  { name: tx(t.brands.ghName, lang), href: brandSites.graphicsHouse, color: '#5B3B8C' },
-                  { name: tx(t.brands.tuName, lang), href: brandSites.turriva, color: '#B5651D' },
-                  { name: tx(t.brands.bmName, lang), href: brandSites.beesMotion, color: '#14707A' },
+                  { name: tx(t.brands.ghName, lang), href: brandSites.graphicsHouse, src: graphicsHouseLogo, dark: true },
+                  { name: tx(t.brands.tuName, lang), href: brandSites.turriva, src: turrivaLogo, dark: false },
+                  { name: tx(t.brands.bmName, lang), href: brandSites.beesMotion, src: beesMotionLogo, dark: false },
                 ].map((b) => (
                   <a
                     key={b.href}
                     href={b.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="visit-link"
-                    style={{ color: b.color, textDecoration: 'none' }}
+                    className="flex items-center gap-4 no-underline group"
                   >
-                    <span>{b.name}</span>
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden style={{ transform: isAr ? 'scaleX(-1)' : undefined }}>
-                      <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <span
+                      className="flex items-center justify-center h-14 w-[7.5rem] flex-shrink-0 px-2"
+                      style={{ background: b.dark ? '#10182A' : '#F3F0E8' }}
+                    >
+                      <img src={b.src} alt="" className="max-h-9 max-w-full w-auto object-contain" />
+                    </span>
+                    <span className="visit-link m-0" style={{ color: 'var(--ink)' }}>
+                      <span>{b.name}</span>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden style={{ transform: isAr ? 'scaleX(-1)' : undefined }}>
+                        <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
                   </a>
                 ))}
               </div>

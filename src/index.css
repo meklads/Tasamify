@@ -136,6 +136,7 @@ h1, h2, h3, .font-display {
   background: var(--paper);
   border: 1px solid rgba(16, 24, 42, 0.08);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
 }
 
 .brand-card:hover {
@@ -160,24 +161,37 @@ h1, h2, h3, .font-display {
   opacity: 0.8;
 }
 
+.section-y {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
 .lang-toggle {
   display: flex;
   align-items: center;
-  border: 1px solid rgba(201, 162, 75, 0.35);
+  border: 1px solid rgba(201, 162, 75, 0.55);
   border-radius: 2px;
-  padding: 2px;
+  padding: 3px;
   gap: 0;
+  background: rgba(201, 162, 75, 0.08);
 }
 
 .lang-btn {
-  padding: 5px 11px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   cursor: pointer;
   border: none;
   background: transparent;
-  color: rgba(246, 243, 236, 0.55);
+  color: rgba(246, 243, 236, 0.7);
   transition: all 0.2s ease;
 }
 
