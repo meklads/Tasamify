@@ -457,11 +457,18 @@ h1, h2, h3, .font-display {
 }
 
 .company-role {
-  margin: 0 0 1rem;
+  margin: 0 0 0.35rem;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.55;
   color: var(--gold-light);
+}
+
+.company-market {
+  margin: 0 0 1rem;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(246, 243, 236, 0.48);
 }
 
 .company-lead {
@@ -542,11 +549,24 @@ h1, h2, h3, .font-display {
 
 .arch-tree-down {
   display: block;
-  margin: 0.7rem 0 2rem;
+  margin: 0.7rem 0 1.25rem;
   font-size: 1.25rem;
   line-height: 1;
   color: var(--gold);
   opacity: 0.8;
+}
+
+.arch-tree-layer {
+  margin: 0 0 1.5rem;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(246, 243, 236, 0.62);
+}
+
+.arch-tree .arch-pillars {
+  margin-bottom: 0.5rem;
 }
 
 .platform-strip {
@@ -705,6 +725,7 @@ h1, h2, h3, .font-display {
 [dir="rtl"] .company-name,
 [dir="rtl"] .company-verb,
 [dir="rtl"] .arch-tree-parent,
+[dir="rtl"] .arch-tree-layer,
 [dir="rtl"] .house-cta,
 [dir="rtl"] .lang-btn,
 [dir="rtl"] .journey-num {
@@ -739,7 +760,9 @@ h1, h2, h3, .font-display {
 [dir="rtl"] .nav-drop-verb,
 [dir="rtl"] .company-verb,
 [dir="rtl"] .company-role,
-[dir="rtl"] .arch-tree-parent {
+[dir="rtl"] .company-market,
+[dir="rtl"] .arch-tree-parent,
+[dir="rtl"] .arch-tree-layer {
   letter-spacing: 0;
   text-transform: none;
 }

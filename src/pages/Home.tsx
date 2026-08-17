@@ -51,6 +51,7 @@ function CompanyPlate({
   verb,
   name,
   role,
+  market,
   lead,
 }: {
   id: string
@@ -61,6 +62,7 @@ function CompanyPlate({
   verb: string
   name: string
   role: string
+  market: string
   lead: string
 }) {
   const { lang } = useLang()
@@ -73,6 +75,7 @@ function CompanyPlate({
         <p className="company-verb">{verb}</p>
         <h3 className="company-name">{name}</h3>
         <p className="company-role">{role}</p>
+        <p className="company-market">{market}</p>
         <p className="company-lead">{lead}</p>
         <VisitLink href={href} label={tx(t.brands.visit, lang)} light />
       </div>
@@ -222,6 +225,7 @@ export default function Home() {
                   verb={tx(c.verb, lang)}
                   name={tx(c.name, lang)}
                   role={tx(c.role, lang)}
+                  market={tx(c.market, lang)}
                   lead={tx(c.lead, lang)}
                 />
               </Reveal>
@@ -266,6 +270,7 @@ export default function Home() {
               <span className="arch-tree-down" aria-hidden>
                 ↓
               </span>
+              <p className="arch-tree-layer">{tx(t.together.specialized, lang)}</p>
               <ol className="arch-pillars">
                 {groupCompanies.map((c) => (
                   <li key={c.id} className="journey-step">
@@ -273,13 +278,33 @@ export default function Home() {
                     <p className="font-display text-cream text-[1.4rem] md:text-[1.55rem] leading-snug m-0 mb-2 font-medium">
                       {tx(c.name, lang)}
                     </p>
-                    <p className="text-[13px] m-0" style={{ color: 'rgba(246,243,236,0.55)' }}>
+                    <p className="text-[13px] m-0 mb-1" style={{ color: 'rgba(246,243,236,0.72)' }}>
                       {tx(c.role, lang)}
+                    </p>
+                    <p className="text-[12px] m-0" style={{ color: 'rgba(246,243,236,0.45)' }}>
+                      {tx(c.market, lang)}
                     </p>
                   </li>
                 ))}
               </ol>
+              <span className="arch-tree-down" aria-hidden>
+                ↓
+              </span>
+              <p className="arch-tree-layer">{tx(t.together.complementary, lang)}</p>
             </div>
+          </Reveal>
+
+          <Reveal className="mt-12 md:mt-16" delay="reveal-delay-2">
+            <p className="section-kicker mb-4 md:mb-5" style={{ color: '#C9A24B' }}>
+              {tx(t.caps.kicker, lang)}
+            </p>
+            <h2 className="section-title section-title-light m-0 mb-5 md:mb-6">{tx(t.caps.title, lang)}</h2>
+            <p
+              className="max-w-3xl m-0 text-[16px] md:text-[18px] leading-[1.9] font-light"
+              style={{ color: 'rgba(246,243,236,0.68)' }}
+            >
+              {tx(t.caps.body, lang)}
+            </p>
           </Reveal>
         </div>
       </section>

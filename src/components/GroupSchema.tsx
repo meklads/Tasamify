@@ -29,19 +29,23 @@ export default function GroupSchema() {
         lang === 'ar'
           ? [
               'شركات متخصصة',
-              'تجارب إبداعية',
+              'تجارب إبداعية وبصرية',
               'تسويق رقمي',
               'إنتاج إبداعي',
               'تنفيذ فراغي',
               'تسليم ميداني',
+              'التقنية والذكاء الاصطناعي',
+              'تجارب ذكية',
             ]
           : [
               'Specialized companies',
-              'Creative experiences',
+              'Creative and visual experiences',
               'Digital marketing',
               'Creative production',
               'Spatial execution',
               'Physical delivery',
+              'Technology and AI',
+              'Smart experiences',
             ],
     }
 

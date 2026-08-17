@@ -43,12 +43,16 @@ export const t = {
     ghName: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
     ghVerb: { en: 'Create', ar: 'ابتكار' },
     ghRole: {
-      en: 'Creative Experiences for Real Estate & Large-Scale Developments',
-      ar: 'تجارب إبداعية للتطوير العقاري والمشروعات الكبرى',
+      en: 'Creative & Visual Experiences',
+      ar: 'تجارب إبداعية وبصرية',
+    },
+    ghMarket: {
+      en: 'Real Estate / Large-Scale Developments',
+      ar: 'العقار والمشروعات الكبرى',
     },
     ghLead: {
-      en: 'A specialist company that designs cinematic and immersive experiences for real estate and large-scale developments, before construction begins.',
-      ar: 'شركة متخصصة تصمم تجارب سينمائية وغامرة للتطوير العقاري والمشروعات الكبرى، قبل أن يبدأ البناء.',
+      en: 'A specialist company that designs cinematic, visual, and smart experiences for real estate and large-scale developments, before construction begins.',
+      ar: 'شركة متخصصة تصمم تجارب سينمائية وبصرية وذكية للتطوير العقاري والمشروعات الكبرى، قبل أن يبدأ البناء.',
     },
 
     bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
@@ -57,9 +61,13 @@ export const t = {
       en: 'Digital Marketing & Creative Production',
       ar: 'التسويق الرقمي والإنتاج الإبداعي',
     },
+    bmMarket: {
+      en: 'Healthcare / Businesses',
+      ar: 'القطاع الطبي والأعمال',
+    },
     bmLead: {
-      en: 'A specialist company that builds campaigns, film, motion, and content systems. For architectural visualization, Graphics House leads.',
-      ar: 'شركة متخصصة تبني الحملات والأفلام والموشن ومنظومات المحتوى. وللإظهار المعماري تتولى جرافيكس هاوس.',
+      en: 'A specialist company that builds campaigns, film, motion, content systems, and AI inside marketing and production. For architectural visualization, Graphics House leads.',
+      ar: 'شركة متخصصة تبني الحملات والأفلام والموشن ومنظومات المحتوى، وتوظّف الذكاء الاصطناعي داخل التسويق والإنتاج. وللإظهار المعماري تتولى جرافيكس هاوس.',
     },
 
     tuName: { en: 'Turriva', ar: 'توريفا' },
@@ -68,21 +76,39 @@ export const t = {
       en: 'Spatial Execution & Physical Delivery',
       ar: 'التنفيذ الفراغي والتسليم الميداني',
     },
+    tuMarket: {
+      en: 'Interior / Exhibitions / Furnishing',
+      ar: 'الداخلي والمعارض والتأثيث',
+    },
     tuLead: {
-      en: 'A specialist company that takes an approved concept into interior, exhibition, and on-site delivery.',
-      ar: 'شركة متخصصة تحوّل المفهوم المعتمد إلى داخلي ومعارض وتسليم على الأرض.',
+      en: 'A specialist company that takes an approved concept into interior, exhibitions, furnishing, and on-site delivery.',
+      ar: 'شركة متخصصة تحوّل المفهوم المعتمد إلى داخلي ومعارض وتأثيث وتسليم على الأرض.',
     },
   },
 
   together: {
     kicker: { en: 'How they complement', ar: 'كيف تتكامل' },
     title: {
-      en: 'Independent companies. Complementary when needed.',
-      ar: 'شركات مستقلة. تتكامل عند الحاجة.',
+      en: 'Specialized companies. Complementary capabilities.',
+      ar: 'شركات متخصصة. قدرات تتكامل.',
     },
+    specialized: { en: 'Specialized Companies', ar: 'شركات متخصصة' },
+    complementary: { en: 'Complementary Capabilities', ar: 'قدرات تتكامل' },
     body: {
       en: 'No company is the parent of another. Graphics House creates. Bees Motion grows. Turriva executes. When a brief needs more than one specialty, Tasami Group connects the right companies without collapsing them into one agency.',
       ar: 'لا شركة أمًّا لأخرى. جرافيكس هاوس تبتكر. بيزموشن تنمّي. توريفا تنفّذ. حين يحتاج الموجز أكثر من تخصص، تصل مجموعة تسامي الشركات الصحيحة دون أن تصير وكالة واحدة.',
+    },
+  },
+
+  caps: {
+    kicker: { en: 'Technology & AI Capabilities', ar: 'قدرات التقنية والذكاء الاصطناعي' },
+    title: {
+      en: 'Technology and AI inside the group.',
+      ar: 'التقنية والذكاء الاصطناعي داخل المجموعة.',
+    },
+    body: {
+      en: 'Smart experiences and AI are real capabilities across Tasami Group. Graphics House leads visual and smart experience design. Bees Motion applies AI inside marketing and production. Tasami Group holds these capabilities and routes the work. It is not a smart interactive agency, and it does not compete with its companies.',
+      ar: 'التجارب الذكية والذكاء الاصطناعي قدرات حقيقية داخل مجموعة تسامي. جرافيكس هاوس تقود التصميم البصري والتجارب الذكية. بيزموشن توظّف الذكاء الاصطناعي داخل التسويق والإنتاج. مجموعة تسامي تمسك هذه القدرات وتوجّه العمل. ليست وكالة تفاعلية ذكية، ولا تنافس شركاتها.',
     },
   },
 
@@ -151,6 +177,7 @@ export const groupCompanies = [
     name: t.brands.ghName,
     verb: t.brands.ghVerb,
     role: t.brands.ghRole,
+    market: t.brands.ghMarket,
     lead: t.brands.ghLead,
     tone: 'gh' as const,
     alt: 'Graphics House',
@@ -161,6 +188,7 @@ export const groupCompanies = [
     name: t.brands.bmName,
     verb: t.brands.bmVerb,
     role: t.brands.bmRole,
+    market: t.brands.bmMarket,
     lead: t.brands.bmLead,
     tone: 'bm' as const,
     alt: 'Bees Motion',
@@ -171,6 +199,7 @@ export const groupCompanies = [
     name: t.brands.tuName,
     verb: t.brands.tuVerb,
     role: t.brands.tuRole,
+    market: t.brands.tuMarket,
     lead: t.brands.tuLead,
     tone: 'tu' as const,
     alt: 'Turriva',
