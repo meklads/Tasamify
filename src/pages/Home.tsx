@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { useLang } from '../lib/LanguageContext'
-import { t, tx, brandSites, groupCompanies } from '../lib/translations'
+import { t, tx, groupCompanies } from '../lib/translations'
 import { useReveal } from '../hooks/useReveal'
 import TasamiMark from '../components/TasamiMark'
 import graphicsHouseLogo from '../assets/brands/graphics-house.png'
@@ -231,21 +231,6 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal className="mt-12 md:mt-16">
-            <div id="platforms" className="anchor-target">
-              <p className="section-kicker mb-5">{tx(t.platforms.kicker, lang)}</p>
-              <a href={brandSites.ruwaq} target="_blank" rel="noopener noreferrer" className="platform-strip">
-                <div className="min-w-0">
-                  <p className="text-[17px] font-medium text-navy m-0 mb-1">{tx(t.platforms.ruwaqName, lang)}</p>
-                  <p className="text-[14px] leading-relaxed text-navy/50 m-0">{tx(t.platforms.ruwaqDesc, lang)}</p>
-                </div>
-                <span className="platform-strip-link" style={{ letterSpacing: isAr ? 0 : '0.04em' }}>
-                  {tx(t.platforms.ruwaqLink, lang)}
-                </span>
-              </a>
-            </div>
-          </Reveal>
         </div>
       </section>
 

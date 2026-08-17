@@ -13,7 +13,7 @@ function ScrollManager() {
 
   useEffect(() => {
     if (hash) {
-      const target = hash === '#brands' ? '#companies' : hash
+      const target = hash === '#brands' || hash === '#platforms' ? '#companies' : hash
       const el = document.querySelector(target)
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' })

@@ -569,37 +569,6 @@ h1, h2, h3, .font-display {
   margin-bottom: 0.5rem;
 }
 
-.platform-strip {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 1.35rem 1.25rem;
-  min-height: 44px;
-  text-decoration: none;
-  background: rgba(16, 24, 42, 0.04);
-  transition: background 0.3s ease;
-}
-
-.platform-strip:hover {
-  background: rgba(201, 162, 75, 0.1);
-  text-decoration: none;
-}
-
-.platform-strip-link {
-  flex-shrink: 0;
-  font-size: 13px;
-  color: rgba(16, 24, 42, 0.4);
-}
-
-@media (min-width: 640px) {
-  .platform-strip {
-    flex-direction: row;
-    align-items: center;
-    padding: 1.5rem 1.5rem;
-  }
-}
-
 .journey-step {
   padding-top: 0;
 }
