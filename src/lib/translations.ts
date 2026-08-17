@@ -2,120 +2,124 @@ export type Lang = 'en' | 'ar'
 
 export const t = {
   nav: {
-    brands: { en: 'Brands', ar: 'العلامات' },
+    brands: { en: 'Our Houses', ar: 'دور المجموعة' },
     contact: { en: 'Contact', ar: 'تواصل' },
   },
 
   hero: {
+    kicker: { en: 'Tasami Group', ar: 'مجموعة تسامي' },
     wordmark: { en: 'Tasami', ar: 'تسامي' },
     subhead: {
-      en: 'The identity behind a group of three specialist brands',
-      ar: 'الهوية الجامعة لمجموعة من ثلاث علامات متخصصة',
+      en: 'The identity above three specialist brands',
+      ar: 'الهوية الجامعة لثلاث علامات متخصصة',
     },
     support: {
-      en: 'From idea to impact — creative, execution, marketing, and AI, under one umbrella',
-      ar: 'من الفكرة إلى الأثر — إبداع، تنفيذ، تسويق، وذكاء اصطناعي، تحت مظلة واحدة',
+      en: 'From the first idea to a finished result — creative production, physical execution, marketing, and AI — held as one.',
+      ar: 'من الفكرة الأولى إلى الأثر المكتمل — إنتاج إبداعي، تنفيذ ميداني، تسويق، وذكاء اصطناعي — في منظومة واحدة.',
     },
   },
 
   about: {
-    kicker: { en: 'About', ar: 'عن تسامي' },
+    kicker: { en: 'The Group', ar: 'المجموعة' },
+    title: {
+      en: 'A frame that unifies — and never competes',
+      ar: 'تجمع الدور، ولا تنافسها',
+    },
     body: {
-      en: "Tasami is the identity that brings together three specialist brands, each operating with independent expertise in its field, converging into a single journey — from idea to tangible impact. Tasami doesn't sell services directly and doesn't compete with any of its brands — its role is to be the framework that unifies the vision and keeps each brand's role clear.",
-      ar: 'تسامي هي الهوية التي تجمع ثلاث علامات متخصصة، كل واحدة منها تعمل في مجالها بحرفية مستقلة، وتتكامل معًا في رحلة واحدة تبدأ من الفكرة وتنتهي بأثر ملموس. لا تبيع تسامي خدمة مباشرة ولا تنافس أيًا من علاماتها — دورها أن تكون الإطار الذي يوحّد الرؤية ويحافظ على وضوح دور كل طرف.',
+      en: 'Tasami is the group identity above Graphics House, Turriva, and Bees Motion. Each house operates with independent mastery in its field. Together they form a single journey: from the first idea to a result that can be built, launched, and grown. Tasami does not sell, and does not compete with its houses. It holds the vision, and keeps every role distinct.',
+      ar: 'تسامي هي هوية المجموعة فوق جرافيكس هاوس وتوريفا وبيزموشن. كل دار تعمل بحرفية مستقلة في مجالها. ومعًا يشكّلن رحلة واحدة: من الفكرة الأولى إلى أثر يُبنى ويُطلق ويُنمّى. تسامي لا تبيع، ولا تنافس دورها. تمسك الرؤية، وتحفظ لكل طرف حدّه.',
     },
   },
 
   brands: {
-    kicker: { en: 'The Three Brands', ar: 'العلامات الثلاث' },
-    visit: { en: 'Visit site', ar: 'زيارة الموقع' },
+    kicker: { en: 'The Houses', ar: 'دور المجموعة' },
+    title: {
+      en: 'Three houses. One standard.',
+      ar: 'ثلاث دور. معيار واحد.',
+    },
+    visit: { en: 'Visit house', ar: 'زيارة الدار' },
     ghName: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
     ghRole: { en: 'Creative Production', ar: 'الإنتاج الإبداعي' },
     ghLead: {
-      en: 'Turning complex ideas into compelling visual and architectural experiences:',
-      ar: 'تحويل الأفكار المعقدة إلى تجارب بصرية ومعمارية مؤثرة:',
+      en: 'Complex ideas, rendered as spaces and images that move people — and close decisions.',
+      ar: 'أفكار معقّدة تتحول إلى فضاءات وصور تحرّك الناس — وتُغلق القرار.',
     },
-    ghB1: {
-      en: 'architectural and cinematic visualization',
-      ar: 'تصور معماري وسينمائي',
-    },
-    ghB2: { en: 'smart maquettes', ar: 'مجسمات ذكية' },
-    ghB3: {
-      en: 'interactive experiences and exhibitions',
-      ar: 'تجارب تفاعلية ومعارض',
-    },
-    ghClose: {
-      en: '15+ years of experience, 500+ projects in the Saudi market.',
-      ar: 'أكثر من 15 عامًا من الخبرة و500+ مشروع في السوق السعودي.',
-    },
+    ghB1: { en: 'Architectural and cinematic visualization', ar: 'تصور معماري وسينمائي' },
+    ghB2: { en: 'Smart maquettes', ar: 'مجسمات ذكية' },
+    ghB3: { en: 'Interactive experiences and exhibitions', ar: 'تجارب تفاعلية ومعارض' },
+    ghStat1: { en: '15+ years', ar: '+١٥ عامًا' },
+    ghStat2: { en: '500+ projects', ar: '+٥٠٠ مشروع' },
+    ghStat3: { en: 'Saudi market', ar: 'السوق السعودي' },
     tuName: { en: 'Turriva', ar: 'توريفا' },
     tuRole: { en: 'Execution', ar: 'التنفيذ' },
-    tuLead: { en: 'From design to reality:', ar: 'من التصميم إلى الواقع:' },
-    tuB1: {
-      en: 'interior fit-out and decor execution',
-      ar: 'تنفيذ مشاريع الديكور والتشطيب',
+    tuLead: {
+      en: 'From approved design to a finished site — sourced, built, and handed over.',
+      ar: 'من التصميم المعتمد إلى موقع مكتمل — توريدًا وبناءً وتسليمًا.',
     },
-    tuB2: {
-      en: 'international sourcing and manufacturing',
-      ar: 'توريد وتصنيع دولي',
-    },
-    tuB3: {
-      en: 'and full on-site project management through delivery',
-      ar: 'وإدارة ميدانية كاملة حتى التسليم',
-    },
+    tuB1: { en: 'Interior fit-out and décor execution', ar: 'تنفيذ الديكور والتشطيب' },
+    tuB2: { en: 'International sourcing and manufacturing', ar: 'توريد وتصنيع دولي' },
+    tuB3: { en: 'Full on-site project management through delivery', ar: 'إدارة ميدانية كاملة حتى التسليم' },
     bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
     bmRole: {
       en: 'Creative Content & AI Digital Transformation',
       ar: 'المحتوى الإبداعي والتحول الرقمي بالذكاء الاصطناعي',
     },
     bmBody: {
-      en: 'A brand independent of real estate, built on two clear tracks: creative content production (film, motion graphics, animation, social media), and AI transformation and automation services — with healthcare as a priority focus across both.',
-      ar: 'علامة مستقلة عن قطاع العقار، بقسمين واضحين: إنتاج محتوى إبداعي (أفلام، موشن جرافيك، كارتون، سوشيال ميديا)، وخدمات تحويل رقمي وأتمتة بالذكاء الاصطناعي — بأولوية للقطاع الطبي في الاثنين معًا.',
+      en: 'Independent of real estate. Two tracks, one house: original content, and AI transformation — with healthcare as a priority across both.',
+      ar: 'مستقلة عن قطاع العقار. مساران في دار واحدة: محتوى أصيل، وتحول بالذكاء الاصطناعي — بأولوية للقطاع الطبي في الاثنين.',
     },
     bmCreative: { en: 'Creative', ar: 'إبداعي' },
     bmCreativeD: {
-      en: 'film, motion graphics, animation, social media',
-      ar: 'أفلام، موشن جرافيك، كارتون، سوشيال ميديا',
+      en: 'Film, motion graphics, animation, and social platforms',
+      ar: 'أفلام، موشن جرافيك، رسوم متحركة، ومنصات التواصل',
     },
     bmAi: { en: 'AI', ar: 'ذكاء اصطناعي' },
     bmAiD: {
-      en: 'AI transformation and automation services',
-      ar: 'تحويل رقمي وأتمتة بالذكاء الاصطناعي',
+      en: 'Digital transformation and automation',
+      ar: 'تحويل رقمي وأتمتة',
     },
   },
 
   together: {
-    kicker: { en: 'How We Work Together', ar: 'كيف نعمل معاً' },
-    body: {
-      en: 'We operate as one ecosystem, not separate projects. Each brand keeps its full specialization, while integrating with the others when needed — from a creative idea, to physical execution, to launch marketing, to future digital transformation.',
-      ar: 'نعمل كمنظومة واحدة، لا كمشاريع منفصلة. كل علامة تحتفظ بتخصصها الكامل، وتتكامل مع الأخريات عند الحاجة — من فكرة إبداعية، إلى تنفيذ فيزيكال، إلى تسويق إطلاقها، وصولًا لرقمنة عملياتها مستقبلًا.',
+    kicker: { en: 'How the houses meet', ar: 'كيف تلتقي الدور' },
+    title: {
+      en: 'One journey. Four movements.',
+      ar: 'رحلة واحدة. أربع حركات.',
     },
-    s1: { en: 'a creative idea', ar: 'فكرة إبداعية' },
+    body: {
+      en: 'We work as one ecosystem, not as disconnected jobs. Each house keeps its full craft — and joins the others when the work requires it.',
+      ar: 'نعمل كمنظومة واحدة، لا كأعمال منفصلة. كل دار تحتفظ بحرفيتها كاملة — وتلتقي بالأخريات حين يطلب العمل ذلك.',
+    },
+    s1: { en: 'A creative idea', ar: 'فكرة إبداعية' },
     s1Brand: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
-    s2: { en: 'physical execution', ar: 'تنفيذ فيزيكال' },
+    s2: { en: 'Physical execution', ar: 'تنفيذ ميداني' },
     s2Brand: { en: 'Turriva', ar: 'توريفا' },
-    s3: { en: 'launch marketing', ar: 'تسويق إطلاقها' },
+    s3: { en: 'Launch marketing', ar: 'تسويق الإطلاق' },
     s3Brand: { en: 'Bees Motion', ar: 'بيزموشن' },
-    s4: { en: 'future digital transformation', ar: 'رقمنة عملياتها مستقبلاً' },
+    s4: { en: 'Digital transformation', ar: 'تحول رقمي' },
     s4Brand: { en: 'Bees Motion', ar: 'بيزموشن' },
   },
 
   contact: {
-    kicker: { en: 'Get in Touch', ar: 'تواصل معنا' },
+    kicker: { en: 'Start here', ar: 'ابدأ من هنا' },
+    title: {
+      en: 'Tell us the need. We will route the house.',
+      ar: 'صف الحاجة. نوجّهك إلى الدار الصحيحة.',
+    },
     body: {
-      en: "Need an idea, execution, marketing, or digital transformation? Choose the right brand, or reach out and we'll direct you to the right team within the group.",
-      ar: 'تحتاج فكرة، تنفيذ، تسويق، أو تحول رقمي؟ اختر العلامة المناسبة، أو تواصل معنا وسنوجهك للجهة الصحيحة داخل المجموعة.',
+      en: 'An idea, an execution, a campaign, or a digital transformation. Choose the house — or write to Tasami, and we will direct you to the right team inside the group.',
+      ar: 'فكرة، تنفيذ، حملة، أو تحول رقمي. اختر الدار — أو اكتب إلى تسامي، ونوجّهك إلى الفريق الصحيح داخل المجموعة.',
     },
     name: { en: 'Name', ar: 'الاسم' },
     phone: { en: 'Phone', ar: 'الجوال' },
     email: { en: 'Email', ar: 'البريد الإلكتروني' },
-    brand: { en: 'Brand', ar: 'العلامة' },
+    brand: { en: 'House', ar: 'الدار' },
     brandAny: { en: 'Not sure — route me', ar: 'غير متأكد — وجّهوني' },
     message: { en: 'Message', ar: 'الرسالة' },
     send: { en: 'Send', ar: 'إرسال' },
     success: {
-      en: "We'll direct you to the right team within the group.",
-      ar: 'سنوجهك للجهة الصحيحة داخل المجموعة.',
+      en: 'Received. We will direct you to the right team inside the group.',
+      ar: 'وصلَت. سنوجّهك إلى الفريق الصحيح داخل المجموعة.',
     },
   },
 
@@ -124,11 +128,11 @@ export const t = {
   },
 
   platforms: {
-    kicker: { en: 'Supporting Platforms', ar: 'منصات داعمة' },
+    kicker: { en: 'Supporting platform', ar: 'منصة داعمة' },
     ruwaqName: { en: 'Ruwaq', ar: 'رُواق' },
     ruwaqDesc: {
-      en: 'A lead-generation directory feeding qualified prospects to all three brands',
-      ar: 'دليل ومنصة جلب عملاء تغذّي العلامات الثلاث بالعملاء المحتملين',
+      en: 'A directory and lead platform that feeds qualified opportunities across the group.',
+      ar: 'دليل ومنصة جلب عملاء تغذّي دور المجموعة بالفرص المؤهلة.',
     },
     ruwaqLink: { en: 'ruwaq.co', ar: 'ruwaq.co' },
   },

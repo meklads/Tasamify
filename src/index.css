@@ -100,54 +100,151 @@ h1, h2, h3, .font-display {
   letter-spacing: 0.08em;
 }
 
+.section-title {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 3.2vw, 2.55rem);
+  line-height: 1.25;
+  color: var(--navy);
+}
+
+.section-title-light {
+  color: #f6f3ec;
+}
+
 .wordmark {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-weight: 500;
-  font-size: clamp(72px, 14vw, 168px);
+  font-size: clamp(64px, 13vw, 148px);
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: #f6f3ec;
 }
 
+.hero-kicker {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+[dir="rtl"] .hero-kicker {
+  letter-spacing: 0.12em;
+}
+
 .hero-subhead {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-weight: 500;
-  font-size: clamp(22px, 2.6vw, 34px);
-  line-height: 1.35;
+  font-size: clamp(20px, 2.5vw, 32px);
+  line-height: 1.4;
   color: var(--gold);
 }
 
 .hero-support {
   font-weight: 300;
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.7;
-  color: rgba(246, 243, 236, 0.62);
-  max-width: 36rem;
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.75;
+  color: rgba(246, 243, 236, 0.64);
+  max-width: 34rem;
+}
+
+.house-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.house-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 4px 8px;
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  color: #f6f3ec;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.house-nav-link:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.house-nav-dot {
+  display: none;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(201, 162, 75, 0.7);
+}
+
+@media (min-width: 640px) {
+  .house-nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .house-nav-dot {
+    display: block;
+  }
 }
 
 .prose-hold {
-  font-size: clamp(17px, 1.5vw, 20px);
+  font-size: clamp(16.5px, 1.45vw, 19.5px);
   font-weight: 400;
-  line-height: 1.85;
+  line-height: 1.9;
   color: #2a3142;
+}
+
+.house-well {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 148px;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .house-well {
+    height: 176px;
+  }
 }
 
 .brand-card {
   background: var(--paper);
   border: 1px solid rgba(16, 24, 42, 0.08);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
   overflow: hidden;
 }
 
 .brand-card:hover {
   border-color: rgba(16, 24, 42, 0.16);
-  box-shadow: 0 18px 40px rgba(16, 24, 42, 0.06);
+  box-shadow: 0 22px 48px rgba(16, 24, 42, 0.08);
+}
+
+.house-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(16, 24, 42, 0.08);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(16, 24, 42, 0.48);
 }
 
 .visit-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  min-height: 44px;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -161,15 +258,27 @@ h1, h2, h3, .font-display {
   opacity: 0.8;
 }
 
+.journey-step {
+  padding-top: 4px;
+  border-top: 1px solid rgba(201, 162, 75, 0.28);
+}
+
+.journey-num {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
 .section-y {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
 
 @media (min-width: 768px) {
   .section-y {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 }
 
@@ -184,7 +293,9 @@ h1, h2, h3, .font-display {
 }
 
 .lang-btn {
-  padding: 7px 14px;
+  padding: 8px 12px;
+  min-height: 36px;
+  min-width: 44px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -262,15 +373,19 @@ h1, h2, h3, .font-display {
 [dir="rtl"] h3,
 [dir="rtl"] .wordmark,
 [dir="rtl"] .hero-subhead,
+[dir="rtl"] .hero-kicker,
 [dir="rtl"] .section-kicker,
+[dir="rtl"] .section-title,
+[dir="rtl"] .house-nav-link,
 [dir="rtl"] .visit-link,
-[dir="rtl"] .lang-btn {
+[dir="rtl"] .lang-btn,
+[dir="rtl"] .journey-num {
   font-family: 'Cairo', sans-serif;
   letter-spacing: 0;
 }
 
 [dir="rtl"] .wordmark {
-  font-size: clamp(64px, 12vw, 140px);
+  font-size: clamp(56px, 11.5vw, 128px);
   font-weight: 700;
   line-height: 1.15;
 }
@@ -285,11 +400,27 @@ h1, h2, h3, .font-display {
   line-height: 1.95;
 }
 
-[dir="rtl"] .visit-link:hover {
-  gap: 12px;
+[dir="rtl"] .house-stats,
+[dir="rtl"] .journey-num {
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .section-title {
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 [dir="rtl"] .uppercase {
   text-transform: none;
   letter-spacing: 0;
+}
+
+[dir="rtl"] .house-stats,
+[dir="rtl"] .journey-num {
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .section-title {
+  font-weight: 700;
+  line-height: 1.45;
 }

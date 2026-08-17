@@ -32,19 +32,19 @@ function applyLang(l: Lang) {
   if (l === 'ar') {
     root.style.setProperty('--font-body', '"Cairo", sans-serif')
     root.style.setProperty('--font-display', '"Cairo", sans-serif')
-    document.title = 'تسامي | الهوية الجامعة لمجموعة من ثلاث علامات متخصصة'
+    document.title = 'تسامي | الهوية الجامعة لثلاث علامات متخصصة'
   } else {
     root.style.setProperty('--font-body', '"Outfit", sans-serif')
     root.style.setProperty('--font-display', '"Cormorant Garamond", serif')
-    document.title = 'Tasami | The identity behind a group of three specialist brands'
+    document.title = 'Tasami | The identity above three specialist brands'
   }
   const meta = document.querySelector('meta[name="description"]')
   if (meta) {
     meta.setAttribute(
       'content',
       l === 'ar'
-        ? 'تسامي — الهوية الجامعة لمجموعة من ثلاث علامات متخصصة. جرافيكس هاوس، توريفا، وبيزموشن، تحت مظلة واحدة.'
-        : 'Tasami — the identity behind a group of three specialist brands. Graphics House, Turriva, and Bees Motion, under one umbrella.',
+        ? 'تسامي — مجموعة فوق جرافيكس هاوس وتوريفا وبيزموشن. هوية جامعة لا تبيع ولا تنافس دورها.'
+        : 'Tasami — the group above Graphics House, Turriva, and Bees Motion. An identity that unifies, and never competes.',
     )
   }
 }
