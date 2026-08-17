@@ -143,6 +143,50 @@ h1, h2, h3, .font-display {
   max-width: 36rem;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 26px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-cta--solid {
+  background: var(--gold);
+  color: #10182a;
+}
+
+.hero-cta--solid:hover {
+  background: var(--gold-light);
+  color: #10182a;
+  text-decoration: none;
+}
+
+.hero-cta--ghost {
+  border: 1px solid rgba(201, 162, 75, 0.55);
+  color: #f6f3ec;
+}
+
+.hero-cta--ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+}
+
 .hero-group {
   display: block;
   margin-top: 0.2rem;
@@ -695,6 +739,7 @@ h1, h2, h3, .font-display {
 [dir="rtl"] .company-verb,
 [dir="rtl"] .arch-tree-parent,
 [dir="rtl"] .arch-tree-layer,
+[dir="rtl"] .hero-cta,
 [dir="rtl"] .house-cta,
 [dir="rtl"] .lang-btn,
 [dir="rtl"] .journey-num {
@@ -739,6 +784,11 @@ h1, h2, h3, .font-display {
 [dir="rtl"] .section-title {
   font-weight: 700;
   line-height: 1.45;
+}
+
+[dir="rtl"] .hero-cta {
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 [dir="rtl"] .uppercase {

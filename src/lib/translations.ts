@@ -11,24 +11,30 @@ export const t = {
     wordmark: { en: 'Tasami', ar: 'تسامي' },
     group: { en: 'Group', ar: 'مجموعة' },
     subhead: {
-      en: 'One group. Specialized companies. Complementary capabilities.',
-      ar: 'مجموعة واحدة. شركات متخصصة. قدرات تتكامل.',
+      en: 'One group. Three specialized companies.',
+      ar: 'مجموعة واحدة. ثلاث شركات متخصصة.',
     },
     support: {
-      en: 'Tasami Group brings together specialized companies across creative experiences, marketing, technology, and physical execution. They work independently, or together when a project requires complementary capabilities.',
-      ar: 'مجموعة تسامي تجمع شركات متخصصة في التجارب الإبداعية والتسويق والتقنية والتنفيذ الميداني. تعمل مستقلة، أو معًا حين يحتاج المشروع قدرات تتكامل.',
+      en: 'We connect the right capabilities when a project needs more than one specialty, from creative vision to physical delivery, under one accountable group.',
+      ar: 'نجمع الخبرات المناسبة عندما يحتاج المشروع إلى أكثر من تخصص، من الرؤية الإبداعية إلى التسليم الميداني، تحت مجموعة واحدة مسؤولة.',
     },
+    explore: { en: 'Explore our companies', ar: 'تعرّف على شركاتنا' },
+    start: { en: 'Start a project', ar: 'ابدأ مشروعك' },
   },
 
   about: {
-    kicker: { en: 'Tasami Group', ar: 'مجموعة تسامي' },
+    kicker: { en: 'Our Story', ar: 'قصتنا' },
     title: {
-      en: 'The group behind specialized companies.',
-      ar: 'المجموعة خلف شركات متخصصة.',
+      en: 'Built from one studio. Grown into a group.',
+      ar: 'بدأنا كاستوديو واحد. وكبرنا إلى مجموعة.',
     },
     body: {
-      en: 'Tasami Group is the group behind Graphics House, Bees Motion, and Turriva. It is not an agency, and it does not sell their work. Each company keeps its name, its market, and its expertise. Tasami Group brings the companies together only when a project requires complementary capabilities.',
-      ar: 'مجموعة تسامي هي المجموعة خلف جرافيكس هاوس وبيزموشن وتوريفا. ليست وكالة، ولا تبيع عمل شركاتها. كل شركة تحتفظ باسمها وسوقها وخبرتها. تجمع مجموعة تسامي الشركات فقط حين يحتاج المشروع قدرات تتكامل.',
+      en: 'Tasami Group began as a single creative studio serving the Saudi real estate and exhibition sector. As client needs grew beyond visualization into marketing and field execution, that expertise was organized into three specialized companies, each accountable for its own discipline.',
+      ar: 'بدأت مجموعة تسامي كاستوديو إبداعي واحد يخدم قطاع العقار والمعارض في السعودية. ومع اتساع احتياجات العملاء لتتجاوز الإظهار البصري إلى التسويق والتنفيذ الميداني، نُظّمت هذه الخبرة في ثلاث شركات متخصصة، كل واحدة مسؤولة عن تخصصها.',
+    },
+    body2: {
+      en: 'Today the group stands behind Graphics House, Bees Motion, and Turriva. It is not an agency, and it does not sell their work. Each company keeps its name, its market, and its expertise. Tasami Group brings them together only when a project requires complementary capabilities.',
+      ar: 'اليوم تقف المجموعة خلف جرافيكس هاوس وبيزموشن وتوريفا. ليست وكالة، ولا تبيع عمل شركاتها. كل شركة تحتفظ باسمها وسوقها وخبرتها. تجمع مجموعة تسامي الشركات فقط حين يحتاج المشروع قدرات تتكامل.',
     },
   },
 
@@ -51,8 +57,8 @@ export const t = {
       ar: 'العقار والمشروعات الكبرى',
     },
     ghLead: {
-      en: 'A specialist company that designs cinematic, visual, and smart experiences for real estate and large-scale developments, before construction begins.',
-      ar: 'شركة متخصصة تصمم تجارب سينمائية وبصرية وذكية للتطوير العقاري والمشروعات الكبرى، قبل أن يبدأ البناء.',
+      en: 'Transforms architectural projects into cinematic narratives, physical models, and interactive platforms, helping developers communicate value and accelerate decisions before construction begins.',
+      ar: 'تحوّل المشاريع المعمارية إلى سرديات سينمائية ومجسمات مادية ومنصات تفاعلية، لمساعدة المطوّرين على إيصال القيمة وتسريع القرارات قبل بدء التنفيذ.',
     },
 
     bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
@@ -66,8 +72,8 @@ export const t = {
       ar: 'القطاع الطبي والأعمال',
     },
     bmLead: {
-      en: 'A specialist company that builds campaigns, film, motion, content systems, and AI inside marketing and production.',
-      ar: 'شركة متخصصة تبني الحملات والأفلام والموشن ومنظومات المحتوى، وتوظّف الذكاء الاصطناعي داخل التسويق والإنتاج.',
+      en: 'Built around creative production: strategy, content, campaigns, distribution, and AI as one system, with deep expertise in healthcare marketing.',
+      ar: 'مبنية حول الإنتاج الإبداعي: الاستراتيجية والمحتوى والحملات والتوزيع والذكاء الاصطناعي كمنظومة واحدة، بخبرة عميقة في التسويق الطبي.',
     },
 
     tuName: { en: 'Turriva', ar: 'توريفا' },
@@ -81,8 +87,8 @@ export const t = {
       ar: 'الداخلي والمعارض والتأثيث',
     },
     tuLead: {
-      en: 'A specialist company that takes an approved concept into interior, exhibitions, furnishing, and on-site delivery.',
-      ar: 'شركة متخصصة تحوّل المفهوم المعتمد إلى داخلي ومعارض وتأثيث وتسليم على الأرض.',
+      en: 'Takes an approved design through to installation, with precision manufacturing, field engineering, and local warranty for villas and developer projects.',
+      ar: 'تتولى التصميم المعتمد حتى التركيب، بتصنيع دقيق وهندسة ميدانية وضمان محلي شامل للفلل ومشاريع المطوّرين.',
     },
   },
 
@@ -97,6 +103,10 @@ export const t = {
     body: {
       en: 'Each company operates independently in its own market and discipline. When a project requires more than one specialty, Tasami Group connects the right teams to deliver a complete solution.',
       ar: 'كل شركة تعمل مستقلة في سوقها وتخصصها. حين يحتاج المشروع أكثر من تخصص، تصل مجموعة تسامي الفرق الصحيحة لتقديم حل مكتمل.',
+    },
+    example: {
+      en: 'A developer launching a project may need a smart maquette from Graphics House, a launch campaign from Bees Motion, and the sales gallery fit-out from Turriva. Tasami Group coordinates that as one engagement, not three separate vendors.',
+      ar: 'مطوّر يطلق مشروعًا قد يحتاج مجسمًا ذكيًا من جرافيكس هاوس، وحملة إطلاق من بيزموشن، وتجهيز صالة المبيعات من توريفا. تنسّق مجموعة تسامي ذلك كمشروع واحد، لا كثلاثة موردين منفصلين.',
     },
   },
 
@@ -119,8 +129,8 @@ export const t = {
       ar: 'اكتب إلى مجموعة تسامي. نوجّهك إلى الشركة الصحيحة.',
     },
     body: {
-      en: 'Tasami Group does not deliver the specialist work. Choose the company you need, or tell us what you need and we will route it to the right company.',
-      ar: 'مجموعة تسامي لا تنفّذ العمل المتخصص. اختر الشركة التي تحتاجها، أو صف الحاجة ونوجّهها إلى الشركة الصحيحة.',
+      en: 'Tell us what your project needs. We will bring in the right company, or the right combination.',
+      ar: 'أخبرنا باحتياج مشروعك. سنوجّهك إلى الشركة المناسبة، أو التركيبة المناسبة منها.',
     },
     name: { en: 'Name', ar: 'الاسم' },
     phone: { en: 'Phone', ar: 'الجوال' },
@@ -143,12 +153,12 @@ export const t = {
 
   seo: {
     title: {
-      en: 'Tasami Group | The group behind specialized companies',
-      ar: 'مجموعة تسامي | المجموعة خلف شركات متخصصة',
+      en: 'Tasami Group | One Group. Three Specialized Companies.',
+      ar: 'مجموعة تسامي | مجموعة واحدة. ثلاث شركات متخصصة.',
     },
     description: {
-      en: 'Tasami Group brings together Graphics House, Bees Motion, and Turriva. Specialized companies with complementary capabilities. Create. Grow. Execute.',
-      ar: 'مجموعة تسامي تجمع جرافيكس هاوس وبيزموشن وتوريفا. شركات متخصصة بقدرات تتكامل. ابتكار. تنمية. تنفيذ.',
+      en: 'Tasami Group connects three specialist companies: Graphics House, Bees Motion, and Turriva. Creative experiences, digital marketing, and spatial execution.',
+      ar: 'مجموعة تسامي تجمع ثلاث شركات متخصصة: جرافيكس هاوس وبيزموشن وتوريفا. تجارب إبداعية، تسويق رقمي، وتنفيذ ميداني.',
     },
   },
 }

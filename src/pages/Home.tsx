@@ -178,9 +178,18 @@ export default function Home() {
             <p className="hero-subhead mt-8 md:mt-10 mb-0">{tx(t.hero.subhead, lang)}</p>
             <p className="hero-support mt-5 md:mt-7 mb-0 mx-auto">{tx(t.hero.support, lang)}</p>
 
+            <div className="hero-actions">
+              <a href="#companies" className="hero-cta hero-cta--solid">
+                {tx(t.hero.explore, lang)}
+              </a>
+              <a href="#contact" className="hero-cta hero-cta--ghost">
+                {tx(t.hero.start, lang)}
+              </a>
+            </div>
+
             <nav className="arch-nav" aria-label={tx(t.brands.kicker, lang)}>
               {groupCompanies.map((c) => (
-                <a key={c.id} href={c.href} target="_blank" rel="noopener noreferrer" className="arch-nav-item">
+                <a key={c.id} href={`#${c.id}`} className="arch-nav-item">
                   <span className="arch-nav-name">{tx(c.name, lang)}</span>
                   <span className="arch-nav-verb">{tx(c.verb, lang)}</span>
                 </a>
@@ -199,7 +208,8 @@ export default function Home() {
                 <h2 className="section-title m-0">{tx(t.about.title, lang)}</h2>
               </div>
               <div className="lg:col-span-7 lg:pt-11">
-                <p className="prose-hold m-0">{tx(t.about.body, lang)}</p>
+                <p className="prose-hold m-0 mb-6">{tx(t.about.body, lang)}</p>
+                <p className="prose-hold m-0">{tx(t.about.body2, lang)}</p>
               </div>
             </div>
           </Reveal>
@@ -242,10 +252,16 @@ export default function Home() {
             </p>
             <h2 className="section-title section-title-light m-0 mb-5 md:mb-6">{tx(t.together.title, lang)}</h2>
             <p
-              className="max-w-3xl mb-12 md:mb-16 text-[16px] md:text-[18px] leading-[1.9] font-light m-0"
+              className="max-w-3xl mb-6 md:mb-8 text-[16px] md:text-[18px] leading-[1.9] font-light m-0"
               style={{ color: 'rgba(246,243,236,0.68)' }}
             >
               {tx(t.together.body, lang)}
+            </p>
+            <p
+              className="max-w-3xl mb-12 md:mb-16 text-[16px] md:text-[18px] leading-[1.9] font-light m-0"
+              style={{ color: 'rgba(246,243,236,0.68)' }}
+            >
+              {tx(t.together.example, lang)}
             </p>
           </Reveal>
 
