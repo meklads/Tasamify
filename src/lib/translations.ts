@@ -64,8 +64,8 @@ export const t = {
     bmVerb: { en: 'Grow', ar: 'تنمية' },
     bmRole: { en: 'Marketing / Content / AI Solutions', ar: 'التسويق والمحتوى وحلول الذكاء الاصطناعي' },
     bmLead: {
-      en: 'Marketing, content, and AI solutions for healthcare and businesses — independent of real estate.',
-      ar: 'تسويق ومحتوى وحلول ذكاء اصطناعي للقطاع الطبي والأعمال — مستقلة عن قطاع العقار.',
+      en: 'Marketing, content, and AI solutions for healthcare and businesses. For architectural visualization, sister company Graphics House leads.',
+      ar: 'تسويق ومحتوى وحلول ذكاء اصطناعي للقطاع الطبي والأعمال. وللإظهار المعماري تتولى الشركة الشقيقة جرافيكس هاوس.',
     },
     bmMarket: {
       en: 'Healthcare / businesses',
