@@ -2,17 +2,15 @@ export type Lang = 'en' | 'ar'
 
 export const t = {
   nav: {
-    about: { en: 'About', ar: 'عن تسامي' },
     brands: { en: 'Brands', ar: 'العلامات' },
-    together: { en: 'How We Work', ar: 'كيف نعمل' },
     contact: { en: 'Contact', ar: 'تواصل' },
   },
 
   hero: {
     wordmark: { en: 'Tasami', ar: 'تسامي' },
     subhead: {
-      en: 'The identity behind a group of four specialist brands',
-      ar: 'الهوية الجامعة لمجموعة من أربع علامات متخصصة',
+      en: 'The identity behind a group of three specialist brands',
+      ar: 'الهوية الجامعة لمجموعة من ثلاث علامات متخصصة',
     },
     support: {
       en: 'From idea to impact — creative, execution, marketing, and AI, under one umbrella',
@@ -23,13 +21,13 @@ export const t = {
   about: {
     kicker: { en: 'About', ar: 'عن تسامي' },
     body: {
-      en: "Tasami is the identity that brings together four specialist brands, each operating with independent expertise in its field, converging into a single journey — from idea to tangible impact. Tasami doesn't sell services directly and doesn't compete with any of its brands — its role is to be the framework that unifies the vision and keeps each brand's role clear.",
-      ar: 'تسامي هي الهوية التي تجمع أربع علامات متخصصة، كل واحدة منها تعمل في مجالها بحرفية مستقلة، وتتكامل معًا في رحلة واحدة تبدأ من الفكرة وتنتهي بأثر ملموس. لا تبيع تسامي خدمة مباشرة ولا تنافس أيًا من علاماتها — دورها أن تكون الإطار الذي يوحّد الرؤية ويحافظ على وضوح دور كل طرف.',
+      en: "Tasami is the identity that brings together three specialist brands, each operating with independent expertise in its field, converging into a single journey — from idea to tangible impact. Tasami doesn't sell services directly and doesn't compete with any of its brands — its role is to be the framework that unifies the vision and keeps each brand's role clear.",
+      ar: 'تسامي هي الهوية التي تجمع ثلاث علامات متخصصة، كل واحدة منها تعمل في مجالها بحرفية مستقلة، وتتكامل معًا في رحلة واحدة تبدأ من الفكرة وتنتهي بأثر ملموس. لا تبيع تسامي خدمة مباشرة ولا تنافس أيًا من علاماتها — دورها أن تكون الإطار الذي يوحّد الرؤية ويحافظ على وضوح دور كل طرف.',
     },
   },
 
   brands: {
-    kicker: { en: 'The Four Brands', ar: 'العلامات الأربع' },
+    kicker: { en: 'The Three Brands', ar: 'العلامات الثلاث' },
     visit: { en: 'Visit site', ar: 'زيارة الموقع' },
     ghName: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
     ghRole: { en: 'Creative Production', ar: 'الإنتاج الإبداعي' },
@@ -67,7 +65,7 @@ export const t = {
     },
     bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
     bmRole: {
-      en: 'Creative content and AI digital transformation',
+      en: 'Creative Content & AI Digital Transformation',
       ar: 'المحتوى الإبداعي والتحول الرقمي بالذكاء الاصطناعي',
     },
     bmBody: {
@@ -124,12 +122,23 @@ export const t = {
   footer: {
     copy: { en: '© Tasami Group', ar: '© مجموعة تسامي' },
   },
+
+  platforms: {
+    kicker: { en: 'Supporting Platforms', ar: 'منصات داعمة' },
+    ruwaqName: { en: 'Ruwaq', ar: 'رُواق' },
+    ruwaqDesc: {
+      en: 'A lead-generation directory feeding qualified prospects to all three brands',
+      ar: 'دليل ومنصة جلب عملاء تغذّي العلامات الثلاث بالعملاء المحتملين',
+    },
+    ruwaqLink: { en: 'ruwaq.co', ar: 'ruwaq.co' },
+  },
 }
 
 export const brandSites = {
   graphicsHouse: 'https://3dgraphicshouse.com',
   turriva: 'https://turriva.com',
   beesMotion: 'https://www.beesmotion.com',
+  ruwaq: 'https://ruwaq.co',
 } as const
 
 export function tx(key: { en: string; ar: string }, lang: Lang): string {

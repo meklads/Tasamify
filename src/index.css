@@ -162,8 +162,8 @@ h1, h2, h3, .font-display {
 }
 
 .section-y {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 
 @media (min-width: 768px) {
@@ -248,7 +248,7 @@ h1, h2, h3, .font-display {
 }
 
 .anchor-target {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 72px;
 }
 
 ::-webkit-scrollbar { width: 6px; }

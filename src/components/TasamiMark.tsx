@@ -1,4 +1,4 @@
-/** Tasami mark — a quiet canopy over four posts (the umbrella identity). */
+/** Tasami mark — a quiet canopy over three posts (the umbrella identity). */
 export default function TasamiMark({
   size = 40,
   className = '',
@@ -19,19 +19,17 @@ export default function TasamiMark({
       aria-hidden
     >
       <path
-        d="M8 28C8 28 18 12 32 12C46 12 56 28 56 28"
+        d="M10 28C10 28 20 12 32 12C44 12 54 28 54 28"
         stroke={gold}
         strokeWidth="1.75"
         strokeLinecap="round"
       />
-      <path d="M16 28V50" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M27 28V46" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M37 28V46" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M48 28V50" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="16" cy="50" r="1.6" fill={gold} />
-      <circle cx="27" cy="46" r="1.6" fill={gold} />
-      <circle cx="37" cy="46" r="1.6" fill={gold} />
-      <circle cx="48" cy="50" r="1.6" fill={gold} />
+      <path d="M18 28V50" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M32 28V46" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M46 28V50" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="18" cy="50" r="1.6" fill={gold} />
+      <circle cx="32" cy="46" r="1.6" fill={gold} />
+      <circle cx="46" cy="50" r="1.6" fill={gold} />
     </svg>
   )
 }

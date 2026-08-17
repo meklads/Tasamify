@@ -12,7 +12,7 @@ export default function TasamiLogo({
   className = '',
 }: TasamiLogoProps) {
   const compact = variant === 'footer'
-  const markSize = compact ? 28 : 34
+  const markSize = compact ? 22 : 26
 
   return (
     <div
@@ -21,7 +21,7 @@ export default function TasamiLogo({
     >
       <TasamiMark size={markSize} className="flex-shrink-0" />
       <span
-        className={`font-display leading-none ${compact ? 'text-[1.35rem]' : 'text-[1.55rem] md:text-[1.7rem]'}`}
+        className={`font-display leading-none ${compact ? 'text-[1.15rem]' : 'text-[1.25rem] md:text-[1.4rem]'}`}
         style={{
           color: '#F6F3EC',
           fontWeight: isAr ? 700 : 500,

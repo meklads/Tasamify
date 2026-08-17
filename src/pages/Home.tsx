@@ -173,7 +173,7 @@ export default function Home() {
     <div id="top" className="bg-cream">
       {/* HERO */}
       <section
-        className="relative min-h-[72svh] md:min-h-[100svh] flex items-end overflow-hidden"
+        className="relative md:min-h-[100svh] flex items-end overflow-hidden"
         style={{ background: '#10182A' }}
       >
         <div
@@ -192,7 +192,7 @@ export default function Home() {
           }}
         />
 
-        <div className="container-xl relative z-10 w-full pt-24 pb-12 md:pt-32 md:pb-28">
+        <div className="container-xl relative z-10 w-full pt-20 pb-10 md:pt-32 md:pb-28">
           <div className="max-w-4xl">
             <TasamiMark size={48} className="mb-6 md:mb-10 opacity-90" />
             <h1 className="wordmark m-0">{tx(t.hero.wordmark, lang)}</h1>
@@ -206,19 +206,19 @@ export default function Home() {
       <section id="about" className="anchor-target section-y">
         <div className="container-xl">
           <Reveal>
-            <div className="gold-rule mb-6" />
-            <p className="section-kicker mb-10">{tx(t.about.kicker, lang)}</p>
+            <div className="gold-rule mb-4 md:mb-6" />
+            <p className="section-kicker mb-4 md:mb-10">{tx(t.about.kicker, lang)}</p>
             <p className="prose-hold max-w-3xl m-0">{tx(t.about.body, lang)}</p>
           </Reveal>
         </div>
       </section>
 
       {/* BRANDS */}
-      <section id="brands" className="anchor-target pb-14 md:pb-32">
+      <section id="brands" className="anchor-target pb-8 md:pb-32">
         <div className="container-xl">
           <Reveal>
-            <div className="gold-rule mb-6" />
-            <p className="section-kicker mb-8 md:mb-14">{tx(t.brands.kicker, lang)}</p>
+            <div className="gold-rule mb-4 md:mb-6" />
+            <p className="section-kicker mb-6 md:mb-14">{tx(t.brands.kicker, lang)}</p>
           </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -321,6 +321,29 @@ export default function Home() {
               </article>
             </Reveal>
           </div>
+
+          <Reveal className="mt-8 md:mt-14">
+            <div id="platforms" className="anchor-target">
+            <p className="section-kicker mb-4 md:mb-5">{tx(t.platforms.kicker, lang)}</p>
+            <a
+              href={brandSites.ruwaq}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-4 no-underline"
+              style={{ borderTop: '1px solid rgba(16,24,42,0.1)', borderBottom: '1px solid rgba(16,24,42,0.1)' }}
+            >
+              <div className="min-w-0">
+                <p className="text-[15px] font-medium text-navy m-0 mb-1">{tx(t.platforms.ruwaqName, lang)}</p>
+                <p className="text-[13px] leading-relaxed text-navy/50 m-0">
+                  {tx(t.platforms.ruwaqDesc, lang)}
+                </p>
+              </div>
+              <span className="text-[12px] text-navy/40 flex-shrink-0" style={{ letterSpacing: isAr ? 0 : '0.04em' }}>
+                {tx(t.platforms.ruwaqLink, lang)}
+              </span>
+            </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -329,7 +352,7 @@ export default function Home() {
         <div className="container-xl">
           <Reveal>
             <div className="gold-rule mb-6" />
-            <p className="section-kicker mb-10" style={{ color: '#C9A24B' }}>
+            <p className="section-kicker mb-6 md:mb-10" style={{ color: '#C9A24B' }}>
               {tx(t.together.kicker, lang)}
             </p>
             <p className="max-w-3xl mb-10 md:mb-20 text-[17px] md:text-[19px] leading-[1.85] font-light m-0" style={{ color: 'rgba(246,243,236,0.72)' }}>
@@ -379,8 +402,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <div className="gold-rule mb-6" />
-              <p className="section-kicker mb-10">{tx(t.contact.kicker, lang)}</p>
-              <p className="prose-hold m-0 mb-10">{tx(t.contact.body, lang)}</p>
+              <p className="section-kicker mb-6 md:mb-10">{tx(t.contact.kicker, lang)}</p>
+              <p className="prose-hold m-0 mb-8 md:mb-10">{tx(t.contact.body, lang)}</p>
               <div className="flex flex-col gap-5">
                 {[
                   { name: tx(t.brands.ghName, lang), href: brandSites.graphicsHouse, src: graphicsHouseLogo, dark: true },
