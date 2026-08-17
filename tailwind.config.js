@@ -20,20 +20,21 @@ module.exports = {
         accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
         popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
-        // Tasami brand colors
-        teal: {
-          50: '#e8f7f9',
-          100: '#d0eff3',
-          200: '#a0dfe8',
-          300: '#70cfdc',
-          400: '#40bfd1',
-          500: '#2ab5c2',
-          600: '#1a8a94',
-          700: '#0d5c63',
-          800: '#094247',
-          900: '#052b2e',
-          950: '#021a1c',
+        navy: {
+          DEFAULT: '#10182A',
+          mid: '#1A2438',
+          soft: '#243049',
         },
+        gold: {
+          DEFAULT: '#C9A24B',
+          light: '#E0C275',
+          dim: '#A4843A',
+        },
+        cream: {
+          DEFAULT: '#F6F3EC',
+          deep: '#EBE6D8',
+        },
+        paper: '#FBFAF6',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -41,7 +42,8 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['Outfit', 'Cairo', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'Cairo', 'serif'],
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
