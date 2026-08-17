@@ -146,7 +146,187 @@ h1, h2, h3, .font-display {
   font-size: clamp(15px, 1.45vw, 18px);
   line-height: 1.75;
   color: rgba(246, 243, 236, 0.64);
-  max-width: 34rem;
+  max-width: 36rem;
+}
+
+.hero-group {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: clamp(20px, 3vw, 34px);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.arch-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  width: 100%;
+  max-width: 52rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .arch-nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 3.25rem;
+  }
+}
+
+.arch-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 14px 10px;
+  text-decoration: none;
+  border-top: 1px solid rgba(201, 162, 75, 0.3);
+  transition: color 0.25s ease;
+}
+
+.arch-nav-item:hover {
+  text-decoration: none;
+}
+
+.arch-nav-name {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  color: #f6f3ec;
+}
+
+.arch-nav-item:hover .arch-nav-name {
+  color: var(--gold);
+}
+
+.arch-nav-verb {
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(246, 243, 236, 0.75);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+@media (min-width: 640px) {
+  .nav-link {
+    font-size: 13px;
+  }
+}
+
+.nav-link:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-drop {
+  position: relative;
+}
+
+.nav-drop-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% - 2px);
+  inset-inline-end: 0;
+  min-width: 240px;
+  padding: 8px 0;
+  background: #10182a;
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  z-index: 60;
+}
+
+.nav-drop.is-open .nav-drop-panel {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .nav-drop:hover .nav-drop-panel,
+  .nav-drop:focus-within .nav-drop-panel {
+    display: block;
+  }
+}
+
+.nav-drop-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 18px;
+  min-height: 44px;
+  font-size: 13px;
+  color: rgba(246, 243, 236, 0.82);
+  text-decoration: none;
+}
+
+.nav-drop-link:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-drop-verb {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.house-market {
+  margin: 0 0 1.15rem;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(16, 24, 42, 0.72);
+}
+
+.house-market span,
+.house-caps-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(16, 24, 42, 0.4);
+}
+
+.house-caps-label {
+  margin: 0 0 0.55rem;
+}
+
+.arch-pillars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .arch-pillars {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 .house-nav {
@@ -587,13 +767,16 @@ h1, h2, h3, .font-display {
 [dir="rtl"] .wordmark,
 [dir="rtl"] .hero-subhead,
 [dir="rtl"] .hero-kicker,
+[dir="rtl"] .hero-group,
 [dir="rtl"] .section-kicker,
 [dir="rtl"] .section-title,
-[dir="rtl"] .house-nav-link,
+[dir="rtl"] .arch-nav-name,
+[dir="rtl"] .arch-nav-verb,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .nav-drop-verb,
 [dir="rtl"] .house-name,
 [dir="rtl"] .house-index,
 [dir="rtl"] .house-cta,
-[dir="rtl"] .visit-link,
 [dir="rtl"] .lang-btn,
 [dir="rtl"] .journey-num {
   font-family: 'Cairo', sans-serif;
@@ -606,9 +789,10 @@ h1, h2, h3, .font-display {
   line-height: 1.15;
 }
 
-[dir="rtl"] .hero-subhead {
-  font-weight: 600;
-  line-height: 1.5;
+[dir="rtl"] .hero-group {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: none;
 }
 
 [dir="rtl"] .hero-support,
@@ -621,10 +805,15 @@ h1, h2, h3, .font-display {
   line-height: 1.4;
 }
 
+[dir="rtl"] .hero-group,
+[dir="rtl"] .arch-nav-verb,
+[dir="rtl"] .nav-drop-verb,
 [dir="rtl"] .house-role,
 [dir="rtl"] .house-tracks li span,
 [dir="rtl"] .house-index,
-[dir="rtl"] .house-stats {
+[dir="rtl"] .house-stats,
+[dir="rtl"] .house-market span,
+[dir="rtl"] .house-caps-label {
   letter-spacing: 0;
   text-transform: none;
 }

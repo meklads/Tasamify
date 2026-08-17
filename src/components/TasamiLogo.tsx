@@ -17,18 +17,18 @@ export default function TasamiLogo({
   return (
     <div
       className={`inline-flex items-center gap-2.5 select-none ${className}`}
-      aria-label={isAr ? 'تسامي' : 'Tasami'}
+      aria-label={isAr ? 'مجموعة تسامي' : 'Tasami Group'}
     >
       <TasamiMark size={markSize} className="flex-shrink-0" />
       <span
-        className={`font-display leading-none ${compact ? 'text-[1.15rem]' : 'text-[1.25rem] md:text-[1.4rem]'}`}
+        className={`font-display leading-none whitespace-nowrap ${compact ? 'text-[1.15rem]' : 'text-[1.05rem] sm:text-[1.2rem] md:text-[1.35rem]'}`}
         style={{
           color: '#F6F3EC',
           fontWeight: isAr ? 700 : 500,
           letterSpacing: isAr ? 0 : '-0.02em',
         }}
       >
-        {isAr ? 'تسامي' : 'Tasami'}
+        {isAr ? 'مجموعة تسامي' : 'Tasami Group'}
       </span>
     </div>
   )

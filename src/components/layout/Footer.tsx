@@ -1,40 +1,40 @@
 import { useLang } from '../../lib/LanguageContext'
-import { t, tx, brandSites } from '../../lib/translations'
+import { t, tx, groupCompanies } from '../../lib/translations'
 import TasamiMark from '../TasamiMark'
 
 export default function Footer() {
   const { lang } = useLang()
 
-  const sites = [
-    { name: tx(t.brands.ghName, lang), href: brandSites.graphicsHouse },
-    { name: tx(t.brands.tuName, lang), href: brandSites.turriva },
-    { name: tx(t.brands.bmName, lang), href: brandSites.beesMotion },
-  ]
-
   return (
     <footer style={{ background: '#10182A', borderTop: '1px solid rgba(201, 162, 75, 0.22)' }}>
-      <div className="container-xl py-8 md:py-9">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
+      <div className="container-xl py-10 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+          <div className="md:col-span-5 flex items-start gap-3">
             <TasamiMark size={24} />
-            <p className="text-[13px] text-cream/70 m-0">{tx(t.footer.copy, lang)}</p>
+            <div>
+              <p className="text-[15px] text-cream m-0 mb-1 font-medium">{tx(t.footer.brand, lang)}</p>
+              <p className="text-[13px] text-cream/50 m-0">{tx(t.footer.copy, lang)}</p>
+            </div>
           </div>
-          <nav className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            {sites.map((site, i) => (
-              <span key={site.href} className="contents">
-                {i > 0 && <span className="text-gold/40 px-1 hidden sm:inline" aria-hidden>·</span>}
+          <div className="md:col-span-7 md:text-end">
+            <p className="section-kicker mb-4" style={{ color: '#C9A24B' }}>
+              {tx(t.footer.companies, lang)}
+            </p>
+            <nav className="flex flex-col sm:flex-row sm:flex-wrap md:justify-end gap-x-6 gap-y-1">
+              {groupCompanies.map((c) => (
                 <a
-                  href={site.href}
+                  key={c.href}
+                  href={c.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] text-cream/70 hover:text-gold transition-colors py-2 px-1 min-h-[44px] inline-flex items-center"
+                  className="text-[14px] text-cream/75 hover:text-gold transition-colors py-2 min-h-[44px] inline-flex items-center"
                   style={{ textDecoration: 'none' }}
                 >
-                  {site.name}
+                  {tx(c.name, lang)}
                 </a>
-              </span>
-            ))}
-          </nav>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

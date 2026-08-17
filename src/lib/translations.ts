@@ -2,73 +2,76 @@ export type Lang = 'en' | 'ar'
 
 export const t = {
   nav: {
-    brands: { en: 'Our Houses', ar: 'دور المجموعة' },
+    companies: { en: 'Companies', ar: 'الشركات' },
     contact: { en: 'Contact', ar: 'تواصل' },
   },
 
   hero: {
-    kicker: { en: 'Tasami Group', ar: 'مجموعة تسامي' },
+    kicker: { en: 'The Group', ar: 'المجموعة' },
     wordmark: { en: 'Tasami', ar: 'تسامي' },
+    group: { en: 'Group', ar: 'مجموعة' },
     subhead: {
-      en: 'The identity above three specialist brands',
-      ar: 'الهوية الجامعة لثلاث علامات متخصصة',
+      en: 'One group. Specialized companies. Complementary capabilities.',
+      ar: 'مجموعة واحدة. شركات متخصصة. قدرات تتكامل.',
     },
     support: {
-      en: 'From the first idea to a finished result — creative production, physical execution, marketing, and AI — held as one.',
-      ar: 'من الفكرة الأولى إلى الأثر المكتمل — إنتاج إبداعي، تنفيذ ميداني، تسويق، وذكاء اصطناعي — في منظومة واحدة.',
+      en: 'Tasami Group brings together specialized companies building creative, marketing, AI, and physical experiences. Each company stands on its own — and they work together when a project needs more than one discipline.',
+      ar: 'مجموعة تسامي تجمع شركات متخصصة تبني تجارب إبداعية وتسويقية وذكاءً اصطناعيًا وتنفيذًا ميدانيًا. كل شركة قائمة بذاتها — وتلتقي الأخريات حين يحتاج المشروع أكثر من تخصص.',
     },
   },
 
   about: {
-    kicker: { en: 'The Group', ar: 'المجموعة' },
+    kicker: { en: 'Tasami Group', ar: 'مجموعة تسامي' },
     title: {
-      en: 'A frame that unifies — and never competes',
-      ar: 'تجمع الدور، ولا تنافسها',
+      en: 'The parent brand. Never a vendor.',
+      ar: 'العلامة الأم. وليست بائع خدمات.',
     },
     body: {
-      en: 'Tasami is the group identity above Graphics House, Turriva, and Bees Motion. Each house operates with independent mastery in its field. Together they form a single journey: from the first idea to a result that can be built, launched, and grown. Tasami does not sell, and does not compete with its houses. It holds the vision, and keeps every role distinct.',
-      ar: 'تسامي هي هوية المجموعة فوق جرافيكس هاوس وتوريفا وبيزموشن. كل دار تعمل بحرفية مستقلة في مجالها. ومعًا يشكّلن رحلة واحدة: من الفكرة الأولى إلى أثر يُبنى ويُطلق ويُنمّى. تسامي لا تبيع، ولا تنافس دورها. تمسك الرؤية، وتحفظ لكل طرف حدّه.',
+      en: 'Tasami Group is the master brand above Graphics House, Bees Motion, and Turriva. Three distinct companies. Three fields of mastery. Complementary capabilities — not a single agency offering everything. Tasami Group does not sell, and does not compete with its companies. It holds the group, and routes each need to the right company.',
+      ar: 'مجموعة تسامي هي العلامة الأم فوق جرافيكس هاوس وبيزموشن وتوريفا. ثلاث شركات مستقلة. ثلاثة مجالات إتقان. قدرات تتكامل — لا وكالة واحدة تقدّم كل شيء. مجموعة تسامي لا تبيع، ولا تنافس شركاتها. تمسك المجموعة، وتوجّه كل حاجة إلى الشركة الصحيحة.',
     },
   },
 
   brands: {
-    kicker: { en: 'The Houses', ar: 'دور المجموعة' },
+    kicker: { en: 'Our Companies', ar: 'شركاتنا' },
     title: {
-      en: 'Three houses. One standard.',
-      ar: 'ثلاث دور. معيار واحد.',
+      en: 'Different brands. Different expertise. One group.',
+      ar: 'علامات مختلفة. خبرات مختلفة. مجموعة واحدة.',
     },
-    visit: { en: 'Visit house', ar: 'زيارة الدار' },
+    visit: { en: 'Visit company', ar: 'زيارة الشركة' },
+    marketLabel: { en: 'Primary market', ar: 'السوق الأساسي' },
+    capsLabel: { en: 'Core capabilities', ar: 'القدرات الأساسية' },
+
     ghName: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
-    ghRole: { en: 'Creative Production', ar: 'الإنتاج الإبداعي' },
+    ghVerb: { en: 'Create', ar: 'ابتكار' },
+    ghRole: { en: 'Creative Experiences', ar: 'التجارب الإبداعية' },
     ghLead: {
-      en: 'Complex ideas, rendered as spaces and images that move people — and close decisions.',
-      ar: 'أفكار معقّدة تتحول إلى فضاءات وصور تحرّك الناس — وتُغلق القرار.',
+      en: 'Creative experiences for real estate and large-scale developments.',
+      ar: 'تجارب إبداعية للتطوير العقاري والمشروعات الكبرى.',
+    },
+    ghMarket: {
+      en: 'Real estate / large-scale developments',
+      ar: 'العقار والمشروعات الكبرى',
     },
     ghB1: { en: 'Architectural and cinematic visualization', ar: 'تصور معماري وسينمائي' },
     ghB2: { en: 'Smart maquettes', ar: 'مجسمات ذكية' },
-    ghB3: { en: 'Interactive experiences and exhibitions', ar: 'تجارب تفاعلية ومعارض' },
+    ghB3: { en: 'Interactive experience design', ar: 'تصميم التجارب التفاعلية' },
     ghStat1: { en: '15+ years', ar: '+١٥ عامًا' },
     ghStat2: { en: '500+ projects', ar: '+٥٠٠ مشروع' },
     ghStat3: { en: 'Saudi market', ar: 'السوق السعودي' },
-    tuName: { en: 'Turriva', ar: 'توريفا' },
-    tuRole: { en: 'Execution', ar: 'التنفيذ' },
-    tuLead: {
-      en: 'From approved design to a finished site — sourced, built, and handed over.',
-      ar: 'من التصميم المعتمد إلى موقع مكتمل — توريدًا وبناءً وتسليمًا.',
-    },
-    tuB1: { en: 'Interior fit-out and décor execution', ar: 'تنفيذ الديكور والتشطيب' },
-    tuB2: { en: 'International sourcing and manufacturing', ar: 'توريد وتصنيع دولي' },
-    tuB3: { en: 'Full on-site project management through delivery', ar: 'إدارة ميدانية كاملة حتى التسليم' },
+
     bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
-    bmRole: {
-      en: 'Creative Content & AI Digital Transformation',
-      ar: 'المحتوى الإبداعي والتحول الرقمي بالذكاء الاصطناعي',
+    bmVerb: { en: 'Grow', ar: 'تنمية' },
+    bmRole: { en: 'Marketing / Content / AI Solutions', ar: 'التسويق والمحتوى وحلول الذكاء الاصطناعي' },
+    bmLead: {
+      en: 'Marketing, content, and AI solutions for healthcare and businesses — independent of real estate.',
+      ar: 'تسويق ومحتوى وحلول ذكاء اصطناعي للقطاع الطبي والأعمال — مستقلة عن قطاع العقار.',
     },
-    bmBody: {
-      en: 'Independent of real estate. Two tracks, one house: original content, and AI transformation — with healthcare as a priority across both.',
-      ar: 'مستقلة عن قطاع العقار. مساران في دار واحدة: محتوى أصيل، وتحول بالذكاء الاصطناعي — بأولوية للقطاع الطبي في الاثنين.',
+    bmMarket: {
+      en: 'Healthcare / businesses',
+      ar: 'القطاع الطبي والأعمال',
     },
-    bmCreative: { en: 'Creative', ar: 'إبداعي' },
+    bmCreative: { en: 'Content', ar: 'محتوى' },
     bmCreativeD: {
       en: 'Film, motion graphics, animation, and social platforms',
       ar: 'أفلام، موشن جرافيك، رسوم متحركة، ومنصات التواصل',
@@ -78,52 +81,61 @@ export const t = {
       en: 'Digital transformation and automation',
       ar: 'تحويل رقمي وأتمتة',
     },
+
+    tuName: { en: 'Turriva', ar: 'توريفا' },
+    tuVerb: { en: 'Execute', ar: 'تنفيذ' },
+    tuRole: { en: 'Spatial Execution', ar: 'التنفيذ الفراغي' },
+    tuLead: {
+      en: 'Spatial execution — interior, exhibitions, and physical delivery.',
+      ar: 'تنفيذ فراغي — داخلي، معارض، وتسليم ميداني.',
+    },
+    tuMarket: {
+      en: 'Interior / exhibitions / physical delivery',
+      ar: 'الداخلي والمعارض والتسليم الميداني',
+    },
+    tuB1: { en: 'Interior fit-out and décor execution', ar: 'تنفيذ الديكور والتشطيب' },
+    tuB2: { en: 'Exhibition build and spatial delivery', ar: 'بناء المعارض والتسليم الفراغي' },
+    tuB3: { en: 'International sourcing and on-site handover', ar: 'توريد دولي وتسليم ميداني' },
   },
 
   together: {
-    kicker: { en: 'How the houses meet', ar: 'كيف تلتقي الدور' },
+    kicker: { en: 'How the group works', ar: 'كيف تعمل المجموعة' },
     title: {
-      en: 'One journey. Four movements.',
-      ar: 'رحلة واحدة. أربع حركات.',
+      en: 'Independent companies. Complementary when it counts.',
+      ar: 'شركات مستقلة. تتكامل حين يلزم الأمر.',
     },
     body: {
-      en: 'We work as one ecosystem, not as disconnected jobs. Each house keeps its full craft — and joins the others when the work requires it.',
-      ar: 'نعمل كمنظومة واحدة، لا كأعمال منفصلة. كل دار تحتفظ بحرفيتها كاملة — وتلتقي بالأخريات حين يطلب العمل ذلك.',
+      en: 'No company is the parent of another. Graphics House creates. Bees Motion grows. Turriva executes. They keep their names, their markets, and their craft. When a project needs more than one specialty, Tasami Group brings the right companies together — without turning them into one agency.',
+      ar: 'لا شركة أمًّا لأخرى. جرافيكس هاوس تبتكر. بيزموشن تنمّي. توريفا تنفّذ. تحتفظ كل منها باسمها وسوقها وحرفيتها. حين يحتاج المشروع أكثر من تخصص، تجمع مجموعة تسامي الشركات الصحيحة — دون أن تصير وكالة واحدة.',
     },
-    s1: { en: 'A creative idea', ar: 'فكرة إبداعية' },
-    s1Brand: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
-    s2: { en: 'Physical execution', ar: 'تنفيذ ميداني' },
-    s2Brand: { en: 'Turriva', ar: 'توريفا' },
-    s3: { en: 'Launch marketing', ar: 'تسويق الإطلاق' },
-    s3Brand: { en: 'Bees Motion', ar: 'بيزموشن' },
-    s4: { en: 'Digital transformation', ar: 'تحول رقمي' },
-    s4Brand: { en: 'Bees Motion', ar: 'بيزموشن' },
   },
 
   contact: {
     kicker: { en: 'Start here', ar: 'ابدأ من هنا' },
     title: {
-      en: 'Tell us the need. We will route the house.',
-      ar: 'صف الحاجة. نوجّهك إلى الدار الصحيحة.',
+      en: 'Write to Tasami Group. We route the company.',
+      ar: 'اكتب إلى مجموعة تسامي. نوجّهك إلى الشركة الصحيحة.',
     },
     body: {
-      en: 'An idea, an execution, a campaign, or a digital transformation. Choose the house — or write to Tasami, and we will direct you to the right team inside the group.',
-      ar: 'فكرة، تنفيذ، حملة، أو تحول رقمي. اختر الدار — أو اكتب إلى تسامي، ونوجّهك إلى الفريق الصحيح داخل المجموعة.',
+      en: 'Tasami Group does not deliver the work. An idea, a campaign, a transformation, or a physical build — choose the company, or tell us the need and we will direct you to the right team inside the group.',
+      ar: 'مجموعة تسامي لا تنفّذ العمل. فكرة، حملة، تحول، أو بناء ميداني — اختر الشركة، أو صف الحاجة ونوجّهك إلى الفريق الصحيح داخل المجموعة.',
     },
     name: { en: 'Name', ar: 'الاسم' },
     phone: { en: 'Phone', ar: 'الجوال' },
     email: { en: 'Email', ar: 'البريد الإلكتروني' },
-    brand: { en: 'House', ar: 'الدار' },
+    brand: { en: 'Company', ar: 'الشركة' },
     brandAny: { en: 'Not sure — route me', ar: 'غير متأكد — وجّهوني' },
     message: { en: 'Message', ar: 'الرسالة' },
     send: { en: 'Send', ar: 'إرسال' },
     success: {
-      en: 'Received. We will direct you to the right team inside the group.',
-      ar: 'وصلَت. سنوجّهك إلى الفريق الصحيح داخل المجموعة.',
+      en: 'Received. Tasami Group will direct you to the right company.',
+      ar: 'وصلَت. ستوجّهك مجموعة تسامي إلى الشركة الصحيحة.',
     },
   },
 
   footer: {
+    brand: { en: 'Tasami Group', ar: 'مجموعة تسامي' },
+    companies: { en: 'Our Companies', ar: 'شركاتنا' },
     copy: { en: '© Tasami Group', ar: '© مجموعة تسامي' },
   },
 
@@ -131,19 +143,70 @@ export const t = {
     kicker: { en: 'Supporting platform', ar: 'منصة داعمة' },
     ruwaqName: { en: 'Ruwaq', ar: 'رُواق' },
     ruwaqDesc: {
-      en: 'A directory and lead platform that feeds qualified opportunities across the group.',
-      ar: 'دليل ومنصة جلب عملاء تغذّي دور المجموعة بالفرص المؤهلة.',
+      en: 'A directory and lead platform that feeds qualified opportunities across Tasami Group. Not a fourth company.',
+      ar: 'دليل ومنصة جلب عملاء تغذّي شركات مجموعة تسامي بالفرص المؤهلة. ليست شركة رابعة.',
     },
     ruwaqLink: { en: 'ruwaq.co', ar: 'ruwaq.co' },
+  },
+
+  seo: {
+    title: {
+      en: 'Tasami Group | Specialized companies in creative, marketing, AI and physical experiences',
+      ar: 'مجموعة تسامي | شركات متخصصة في الإبداع والتسويق والذكاء الاصطناعي والتنفيذ الميداني',
+    },
+    description: {
+      en: 'Tasami Group brings together Graphics House, Bees Motion, and Turriva — specialized companies with complementary capabilities. Create. Grow. Execute.',
+      ar: 'مجموعة تسامي تجمع جرافيكس هاوس وبيزموشن وتوريفا — شركات متخصصة بقدرات تتكامل. ابتكار. تنمية. تنفيذ.',
+    },
   },
 }
 
 export const brandSites = {
   graphicsHouse: 'https://3dgraphicshouse.com',
-  turriva: 'https://turriva.com',
   beesMotion: 'https://www.beesmotion.com',
+  turriva: 'https://turriva.com',
   ruwaq: 'https://ruwaq.co',
 } as const
+
+/** Canonical group order: Create → Grow → Execute */
+export const groupCompanies = [
+  {
+    id: 'graphics-house',
+    href: brandSites.graphicsHouse,
+    name: t.brands.ghName,
+    verb: t.brands.ghVerb,
+    role: t.brands.ghRole,
+    lead: t.brands.ghLead,
+    market: t.brands.ghMarket,
+    stage: 'dark' as const,
+    accent: '#7A52B8',
+    alt: 'Graphics House',
+  },
+  {
+    id: 'bees-motion',
+    href: brandSites.beesMotion,
+    name: t.brands.bmName,
+    verb: t.brands.bmVerb,
+    role: t.brands.bmRole,
+    lead: t.brands.bmLead,
+    market: t.brands.bmMarket,
+    stage: 'light' as const,
+    accent: '#1E9AA6',
+    alt: 'Bees Motion',
+  },
+  {
+    id: 'turriva',
+    href: brandSites.turriva,
+    name: t.brands.tuName,
+    verb: t.brands.tuVerb,
+    role: t.brands.tuRole,
+    lead: t.brands.tuLead,
+    market: t.brands.tuMarket,
+    stage: 'light' as const,
+    accent: '#E08A3C',
+    alt: 'Turriva',
+  },
+] as const
 
 export function tx(key: { en: string; ar: string }, lang: Lang): string {
   return key[lang]

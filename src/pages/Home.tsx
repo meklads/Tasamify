@@ -1,11 +1,17 @@
 import { useState, type FormEvent } from 'react'
 import { useLang } from '../lib/LanguageContext'
-import { t, tx, brandSites } from '../lib/translations'
+import { t, tx, brandSites, groupCompanies } from '../lib/translations'
 import { useReveal } from '../hooks/useReveal'
 import TasamiMark from '../components/TasamiMark'
 import graphicsHouseLogo from '../assets/brands/graphics-house.png'
 import turrivaLogo from '../assets/brands/turriva.png'
 import beesMotionLogo from '../assets/brands/bees-motion.png'
+
+const logos = {
+  'graphics-house': graphicsHouseLogo,
+  'bees-motion': beesMotionLogo,
+  turriva: turrivaLogo,
+} as const
 
 function Reveal({
   children,
@@ -27,12 +33,7 @@ function Reveal({
 function VisitLink({ href, label }: { href: string; label: string }) {
   const { isAr } = useLang()
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="house-cta"
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" className="house-cta">
       <span>{label}</span>
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden style={{ transform: isAr ? 'scaleX(-1)' : undefined }}>
         <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -41,45 +42,54 @@ function VisitLink({ href, label }: { href: string; label: string }) {
   )
 }
 
-function HouseBand({
-  index,
+function CompanyBand({
+  id,
   href,
   src,
   alt,
   stage,
   accent,
+  verb,
   name,
   role,
   lead,
+  market,
   children,
 }: {
-  index: string
+  id: string
   href: string
   src: string
   alt: string
   stage: 'dark' | 'light'
   accent: string
+  verb: string
   name: string
   role: string
   lead: string
+  market: string
   children?: React.ReactNode
 }) {
   const { lang } = useLang()
   return (
-    <article className="house-band" style={{ ['--house-accent' as string]: accent }}>
+    <article id={id} className="house-band" style={{ ['--house-accent' as string]: accent }}>
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`house-stage house-stage--${stage} group/logo`}
+        className={`house-stage house-stage--${stage}`}
       >
         <img src={src} alt={alt} decoding="async" />
       </a>
       <div className="house-copy">
-        <p className="house-index">{index}</p>
+        <p className="house-index">{verb}</p>
         <h3 className="house-name">{name}</h3>
         <p className="house-role">{role}</p>
         <p className="house-lead">{lead}</p>
+        <p className="house-market">
+          <span>{tx(t.brands.marketLabel, lang)}</span>
+          {market}
+        </p>
+        <p className="house-caps-label">{tx(t.brands.capsLabel, lang)}</p>
         {children}
         <VisitLink href={href} label={tx(t.brands.visit, lang)} />
       </div>
@@ -101,21 +111,14 @@ function ContactForm() {
     'w-full bg-transparent border-0 border-b border-navy/20 px-0 py-3.5 text-[15px] text-navy outline-none focus:border-gold transition-colors min-h-[44px]'
 
   if (sent) {
-    return (
-      <p className="prose-hold m-0 max-w-md">{tx(t.contact.success, lang)}</p>
-    )
+    return <p className="prose-hold m-0 max-w-md">{tx(t.contact.success, lang)}</p>
   }
 
   return (
     <form onSubmit={onSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7">
       <label className="block">
         <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.name, lang)}</span>
-        <input
-          required
-          className={field}
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-        />
+        <input required className={field} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
       </label>
       <label className="block">
         <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.phone, lang)}</span>
@@ -130,24 +133,17 @@ function ContactForm() {
       </label>
       <label className="block">
         <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.email, lang)}</span>
-        <input
-          type="email"
-          className={field}
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-        />
+        <input type="email" className={field} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
       </label>
       <label className="block">
         <span className="text-[11px] tracking-[0.14em] uppercase text-navy/45">{tx(t.contact.brand, lang)}</span>
-        <select
-          className={`${field} bg-cream`}
-          value={form.brand}
-          onChange={(e) => setForm({ ...form, brand: e.target.value })}
-        >
+        <select className={`${field} bg-cream`} value={form.brand} onChange={(e) => setForm({ ...form, brand: e.target.value })}>
           <option value="">{tx(t.contact.brandAny, lang)}</option>
-          <option value="graphics-house">{tx(t.brands.ghName, lang)}</option>
-          <option value="turriva">{tx(t.brands.tuName, lang)}</option>
-          <option value="bees-motion">{tx(t.brands.bmName, lang)}</option>
+          {groupCompanies.map((c) => (
+            <option key={c.id} value={c.id}>
+              {tx(c.name, lang)}
+            </option>
+          ))}
         </select>
       </label>
       <label className="block sm:col-span-2">
@@ -175,31 +171,13 @@ function ContactForm() {
 export default function Home() {
   const { lang, isAr } = useLang()
 
-  const houses = [
-    { name: tx(t.brands.ghName, lang), href: brandSites.graphicsHouse },
-    { name: tx(t.brands.tuName, lang), href: brandSites.turriva },
-    { name: tx(t.brands.bmName, lang), href: brandSites.beesMotion },
-  ]
-
-  const stages = [
-    { n: '01', label: tx(t.together.s1, lang), brand: tx(t.together.s1Brand, lang), color: '#7A52B8' },
-    { n: '02', label: tx(t.together.s2, lang), brand: tx(t.together.s2Brand, lang), color: '#E08A3C' },
-    { n: '03', label: tx(t.together.s3, lang), brand: tx(t.together.s3Brand, lang), color: '#1E9AA6' },
-    { n: '04', label: tx(t.together.s4, lang), brand: tx(t.together.s4Brand, lang), color: '#14707A' },
-  ]
-
   return (
     <div id="top" className="bg-cream">
-      {/* HERO */}
-      <section
-        className="relative min-h-[88svh] flex items-center overflow-hidden"
-        style={{ background: '#10182A' }}
-      >
+      <section className="relative min-h-[88svh] flex items-center overflow-hidden" style={{ background: '#10182A' }}>
         <div
           className="pointer-events-none absolute inset-0"
           style={{
-            background:
-              'radial-gradient(ellipse 70% 55% at 50% 100%, rgba(201,162,75,0.16) 0%, transparent 58%)',
+            background: 'radial-gradient(ellipse 70% 55% at 50% 100%, rgba(201,162,75,0.16) 0%, transparent 58%)',
           }}
         />
         <div
@@ -215,26 +193,26 @@ export default function Home() {
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <p className="hero-kicker mb-6 md:mb-8">{tx(t.hero.kicker, lang)}</p>
             <TasamiMark size={52} className="mb-5 md:mb-7 opacity-90" />
-            <h1 className="wordmark m-0">{tx(t.hero.wordmark, lang)}</h1>
+            <h1 className="m-0 flex flex-col items-center">
+              <span className="wordmark">{tx(t.hero.wordmark, lang)}</span>
+              <span className="hero-group">{tx(t.hero.group, lang)}</span>
+            </h1>
             <div className="gold-rule mx-auto mt-7 md:mt-9 mb-6 md:mb-8" />
             <p className="hero-subhead mt-0 mb-0">{tx(t.hero.subhead, lang)}</p>
             <p className="hero-support mt-5 md:mt-7 mb-0 mx-auto">{tx(t.hero.support, lang)}</p>
 
-            <nav className="house-nav mt-10 md:mt-14" aria-label={tx(t.brands.kicker, lang)}>
-              {houses.map((house, i) => (
-                <span key={house.href} className="contents">
-                  {i > 0 && <span className="house-nav-dot" aria-hidden />}
-                  <a href={house.href} target="_blank" rel="noopener noreferrer" className="house-nav-link">
-                    {house.name}
-                  </a>
-                </span>
+            <nav className="arch-nav" aria-label={tx(t.brands.kicker, lang)}>
+              {groupCompanies.map((c) => (
+                <a key={c.id} href={c.href} target="_blank" rel="noopener noreferrer" className="arch-nav-item">
+                  <span className="arch-nav-name">{tx(c.name, lang)}</span>
+                  <span className="arch-nav-verb">{tx(c.verb, lang)}</span>
+                </a>
               ))}
             </nav>
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
       <section id="about" className="anchor-target section-y">
         <div className="container-xl">
           <Reveal>
@@ -252,8 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOUSES */}
-      <section id="brands" className="anchor-target pb-12 md:pb-28">
+      <section id="companies" className="anchor-target pb-12 md:pb-28">
         <div className="container-xl">
           <Reveal>
             <div className="gold-rule mb-5" />
@@ -262,91 +239,63 @@ export default function Home() {
           </Reveal>
 
           <div className="flex flex-col gap-5 md:gap-6">
-            <Reveal delay="reveal-delay-1">
-              <HouseBand
-                index="01"
-                href={brandSites.graphicsHouse}
-                src={graphicsHouseLogo}
-                alt="Graphics House"
-                stage="dark"
-                accent="#7A52B8"
-                name={tx(t.brands.ghName, lang)}
-                role={tx(t.brands.ghRole, lang)}
-                lead={tx(t.brands.ghLead, lang)}
-              >
-                <ul className="house-points">
-                  {[tx(t.brands.ghB1, lang), tx(t.brands.ghB2, lang), tx(t.brands.ghB3, lang)].map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <p className="house-stats">
-                  <span>{tx(t.brands.ghStat1, lang)}</span>
-                  <span>{tx(t.brands.ghStat2, lang)}</span>
-                  <span>{tx(t.brands.ghStat3, lang)}</span>
-                </p>
-              </HouseBand>
-            </Reveal>
-
-            <Reveal delay="reveal-delay-2">
-              <HouseBand
-                index="02"
-                href={brandSites.turriva}
-                src={turrivaLogo}
-                alt="Turriva"
-                stage="light"
-                accent="#E08A3C"
-                name={tx(t.brands.tuName, lang)}
-                role={tx(t.brands.tuRole, lang)}
-                lead={tx(t.brands.tuLead, lang)}
-              >
-                <ul className="house-points">
-                  {[tx(t.brands.tuB1, lang), tx(t.brands.tuB2, lang), tx(t.brands.tuB3, lang)].map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </HouseBand>
-            </Reveal>
-
-            <Reveal delay="reveal-delay-3">
-              <HouseBand
-                index="03"
-                href={brandSites.beesMotion}
-                src={beesMotionLogo}
-                alt="Bees Motion"
-                stage="light"
-                accent="#1E9AA6"
-                name={tx(t.brands.bmName, lang)}
-                role={tx(t.brands.bmRole, lang)}
-                lead={tx(t.brands.bmBody, lang)}
-              >
-                <ul className="house-tracks">
-                  <li>
-                    <span>{tx(t.brands.bmCreative, lang)}</span>
-                    {tx(t.brands.bmCreativeD, lang)}
-                  </li>
-                  <li>
-                    <span>{tx(t.brands.bmAi, lang)}</span>
-                    {tx(t.brands.bmAiD, lang)}
-                  </li>
-                </ul>
-              </HouseBand>
-            </Reveal>
+            {groupCompanies.map((c, i) => (
+              <Reveal key={c.id} delay={`reveal-delay-${i + 1}`}>
+                <CompanyBand
+                  id={c.id}
+                  href={c.href}
+                  src={logos[c.id]}
+                  alt={c.alt}
+                  stage={c.stage}
+                  accent={c.accent}
+                  verb={tx(c.verb, lang)}
+                  name={tx(c.name, lang)}
+                  role={tx(c.role, lang)}
+                  lead={tx(c.lead, lang)}
+                  market={tx(c.market, lang)}
+                >
+                  {c.id === 'bees-motion' ? (
+                    <ul className="house-tracks">
+                      <li>
+                        <span>{tx(t.brands.bmCreative, lang)}</span>
+                        {tx(t.brands.bmCreativeD, lang)}
+                      </li>
+                      <li>
+                        <span>{tx(t.brands.bmAi, lang)}</span>
+                        {tx(t.brands.bmAiD, lang)}
+                      </li>
+                    </ul>
+                  ) : (
+                    <>
+                      <ul className="house-points">
+                        {(c.id === 'graphics-house'
+                          ? [tx(t.brands.ghB1, lang), tx(t.brands.ghB2, lang), tx(t.brands.ghB3, lang)]
+                          : [tx(t.brands.tuB1, lang), tx(t.brands.tuB2, lang), tx(t.brands.tuB3, lang)]
+                        ).map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                      {c.id === 'graphics-house' && (
+                        <p className="house-stats">
+                          <span>{tx(t.brands.ghStat1, lang)}</span>
+                          <span>{tx(t.brands.ghStat2, lang)}</span>
+                          <span>{tx(t.brands.ghStat3, lang)}</span>
+                        </p>
+                      )}
+                    </>
+                  )}
+                </CompanyBand>
+              </Reveal>
+            ))}
           </div>
 
           <Reveal className="mt-12 md:mt-16">
             <div id="platforms" className="anchor-target">
               <p className="section-kicker mb-5">{tx(t.platforms.kicker, lang)}</p>
-              <a
-                href={brandSites.ruwaq}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="platform-strip"
-              >
+              <a href={brandSites.ruwaq} target="_blank" rel="noopener noreferrer" className="platform-strip">
                 <div className="min-w-0">
                   <p className="text-[17px] font-medium text-navy m-0 mb-1">{tx(t.platforms.ruwaqName, lang)}</p>
-                  <p className="text-[14px] leading-relaxed text-navy/50 m-0">
-                    {tx(t.platforms.ruwaqDesc, lang)}
-                  </p>
+                  <p className="text-[14px] leading-relaxed text-navy/50 m-0">{tx(t.platforms.ruwaqDesc, lang)}</p>
                 </div>
                 <span className="platform-strip-link" style={{ letterSpacing: isAr ? 0 : '0.04em' }}>
                   {tx(t.platforms.ruwaqLink, lang)}
@@ -357,7 +306,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOW WE WORK */}
       <section id="together" className="anchor-target section-y" style={{ background: '#10182A' }}>
         <div className="container-xl">
           <Reveal>
@@ -366,23 +314,26 @@ export default function Home() {
               {tx(t.together.kicker, lang)}
             </p>
             <h2 className="section-title section-title-light m-0 mb-5 md:mb-6">{tx(t.together.title, lang)}</h2>
-            <p className="max-w-3xl mb-12 md:mb-20 text-[16px] md:text-[18px] leading-[1.9] font-light m-0" style={{ color: 'rgba(246,243,236,0.68)' }}>
+            <p
+              className="max-w-3xl mb-12 md:mb-20 text-[16px] md:text-[18px] leading-[1.9] font-light m-0"
+              style={{ color: 'rgba(246,243,236,0.68)' }}
+            >
               {tx(t.together.body, lang)}
             </p>
           </Reveal>
 
           <Reveal delay="reveal-delay-1">
-            <ol className="relative m-0 p-0 list-none grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8">
-              {stages.map((stage) => (
-                <li key={stage.n} className="journey-step">
-                  <p className="journey-num m-0 mb-4" style={{ color: stage.color }}>
-                    {stage.n}
+            <ol className="arch-pillars">
+              {groupCompanies.map((c) => (
+                <li key={c.id} className="journey-step">
+                  <p className="journey-num m-0 mb-4" style={{ color: c.accent }}>
+                    {tx(c.verb, lang)}
                   </p>
                   <p className="font-display text-cream text-[1.4rem] md:text-[1.55rem] leading-snug m-0 mb-2 font-medium">
-                    {stage.label}
+                    {tx(c.name, lang)}
                   </p>
-                  <p className="text-[13px] m-0" style={{ color: stage.color }}>
-                    {stage.brand}
+                  <p className="text-[13px] m-0" style={{ color: c.accent }}>
+                    {tx(c.role, lang)}
                   </p>
                 </li>
               ))}
@@ -391,7 +342,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" className="anchor-target section-y">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
@@ -401,26 +351,22 @@ export default function Home() {
               <h2 className="section-title m-0 mb-5 md:mb-7">{tx(t.contact.title, lang)}</h2>
               <p className="prose-hold m-0 mb-9 md:mb-11">{tx(t.contact.body, lang)}</p>
               <div className="flex flex-col gap-4">
-                {[
-                  { name: tx(t.brands.ghName, lang), href: brandSites.graphicsHouse, src: graphicsHouseLogo, dark: true },
-                  { name: tx(t.brands.tuName, lang), href: brandSites.turriva, src: turrivaLogo, dark: false },
-                  { name: tx(t.brands.bmName, lang), href: brandSites.beesMotion, src: beesMotionLogo, dark: false },
-                ].map((b) => (
+                {groupCompanies.map((c) => (
                   <a
-                    key={b.href}
-                    href={b.href}
+                    key={c.href}
+                    href={c.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 no-underline group min-h-[56px]"
                   >
                     <span
                       className="flex items-center justify-center h-14 w-[7.75rem] flex-shrink-0 px-2"
-                      style={{ background: b.dark ? '#10182A' : '#F3F0E8' }}
+                      style={{ background: c.stage === 'dark' ? '#10182A' : '#F3F0E8' }}
                     >
-                      <img src={b.src} alt="" className="max-h-9 max-w-full w-auto object-contain" />
+                      <img src={logos[c.id]} alt="" className="max-h-9 max-w-full w-auto object-contain" />
                     </span>
                     <span className="house-cta m-0" style={{ color: 'var(--ink)' }}>
-                      <span>{b.name}</span>
+                      <span>{tx(c.name, lang)}</span>
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden style={{ transform: isAr ? 'scaleX(-1)' : undefined }}>
                         <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>

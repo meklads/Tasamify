@@ -5,6 +5,7 @@ import './index.css'
 import { LanguageProvider } from './lib/LanguageContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import GroupSchema from './components/GroupSchema'
 import Home from './pages/Home'
 
 function ScrollManager() {
@@ -12,7 +13,8 @@ function ScrollManager() {
 
   useEffect(() => {
     if (hash) {
-      const el = document.querySelector(hash)
+      const target = hash === '#brands' ? '#companies' : hash
+      const el = document.querySelector(target)
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' })
         return
@@ -28,10 +30,13 @@ function Layout() {
   return (
     <>
       <ScrollManager />
+      <GroupSchema />
       <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/companies" element={<Navigate to="/#companies" replace />} />
+          <Route path="/brands" element={<Navigate to="/#companies" replace />} />
           <Route path="/contact" element={<Navigate to="/#contact" replace />} />
           <Route path="/about" element={<Navigate to="/#about" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />

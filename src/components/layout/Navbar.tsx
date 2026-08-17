@@ -1,15 +1,21 @@
+import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../../lib/LanguageContext'
-import { t, tx } from '../../lib/translations'
+import { t, tx, groupCompanies } from '../../lib/translations'
 import TasamiLogo from '../TasamiLogo'
 import LangToggle from '../LangToggle'
 
-const links = [
-  { key: 'brands' as const, href: '#brands' },
-  { key: 'contact' as const, href: '#contact' },
-]
-
 export default function Navbar() {
   const { lang, isAr } = useLang()
+  const [open, setOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (!menuRef.current?.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onDoc)
+    return () => document.removeEventListener('mousedown', onDoc)
+  }, [])
 
   return (
     <header
@@ -27,16 +33,44 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3 sm:gap-6 flex-shrink-0">
             <nav className="flex items-center gap-3 sm:gap-7">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-[12px] sm:text-[13px] font-medium text-cream/75 hover:text-gold transition-colors py-2 min-h-[44px] inline-flex items-center"
-                  style={{ textDecoration: 'none', letterSpacing: isAr ? 0 : '0.08em' }}
+              <div className={`nav-drop ${open ? 'is-open' : ''}`} ref={menuRef}>
+                <button
+                  type="button"
+                  className="nav-link"
+                  aria-expanded={open}
+                  aria-haspopup="true"
+                  onClick={() => setOpen((v) => !v)}
+                  style={{ letterSpacing: isAr ? 0 : '0.08em' }}
                 >
-                  {tx(t.nav[link.key], lang)}
-                </a>
-              ))}
+                  {tx(t.nav.companies, lang)}
+                </button>
+                <div className="nav-drop-panel" role="menu">
+                  <a href="#companies" className="nav-drop-link" role="menuitem" onClick={() => setOpen(false)}>
+                    {tx(t.brands.kicker, lang)}
+                  </a>
+                  {groupCompanies.map((c) => (
+                    <a
+                      key={c.id}
+                      href={c.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nav-drop-link"
+                      role="menuitem"
+                      onClick={() => setOpen(false)}
+                    >
+                      <span>{tx(c.name, lang)}</span>
+                      <span className="nav-drop-verb">{tx(c.verb, lang)}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <a
+                href="#contact"
+                className="nav-link"
+                style={{ letterSpacing: isAr ? 0 : '0.08em' }}
+              >
+                {tx(t.nav.contact, lang)}
+              </a>
             </nav>
             <LangToggle />
           </div>
