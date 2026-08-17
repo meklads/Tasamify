@@ -30,10 +30,10 @@ function Reveal({
   )
 }
 
-function VisitLink({ href, label }: { href: string; label: string }) {
+function VisitLink({ href, label, light = false }: { href: string; label: string; light?: boolean }) {
   const { isAr } = useLang()
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="house-cta">
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`house-cta ${light ? 'house-cta--light' : ''}`}>
       <span>{label}</span>
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden style={{ transform: isAr ? 'scaleX(-1)' : undefined }}>
         <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -42,56 +42,39 @@ function VisitLink({ href, label }: { href: string; label: string }) {
   )
 }
 
-function CompanyBand({
+function CompanyPlate({
   id,
   href,
   src,
   alt,
-  stage,
-  accent,
+  tone,
   verb,
   name,
   role,
   lead,
-  market,
-  children,
 }: {
   id: string
   href: string
   src: string
   alt: string
-  stage: 'dark' | 'light'
-  accent: string
+  tone: 'gh' | 'bm' | 'tu'
   verb: string
   name: string
   role: string
   lead: string
-  market: string
-  children?: React.ReactNode
 }) {
   const { lang } = useLang()
   return (
-    <article id={id} className="house-band" style={{ ['--house-accent' as string]: accent }}>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`house-stage house-stage--${stage}`}
-      >
+    <article id={id} className={`company-plate company-plate--${tone}`}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className="company-logo-well">
         <img src={src} alt={alt} decoding="async" />
       </a>
-      <div className="house-copy">
-        <p className="house-index">{verb}</p>
-        <h3 className="house-name">{name}</h3>
-        <p className="house-role">{role}</p>
-        <p className="house-lead">{lead}</p>
-        <p className="house-market">
-          <span>{tx(t.brands.marketLabel, lang)}</span>
-          {market}
-        </p>
-        <p className="house-caps-label">{tx(t.brands.capsLabel, lang)}</p>
-        {children}
-        <VisitLink href={href} label={tx(t.brands.visit, lang)} />
+      <div className="company-body">
+        <p className="company-verb">{verb}</p>
+        <h3 className="company-name">{name}</h3>
+        <p className="company-role">{role}</p>
+        <p className="company-lead">{lead}</p>
+        <VisitLink href={href} label={tx(t.brands.visit, lang)} light />
       </div>
     </article>
   )
@@ -180,14 +163,6 @@ export default function Home() {
             background: 'radial-gradient(ellipse 70% 55% at 50% 100%, rgba(201,162,75,0.16) 0%, transparent 58%)',
           }}
         />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(201,162,75,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,75,0.55) 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }}
-        />
 
         <div className="container-xl relative z-10 w-full pt-24 pb-14 md:pt-28 md:pb-20">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -197,8 +172,7 @@ export default function Home() {
               <span className="wordmark">{tx(t.hero.wordmark, lang)}</span>
               <span className="hero-group">{tx(t.hero.group, lang)}</span>
             </h1>
-            <div className="gold-rule mx-auto mt-7 md:mt-9 mb-6 md:mb-8" />
-            <p className="hero-subhead mt-0 mb-0">{tx(t.hero.subhead, lang)}</p>
+            <p className="hero-subhead mt-8 md:mt-10 mb-0">{tx(t.hero.subhead, lang)}</p>
             <p className="hero-support mt-5 md:mt-7 mb-0 mx-auto">{tx(t.hero.support, lang)}</p>
 
             <nav className="arch-nav" aria-label={tx(t.brands.kicker, lang)}>
@@ -218,7 +192,6 @@ export default function Home() {
           <Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 lg:items-start">
               <div className="lg:col-span-5">
-                <div className="gold-rule mb-5" />
                 <p className="section-kicker mb-4 md:mb-6">{tx(t.about.kicker, lang)}</p>
                 <h2 className="section-title m-0">{tx(t.about.title, lang)}</h2>
               </div>
@@ -233,58 +206,24 @@ export default function Home() {
       <section id="companies" className="anchor-target pb-12 md:pb-28">
         <div className="container-xl">
           <Reveal>
-            <div className="gold-rule mb-5" />
             <p className="section-kicker mb-3 md:mb-4">{tx(t.brands.kicker, lang)}</p>
-            <h2 className="section-title m-0 mb-10 md:mb-16">{tx(t.brands.title, lang)}</h2>
+            <h2 className="section-title m-0 mb-10 md:mb-14">{tx(t.brands.title, lang)}</h2>
           </Reveal>
 
-          <div className="flex flex-col gap-5 md:gap-6">
+          <div className="company-grid">
             {groupCompanies.map((c, i) => (
               <Reveal key={c.id} delay={`reveal-delay-${i + 1}`}>
-                <CompanyBand
+                <CompanyPlate
                   id={c.id}
                   href={c.href}
                   src={logos[c.id]}
                   alt={c.alt}
-                  stage={c.stage}
-                  accent={c.accent}
+                  tone={c.tone}
                   verb={tx(c.verb, lang)}
                   name={tx(c.name, lang)}
                   role={tx(c.role, lang)}
                   lead={tx(c.lead, lang)}
-                  market={tx(c.market, lang)}
-                >
-                  {c.id === 'bees-motion' ? (
-                    <ul className="house-tracks">
-                      <li>
-                        <span>{tx(t.brands.bmCreative, lang)}</span>
-                        {tx(t.brands.bmCreativeD, lang)}
-                      </li>
-                      <li>
-                        <span>{tx(t.brands.bmAi, lang)}</span>
-                        {tx(t.brands.bmAiD, lang)}
-                      </li>
-                    </ul>
-                  ) : (
-                    <>
-                      <ul className="house-points">
-                        {(c.id === 'graphics-house'
-                          ? [tx(t.brands.ghB1, lang), tx(t.brands.ghB2, lang), tx(t.brands.ghB3, lang)]
-                          : [tx(t.brands.tuB1, lang), tx(t.brands.tuB2, lang), tx(t.brands.tuB3, lang)]
-                        ).map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                      {c.id === 'graphics-house' && (
-                        <p className="house-stats">
-                          <span>{tx(t.brands.ghStat1, lang)}</span>
-                          <span>{tx(t.brands.ghStat2, lang)}</span>
-                          <span>{tx(t.brands.ghStat3, lang)}</span>
-                        </p>
-                      )}
-                    </>
-                  )}
-                </CompanyBand>
+                />
               </Reveal>
             ))}
           </div>
@@ -309,13 +248,12 @@ export default function Home() {
       <section id="together" className="anchor-target section-y" style={{ background: '#10182A' }}>
         <div className="container-xl">
           <Reveal>
-            <div className="gold-rule mb-5" />
             <p className="section-kicker mb-4 md:mb-5" style={{ color: '#C9A24B' }}>
               {tx(t.together.kicker, lang)}
             </p>
             <h2 className="section-title section-title-light m-0 mb-5 md:mb-6">{tx(t.together.title, lang)}</h2>
             <p
-              className="max-w-3xl mb-12 md:mb-20 text-[16px] md:text-[18px] leading-[1.9] font-light m-0"
+              className="max-w-3xl mb-12 md:mb-16 text-[16px] md:text-[18px] leading-[1.9] font-light m-0"
               style={{ color: 'rgba(246,243,236,0.68)' }}
             >
               {tx(t.together.body, lang)}
@@ -323,21 +261,25 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay="reveal-delay-1">
-            <ol className="arch-pillars">
-              {groupCompanies.map((c) => (
-                <li key={c.id} className="journey-step">
-                  <p className="journey-num m-0 mb-4" style={{ color: c.accent }}>
-                    {tx(c.verb, lang)}
-                  </p>
-                  <p className="font-display text-cream text-[1.4rem] md:text-[1.55rem] leading-snug m-0 mb-2 font-medium">
-                    {tx(c.name, lang)}
-                  </p>
-                  <p className="text-[13px] m-0" style={{ color: c.accent }}>
-                    {tx(c.role, lang)}
-                  </p>
-                </li>
-              ))}
-            </ol>
+            <div className="arch-tree">
+              <p className="arch-tree-parent">{tx(t.hero.kicker, lang)}</p>
+              <span className="arch-tree-down" aria-hidden>
+                ↓
+              </span>
+              <ol className="arch-pillars">
+                {groupCompanies.map((c) => (
+                  <li key={c.id} className="journey-step">
+                    <p className="journey-num m-0 mb-3">{tx(c.verb, lang)}</p>
+                    <p className="font-display text-cream text-[1.4rem] md:text-[1.55rem] leading-snug m-0 mb-2 font-medium">
+                      {tx(c.name, lang)}
+                    </p>
+                    <p className="text-[13px] m-0" style={{ color: 'rgba(246,243,236,0.55)' }}>
+                      {tx(c.role, lang)}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -346,7 +288,6 @@ export default function Home() {
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
-              <div className="gold-rule mb-5" />
               <p className="section-kicker mb-4 md:mb-5">{tx(t.contact.kicker, lang)}</p>
               <h2 className="section-title m-0 mb-5 md:mb-7">{tx(t.contact.title, lang)}</h2>
               <p className="prose-hold m-0 mb-9 md:mb-11">{tx(t.contact.body, lang)}</p>
@@ -359,10 +300,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 no-underline group min-h-[56px]"
                   >
-                    <span
-                      className="flex items-center justify-center h-14 w-[7.75rem] flex-shrink-0 px-2"
-                      style={{ background: c.stage === 'dark' ? '#10182A' : '#F3F0E8' }}
-                    >
+                    <span className={`contact-logo contact-logo--${c.tone}`}>
                       <img src={logos[c.id]} alt="" className="max-h-9 max-w-full w-auto object-contain" />
                     </span>
                     <span className="house-cta m-0" style={{ color: 'var(--ink)' }}>

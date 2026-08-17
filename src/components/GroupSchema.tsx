@@ -19,13 +19,30 @@ export default function GroupSchema() {
         '@type': 'Organization',
         name: c.alt,
         url: c.href,
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'Tasami Group',
+          url: 'https://tasamify.com/',
+        },
       })),
-      knowsAbout: [
-        'Creative experiences',
-        'Marketing',
-        'Artificial intelligence',
-        'Spatial execution',
-      ],
+      knowsAbout:
+        lang === 'ar'
+          ? [
+              'شركات متخصصة',
+              'تجارب إبداعية',
+              'تسويق رقمي',
+              'إنتاج إبداعي',
+              'تنفيذ فراغي',
+              'تسليم ميداني',
+            ]
+          : [
+              'Specialized companies',
+              'Creative experiences',
+              'Digital marketing',
+              'Creative production',
+              'Spatial execution',
+              'Physical delivery',
+            ],
     }
 
     const script = existing ?? document.createElement('script')

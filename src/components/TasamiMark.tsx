@@ -1,4 +1,4 @@
-/** Tasami mark — a quiet canopy over three posts (the umbrella identity). */
+/** Tasami mark: a quiet canopy over three posts (the umbrella identity). */
 export default function TasamiMark({
   size = 40,
   className = '',
