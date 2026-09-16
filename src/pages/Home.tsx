@@ -268,7 +268,7 @@ export default function Home() {
           <Reveal delay="reveal-delay-1">
             <figure className="group-structure-figure m-0">
               <img
-                src="/group-structure.png"
+                src="/Tasami%20Group.png"
                 alt={
                   isAr
                     ? 'هيكل مجموعة تسامي: جرافيكس هاوس وتوريفا وبيز موشن'
