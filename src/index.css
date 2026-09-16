@@ -581,6 +581,22 @@ h1, h2, h3, .font-display {
   text-align: center;
 }
 
+.group-structure-figure {
+  margin: 0 auto;
+  max-width: 56rem;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.group-structure-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .arch-tree-parent {
   margin: 0;
   font-family: var(--font-display, 'Cormorant Garamond', serif);

@@ -266,33 +266,20 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay="reveal-delay-1">
-            <div className="arch-tree">
-              <p className="arch-tree-parent">{tx(t.hero.kicker, lang)}</p>
-              <span className="arch-tree-down" aria-hidden>
-                ↓
-              </span>
-              <p className="arch-tree-layer">{tx(t.together.specialized, lang)}</p>
-              <ol className="arch-pillars">
-                {groupCompanies.map((c) => (
-                  <li key={c.id} className="journey-step">
-                    <p className="journey-num m-0 mb-3">{tx(c.verb, lang)}</p>
-                    <p className="font-display text-cream text-[1.4rem] md:text-[1.55rem] leading-snug m-0 mb-2 font-medium">
-                      {tx(c.name, lang)}
-                    </p>
-                    <p className="text-[13px] m-0 mb-1" style={{ color: 'rgba(246,243,236,0.72)' }}>
-                      {tx(c.role, lang)}
-                    </p>
-                    <p className="text-[12px] m-0" style={{ color: 'rgba(246,243,236,0.45)' }}>
-                      {tx(c.market, lang)}
-                    </p>
-                  </li>
-                ))}
-              </ol>
-              <span className="arch-tree-down" aria-hidden>
-                ↓
-              </span>
-              <p className="arch-tree-layer">{tx(t.together.complementary, lang)}</p>
-            </div>
+            <figure className="group-structure-figure m-0">
+              <img
+                src="/group-structure.png"
+                alt={
+                  isAr
+                    ? 'هيكل مجموعة تسامي: جرافيكس هاوس وتوريفا وبيز موشن'
+                    : 'Tasami Group structure: Graphics House, Turriva, and Bees Motion'
+                }
+                width={1536}
+                height={1024}
+                className="group-structure-img"
+                decoding="async"
+              />
+            </figure>
           </Reveal>
 
           <Reveal className="mt-12 md:mt-16" delay="reveal-delay-2">
