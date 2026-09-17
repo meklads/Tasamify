@@ -25,6 +25,7 @@ export default function About() {
     { n: t.aboutPage.g1n, title: t.aboutPage.g1t, body: t.aboutPage.g1 },
     { n: t.aboutPage.g2n, title: t.aboutPage.g2t, body: t.aboutPage.g2 },
     { n: t.aboutPage.g3n, title: t.aboutPage.g3t, body: t.aboutPage.g3 },
+    { n: t.aboutPage.g4n, title: t.aboutPage.g4t, body: t.aboutPage.g4 },
   ]
 
   return (

@@ -157,60 +157,66 @@ export const t = {
   aboutPage: {
     kicker: { en: 'About', ar: 'عنا' },
     title: {
-      en: 'The group behind specialized companies.',
-      ar: 'المجموعة خلف شركات متخصصة.',
+      en: 'Leadership. Quality. One umbrella.',
+      ar: 'ريادة. جودة. مظلة واحدة.',
     },
     lead: {
-      en: 'Tasami Group exists so specialist companies can remain specialist, and still work as one when a project requires more than a single craft.',
-      ar: 'مجموعة تسامي موجودة كي تبقى الشركات المتخصصة متخصصة، وتعمل معًا حين يحتاج المشروع أكثر من حرفة واحدة.',
+      en: 'Tasami Group raises the standard of business by uniting specialized companies to achieve ambitious goals, from idea to delivery.',
+      ar: 'مجموعة تسامي ترتقي بمستوى الأعمال عبر توحيد شركات متخصصة لتحقيق أهداف طموحة، من الفكرة إلى التسليم.',
     },
 
     visionKicker: { en: 'Vision', ar: 'الرؤية' },
     vision: {
-      en: 'To be the group trusted to stand behind complete work: independently excellent companies, complementary when it matters, accountable as one.',
-      ar: 'أن نكون المجموعة التي يُوثق بها خلف العمل المكتمل: شركات متقنة باستقلال، تتكامل حين يلزم الأمر، ومسؤولة كمجموعة واحدة.',
+      en: 'To lead the integration of specialized excellence, set a higher bar for quality, and turn ambition into results that can be measured.',
+      ar: 'أن نقود تكامل التميز المتخصص، ونرفع سقف الجودة، ونحوّل الطموح إلى نتائج تُقاس.',
     },
 
     missionKicker: { en: 'Mission', ar: 'الرسالة' },
     mission: {
-      en: 'We hold Graphics House, Bees Motion, and Turriva. We protect each company name, market, and discipline, and we connect the right capabilities when a brief needs a complete solution.',
-      ar: 'نمسك جرافيكس هاوس وبيزموشن وتوريفا. نحفظ اسم كل شركة وسوقها وتخصصها، ونصل القدرات الصحيحة حين يحتاج الموجز حلاً مكتملاً.',
+      en: 'Under one umbrella we create, grow, and execute. We connect the right capabilities to elevate the business and achieve the goal, without scattering the work across disconnected vendors.',
+      ar: 'تحت مظلة واحدة نبتكر وننمّي وننفّذ. نربط القدرات الصحيحة لرفع مستوى الأعمال وتحقيق الهدف، دون تشتت العمل بين أطراف لا يجمعها قرار واحد.',
     },
 
     goalsKicker: { en: 'Objectives', ar: 'الأهداف' },
     goalsTitle: {
-      en: 'What the group is built to do.',
-      ar: 'ما بُنيت المجموعة لتفعله.',
+      en: 'What we pursue.',
+      ar: 'ما نسعى إليه.',
     },
     g1n: { en: '01', ar: '٠١' },
-    g1t: { en: 'Preserve independence', ar: 'حفظ الاستقلال' },
+    g1t: { en: 'Lead with quality', ar: 'الريادة والجودة' },
     g1: {
-      en: 'Each company keeps its identity, its market, and the depth of its craft.',
-      ar: 'تحتفظ كل شركة بهويتها وسوقها وعمق حرفيتها.',
+      en: 'A higher standard in every company, and in every moment they meet.',
+      ar: 'معيار أعلى في كل شركة، وفي كل لحظة تلتقي فيها الشركات.',
     },
     g2n: { en: '02', ar: '٠٢' },
-    g2t: { en: 'Connect with purpose', ar: 'التكامل بقصد' },
+    g2t: { en: 'Elevate the business', ar: 'رفع مستوى الأعمال' },
     g2: {
-      en: 'When a project needs more than one specialty, we assemble the right companies. Not every brief. Only when it matters.',
-      ar: 'حين يحتاج المشروع أكثر من تخصص، نجمع الشركات الصحيحة. ليس كل موجز. فقط حين يلزم الأمر.',
+      en: 'Work that accelerates decisions, strengthens presence, and moves the enterprise forward.',
+      ar: 'عمل يسرّع القرار، ويقوّي الحضور، ويدفع المنشأة إلى الأمام.',
     },
     g3n: { en: '03', ar: '٠٣' },
-    g3t: { en: 'Deliver as one group', ar: 'التسليم كمجموعة واحدة' },
+    g3t: { en: 'Achieve the goal', ar: 'تحقيق الأهداف' },
     g3: {
-      en: 'From creative vision to physical delivery, the client has one accountable group behind the work.',
-      ar: 'من الرؤية الإبداعية إلى التسليم الميداني، يقف خلف العمل مجموعة واحدة مسؤولة.',
+      en: 'Clear outcomes. Complete delivery. Ambition that arrives as a result, not a promise.',
+      ar: 'نتائج واضحة. تسليم مكتمل. طموح يصل نتيجة لا وعدًا.',
+    },
+    g4n: { en: '04', ar: '٠٤' },
+    g4t: { en: 'Integrate under one umbrella', ar: 'التكامل تحت مظلة واحدة' },
+    g4: {
+      en: 'Creative, marketing, and execution as one system when the project demands it.',
+      ar: 'إبداع وتسويق وتنفيذ في منظومة واحدة حين يطلب المشروع ذلك.',
     },
 
     cta: { en: 'Meet the companies', ar: 'تعرّف على الشركات' },
 
     seo: {
       title: {
-        en: 'About Tasami Group | Vision, Mission, Objectives',
-        ar: 'عن مجموعة تسامي | الرؤية والرسالة والأهداف',
+        en: 'About Tasami Group | Leadership, Quality, One Umbrella',
+        ar: 'عن مجموعة تسامي | ريادة وجودة تحت مظلة واحدة',
       },
       description: {
-        en: 'Tasami Group vision, mission, and objectives. The group behind Graphics House, Bees Motion, and Turriva.',
-        ar: 'رؤية مجموعة تسامي ورسالتها وأهدافها. المجموعة خلف جرافيكس هاوس وبيزموشن وتوريفا.',
+        en: 'Tasami Group: leadership, quality, and integrated specialist companies under one umbrella, from idea to delivery.',
+        ar: 'مجموعة تسامي: ريادة وجودة وتكامل شركات متخصصة تحت مظلة واحدة، من الفكرة إلى التسليم.',
       },
     },
   },
