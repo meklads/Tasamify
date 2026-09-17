@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { useLang } from '../lib/LanguageContext'
 import { t, tx, groupCompanies } from '../lib/translations'
 import { useReveal } from '../hooks/useReveal'
-import TasamiMark from '../components/TasamiMark'
+import TasamiLogo from '../components/TasamiLogo'
 import graphicsHouseLogo from '../assets/brands/graphics-house.png'
 import turrivaLogo from '../assets/brands/turriva.png'
 import beesMotionLogo from '../assets/brands/bees-motion.png'
@@ -170,9 +170,8 @@ export default function Home() {
         <div className="container-xl relative z-10 w-full pt-24 pb-14 md:pt-28 md:pb-20">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <p className="hero-kicker mb-6 md:mb-8">{tx(t.hero.kicker, lang)}</p>
-            <TasamiMark size={52} className="mb-5 md:mb-7 opacity-90" />
             <h1 className="m-0 flex flex-col items-center">
-              <span className="wordmark">{tx(t.hero.wordmark, lang)}</span>
+              <TasamiLogo variant="hero" isAr={isAr} />
               <span className="hero-group">{tx(t.hero.group, lang)}</span>
             </h1>
             <p className="hero-subhead mt-8 md:mt-10 mb-0">{tx(t.hero.subhead, lang)}</p>

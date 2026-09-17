@@ -14,7 +14,7 @@ export default function GroupSchema() {
       alternateName: ['مجموعة تسامي', 'Tasami'],
       url: 'https://tasamify.com/',
       description: tx(t.seo.description, lang),
-      logo: 'https://tasamify.com/favicon.svg',
+      logo: 'https://tasamify.com/tasami-logo.png',
       subOrganization: groupCompanies.map((c) => ({
         '@type': 'Organization',
         name: c.alt,

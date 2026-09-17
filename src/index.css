@@ -189,13 +189,39 @@ h1, h2, h3, .font-display {
 
 .hero-group {
   display: block;
-  margin-top: 0.2rem;
+  margin-top: 0.85rem;
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-size: clamp(20px, 3vw, 34px);
   font-weight: 500;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+.tasami-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.tasami-logo--navbar {
+  height: 22px;
+}
+
+@media (min-width: 640px) {
+  .tasami-logo--navbar {
+    height: 28px;
+  }
+}
+
+.tasami-logo--footer {
+  height: 28px;
+}
+
+.tasami-logo--hero {
+  width: min(88vw, 520px);
+  height: auto;
 }
 
 .arch-nav {
