@@ -2,14 +2,20 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { useEffect } from 'react'
 import './index.css'
 
-import { LanguageProvider } from './lib/LanguageContext'
+import { LanguageProvider, applySeo, useLang } from './lib/LanguageContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import GroupSchema from './components/GroupSchema'
 import Home from './pages/Home'
+import About from './pages/About'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
+  const { lang } = useLang()
+
+  useEffect(() => {
+    applySeo(lang)
+  }, [pathname, lang])
 
   useEffect(() => {
     if (hash) {
@@ -35,10 +41,10 @@ function Layout() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/companies" element={<Navigate to="/#companies" replace />} />
           <Route path="/brands" element={<Navigate to="/#companies" replace />} />
           <Route path="/contact" element={<Navigate to="/#contact" replace />} />
-          <Route path="/about" element={<Navigate to="/#about" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

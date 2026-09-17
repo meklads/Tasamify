@@ -2,6 +2,7 @@ export type Lang = 'en' | 'ar'
 
 export const t = {
   nav: {
+    about: { en: 'About', ar: 'عنا' },
     companies: { en: 'Companies', ar: 'الشركات' },
     contact: { en: 'Contact', ar: 'تواصل' },
   },
@@ -36,6 +37,7 @@ export const t = {
       en: 'Today the group stands behind Graphics House, Bees Motion, and Turriva. It is not an agency, and it does not sell their work. Each company keeps its name, its market, and its expertise. Tasami Group brings them together only when a project requires complementary capabilities.',
       ar: 'اليوم تقف المجموعة خلف جرافيكس هاوس وبيزموشن وتوريفا. ليست وكالة، ولا تبيع عمل شركاتها. كل شركة تحتفظ باسمها وسوقها وخبرتها. تجمع مجموعة تسامي الشركات فقط حين يحتاج المشروع قدرات تتكامل.',
     },
+    more: { en: 'Vision, mission, and objectives', ar: 'الرؤية والرسالة والأهداف' },
   },
 
   brands: {
@@ -148,7 +150,69 @@ export const t = {
   footer: {
     brand: { en: 'Tasami Group', ar: 'مجموعة تسامي' },
     companies: { en: 'Our Companies', ar: 'شركاتنا' },
+    group: { en: 'The Group', ar: 'المجموعة' },
     copy: { en: '© Tasami Group', ar: '© مجموعة تسامي' },
+  },
+
+  aboutPage: {
+    kicker: { en: 'About', ar: 'عنا' },
+    title: {
+      en: 'The group behind specialized companies.',
+      ar: 'المجموعة خلف شركات متخصصة.',
+    },
+    lead: {
+      en: 'Tasami Group exists so specialist companies can remain specialist, and still work as one when a project requires more than a single craft.',
+      ar: 'مجموعة تسامي موجودة كي تبقى الشركات المتخصصة متخصصة، وتعمل معًا حين يحتاج المشروع أكثر من حرفة واحدة.',
+    },
+
+    visionKicker: { en: 'Vision', ar: 'الرؤية' },
+    vision: {
+      en: 'To be the group trusted to stand behind complete work: independently excellent companies, complementary when it matters, accountable as one.',
+      ar: 'أن نكون المجموعة التي يُوثق بها خلف العمل المكتمل: شركات متقنة باستقلال، تتكامل حين يلزم الأمر، ومسؤولة كمجموعة واحدة.',
+    },
+
+    missionKicker: { en: 'Mission', ar: 'الرسالة' },
+    mission: {
+      en: 'We hold Graphics House, Bees Motion, and Turriva. We protect each company name, market, and discipline, and we connect the right capabilities when a brief needs a complete solution.',
+      ar: 'نمسك جرافيكس هاوس وبيزموشن وتوريفا. نحفظ اسم كل شركة وسوقها وتخصصها، ونصل القدرات الصحيحة حين يحتاج الموجز حلاً مكتملاً.',
+    },
+
+    goalsKicker: { en: 'Objectives', ar: 'الأهداف' },
+    goalsTitle: {
+      en: 'What the group is built to do.',
+      ar: 'ما بُنيت المجموعة لتفعله.',
+    },
+    g1n: { en: '01', ar: '٠١' },
+    g1t: { en: 'Preserve independence', ar: 'حفظ الاستقلال' },
+    g1: {
+      en: 'Each company keeps its identity, its market, and the depth of its craft.',
+      ar: 'تحتفظ كل شركة بهويتها وسوقها وعمق حرفيتها.',
+    },
+    g2n: { en: '02', ar: '٠٢' },
+    g2t: { en: 'Connect with purpose', ar: 'التكامل بقصد' },
+    g2: {
+      en: 'When a project needs more than one specialty, we assemble the right companies. Not every brief. Only when it matters.',
+      ar: 'حين يحتاج المشروع أكثر من تخصص، نجمع الشركات الصحيحة. ليس كل موجز. فقط حين يلزم الأمر.',
+    },
+    g3n: { en: '03', ar: '٠٣' },
+    g3t: { en: 'Deliver as one group', ar: 'التسليم كمجموعة واحدة' },
+    g3: {
+      en: 'From creative vision to physical delivery, the client has one accountable group behind the work.',
+      ar: 'من الرؤية الإبداعية إلى التسليم الميداني، يقف خلف العمل مجموعة واحدة مسؤولة.',
+    },
+
+    cta: { en: 'Meet the companies', ar: 'تعرّف على الشركات' },
+
+    seo: {
+      title: {
+        en: 'About Tasami Group | Vision, Mission, Objectives',
+        ar: 'عن مجموعة تسامي | الرؤية والرسالة والأهداف',
+      },
+      description: {
+        en: 'Tasami Group vision, mission, and objectives. The group behind Graphics House, Bees Motion, and Turriva.',
+        ar: 'رؤية مجموعة تسامي ورسالتها وأهدافها. المجموعة خلف جرافيكس هاوس وبيزموشن وتوريفا.',
+      },
+    },
   },
 
   seo: {

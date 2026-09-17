@@ -208,7 +208,10 @@ export default function Home() {
               </div>
               <div className="lg:col-span-7 lg:pt-11">
                 <p className="prose-hold m-0 mb-6">{tx(t.about.body, lang)}</p>
-                <p className="prose-hold m-0">{tx(t.about.body2, lang)}</p>
+                <p className="prose-hold m-0 mb-8">{tx(t.about.body2, lang)}</p>
+                <a href="/about" className="house-cta">
+                  {tx(t.about.more, lang)}
+                </a>
               </div>
             </div>
           </Reveal>

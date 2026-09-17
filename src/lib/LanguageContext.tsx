@@ -36,13 +36,18 @@ function applyLang(l: Lang) {
     root.style.setProperty('--font-body', '"Outfit", sans-serif')
     root.style.setProperty('--font-display', '"Cormorant Garamond", serif')
   }
-  document.title = tx(t.seo.title, l)
+  applySeo(l)
+}
+
+export function applySeo(l: Lang) {
+  const seo = window.location.pathname.startsWith('/about') ? t.aboutPage.seo : t.seo
+  document.title = tx(seo.title, l)
   const meta = document.querySelector('meta[name="description"]')
-  if (meta) meta.setAttribute('content', tx(t.seo.description, l))
+  if (meta) meta.setAttribute('content', tx(seo.description, l))
   const ogTitle = document.querySelector('meta[property="og:title"]')
-  if (ogTitle) ogTitle.setAttribute('content', tx(t.seo.title, l))
+  if (ogTitle) ogTitle.setAttribute('content', tx(seo.title, l))
   const ogDesc = document.querySelector('meta[property="og:description"]')
-  if (ogDesc) ogDesc.setAttribute('content', tx(t.seo.description, l))
+  if (ogDesc) ogDesc.setAttribute('content', tx(seo.description, l))
   const ogLocale = document.querySelector('meta[property="og:locale"]')
   if (ogLocale) ogLocale.setAttribute('content', l === 'ar' ? 'ar_SA' : 'en_US')
 }

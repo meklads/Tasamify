@@ -27,12 +27,19 @@ export default function Navbar() {
     >
       <div className="container-xl">
         <div className="flex items-center justify-between h-[60px] md:h-16 gap-3">
-          <a href="#top" className="flex-shrink-0 min-w-0 hover:opacity-90 transition-opacity" style={{ textDecoration: 'none' }}>
+          <a href="/" className="flex-shrink-0 min-w-0 hover:opacity-90 transition-opacity" style={{ textDecoration: 'none' }}>
             <TasamiLogo variant="navbar" isAr={isAr} />
           </a>
 
           <div className="flex items-center gap-3 sm:gap-6 flex-shrink-0">
             <nav className="flex items-center gap-3 sm:gap-7">
+              <a
+                href="/about"
+                className="nav-link"
+                style={{ letterSpacing: isAr ? 0 : '0.08em' }}
+              >
+                {tx(t.nav.about, lang)}
+              </a>
               <div className={`nav-drop ${open ? 'is-open' : ''}`} ref={menuRef}>
                 <button
                   type="button"
@@ -45,7 +52,7 @@ export default function Navbar() {
                   {tx(t.nav.companies, lang)}
                 </button>
                 <div className="nav-drop-panel" role="menu">
-                  <a href="#companies" className="nav-drop-link" role="menuitem" onClick={() => setOpen(false)}>
+                  <a href="/#companies" className="nav-drop-link" role="menuitem" onClick={() => setOpen(false)}>
                     {tx(t.brands.kicker, lang)}
                   </a>
                   {groupCompanies.map((c) => (
@@ -65,7 +72,7 @@ export default function Navbar() {
                 </div>
               </div>
               <a
-                href="#contact"
+                href="/#contact"
                 className="nav-link"
                 style={{ letterSpacing: isAr ? 0 : '0.08em' }}
               >

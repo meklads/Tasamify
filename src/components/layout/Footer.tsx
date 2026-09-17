@@ -14,23 +14,48 @@ export default function Footer() {
             <p className="text-[13px] text-cream/50 m-0 mt-3">{tx(t.footer.copy, lang)}</p>
           </div>
           <div className="md:col-span-7 md:text-end">
-            <p className="section-kicker mb-4" style={{ color: '#C9A24B' }}>
-              {tx(t.footer.companies, lang)}
-            </p>
-            <nav className="flex flex-col sm:flex-row sm:flex-wrap md:justify-end gap-x-6 gap-y-1">
-              {groupCompanies.map((c) => (
-                <a
-                  key={c.href}
-                  href={c.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[14px] text-cream/75 hover:text-gold transition-colors py-2 min-h-[44px] inline-flex items-center"
-                  style={{ textDecoration: 'none' }}
-                >
-                  {tx(c.name, lang)}
-                </a>
-              ))}
-            </nav>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
+              <div className="sm:text-start md:text-end">
+                <p className="section-kicker mb-4" style={{ color: '#C9A24B' }}>
+                  {tx(t.footer.group, lang)}
+                </p>
+                <nav className="flex flex-col md:items-end">
+                  <a
+                    href="/about"
+                    className="text-[14px] text-cream/75 hover:text-gold transition-colors py-2 min-h-[44px] inline-flex items-center"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    {tx(t.nav.about, lang)}
+                  </a>
+                  <a
+                    href="/#contact"
+                    className="text-[14px] text-cream/75 hover:text-gold transition-colors py-2 min-h-[44px] inline-flex items-center"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    {tx(t.nav.contact, lang)}
+                  </a>
+                </nav>
+              </div>
+              <div>
+                <p className="section-kicker mb-4" style={{ color: '#C9A24B' }}>
+                  {tx(t.footer.companies, lang)}
+                </p>
+                <nav className="flex flex-col sm:flex-row sm:flex-wrap md:justify-end gap-x-6 gap-y-1">
+                  {groupCompanies.map((c) => (
+                    <a
+                      key={c.href}
+                      href={c.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[14px] text-cream/75 hover:text-gold transition-colors py-2 min-h-[44px] inline-flex items-center"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      {tx(c.name, lang)}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </div>
           </div>
         </div>
       </div>

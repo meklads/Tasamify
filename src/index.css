@@ -377,6 +377,43 @@ h1, h2, h3, .font-display {
   color: #2a3142;
 }
 
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .purpose-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+  }
+}
+
+.purpose-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .purpose-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+.purpose-num {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
 .company-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -781,6 +818,7 @@ h1, h2, h3, .font-display {
 [dir="rtl"] .company-verb,
 [dir="rtl"] .arch-tree-parent,
 [dir="rtl"] .arch-tree-layer,
+[dir="rtl"] .purpose-num,
 [dir="rtl"] .hero-cta,
 [dir="rtl"] .house-cta,
 [dir="rtl"] .lang-btn,
