@@ -1,0 +1,17 @@
+---
+description: Push implementation changes to GitHub immediately after completing work
+alwaysApply: true
+---
+
+# Git push policy (Tasamify)
+
+The user expects **automatic GitHub delivery** — do not wait for them to ask for commit or push.
+
+After completing any implementation work (features, fixes, UI, i18n, config, assets):
+
+1. Run `npm run build` when application code changed; fix failures before pushing.
+2. **Commit and push to `origin` (meklads/Tasamify) in the same turn** — no “tell me if you want push”.
+3. Do not push secrets (`.env`, credentials). Never force-push to `main`.
+4. Use clear commit messages focused on why the change was made.
+5. Only skip commit/push if the user **explicitly** says not to push or not to commit in that turn.
+6. If push is blocked by approval, retry with the required approval flow; do not leave work only local without saying so.
