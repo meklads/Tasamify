@@ -12,12 +12,12 @@ export const t = {
     wordmark: { en: 'Tasami', ar: 'تسامي' },
     group: { en: 'Group', ar: 'مجموعة' },
     subhead: {
-      en: 'One group. Three specialized companies.',
-      ar: 'مجموعة واحدة. ثلاث شركات متخصصة.',
+      en: 'A creative and execution group built around specialized companies.',
+      ar: 'مجموعة إبداع وتنفيذ مبنية حول شركات متخصصة.',
     },
     support: {
-      en: 'We connect the right capabilities when a project needs more than one specialty, from creative vision to physical delivery, under one accountable group.',
-      ar: 'نجمع الخبرات المناسبة عندما يحتاج المشروع إلى أكثر من تخصص، من الرؤية الإبداعية إلى التسليم الميداني، تحت مجموعة واحدة مسؤولة.',
+      en: 'Two global flagship offers — Real Estate Visual Launch by Graphics House, and AI Creative Production by Bees Motion — with Turriva for physical and interior execution when the project needs it.',
+      ar: 'عرضان رئيسيان عالميان — الإطلاق البصري العقاري من جرافيكس هاوس، والإنتاج الإبداعي بالذكاء الاصطناعي من بيز موشن — مع توريفا للتنفيذ الميداني والداخلي حين يحتاج المشروع ذلك.',
     },
     explore: { en: 'Explore our companies', ar: 'تعرّف على شركاتنا' },
     start: { en: 'Start a project', ar: 'ابدأ مشروعك' },
@@ -46,51 +46,54 @@ export const t = {
       en: 'Different brands. Different expertise. One group.',
       ar: 'علامات مختلفة. خبرات مختلفة. مجموعة واحدة.',
     },
-    visit: { en: 'Visit company', ar: 'زيارة الشركة' },
+    visit: { en: 'Open offer', ar: 'افتح العرض' },
+    visitHome: { en: 'Visit company', ar: 'زيارة الشركة' },
+    flagship: { en: 'Global flagship', ar: 'عرض عالمي رئيسي' },
+    execution: { en: 'Group capability', ar: 'قدرة ضمن المجموعة' },
 
     ghName: { en: 'Graphics House', ar: 'جرافيكس هاوس' },
     ghVerb: { en: 'Create', ar: 'ابتكار' },
     ghRole: {
-      en: 'Creative & Visual Experiences',
-      ar: 'تجارب إبداعية وبصرية',
+      en: 'Real Estate Visual Launch System',
+      ar: 'نظام الإطلاق البصري العقاري',
     },
     ghMarket: {
-      en: 'Real Estate / Large-Scale Developments',
-      ar: 'العقار والمشروعات الكبرى',
+      en: 'Real Estate Developers / Marketing Teams',
+      ar: 'المطورون العقاريون / فرق التسويق',
     },
     ghLead: {
-      en: 'Transforms architectural projects into cinematic narratives, physical models, and interactive platforms, helping developers communicate value and accelerate decisions before construction begins.',
-      ar: 'تحوّل المشاريع المعمارية إلى سرديات سينمائية ومجسمات مادية ومنصات تفاعلية، لمساعدة المطوّرين على إيصال القيمة وتسريع القرارات قبل بدء التنفيذ.',
+      en: 'A complete visual system that turns architectural information into market-ready launch assets — CGI, cinematic film, sales visuals, and digital campaign materials.',
+      ar: 'منظومة بصرية متكاملة تحوّل المعلومات المعمارية إلى أصول إطلاق جاهزة للسوق — إظهار معماري، أفلام سينمائية، مواد بيع، وأصول حملات رقمية.',
     },
 
-    bmName: { en: 'Bees Motion', ar: 'بيزموشن' },
-    bmVerb: { en: 'Grow', ar: 'تنمية' },
+    bmName: { en: 'Bees Motion', ar: 'بيز موشن' },
+    bmVerb: { en: 'Produce', ar: 'إنتاج' },
     bmRole: {
-      en: 'Digital Marketing & Creative Production',
-      ar: 'التسويق الرقمي والإنتاج الإبداعي',
+      en: 'AI Creative Production',
+      ar: 'إنتاج إبداعي بالذكاء الاصطناعي',
     },
     bmMarket: {
-      en: 'Healthcare / Businesses',
-      ar: 'القطاع الطبي والأعمال',
+      en: 'Brands / Marketing & Campaign Teams',
+      ar: 'العلامات / فرق التسويق والحملات',
     },
     bmLead: {
-      en: 'Built around creative production: strategy, content, campaigns, distribution, and AI as one system, with deep expertise in healthcare marketing.',
-      ar: 'مبنية حول الإنتاج الإبداعي: الاستراتيجية والمحتوى والحملات والتوزيع والذكاء الاصطناعي كمنظومة واحدة، بخبرة عميقة في التسويق الطبي.',
+      en: 'Campaign-ready creative under human direction — AI-assisted production and professional finish for films, product video, social creative, and motion content.',
+      ar: 'إبداع جاهز للحملة تحت إخراج بشري — إنتاج بمساندة الذكاء الاصطناعي وإنهاء احترافي لأفلام وفيديو المنتجات ومحتوى السوشيال والموشن.',
     },
 
     tuName: { en: 'Turriva', ar: 'توريفا' },
     tuVerb: { en: 'Execute', ar: 'تنفيذ' },
     tuRole: {
-      en: 'Spatial Execution & Physical Delivery',
-      ar: 'التنفيذ الفراغي والتسليم الميداني',
+      en: 'Physical / Interior Execution',
+      ar: 'التنفيذ الميداني والداخلي',
     },
     tuMarket: {
       en: 'Interior / Exhibitions / Furnishing',
       ar: 'الداخلي والمعارض والتأثيث',
     },
     tuLead: {
-      en: 'Takes an approved design through to installation, with precision manufacturing, field engineering, and local warranty for villas and developer projects.',
-      ar: 'تتولى التصميم المعتمد حتى التركيب، بتصنيع دقيق وهندسة ميدانية وضمان محلي شامل للفلل ومشاريع المطوّرين.',
+      en: 'Physical delivery when the project needs installation and field execution — visible in the group, not one of the two global digital flagships in this phase.',
+      ar: 'تسليم ميداني حين يحتاج المشروع التركيب والتنفيذ — ظاهرة ضمن المجموعة، وليست أحد العرضين الرقميين العالميين في هذه المرحلة.',
     },
   },
 
@@ -227,22 +230,25 @@ export const t = {
       ar: 'مجموعة تسامي | مجموعة واحدة. ثلاث شركات متخصصة.',
     },
     description: {
-      en: 'Tasami Group connects three specialist companies: Graphics House, Bees Motion, and Turriva. Creative experiences, digital marketing, and spatial execution.',
-      ar: 'مجموعة تسامي تجمع ثلاث شركات متخصصة: جرافيكس هاوس وبيزموشن وتوريفا. تجارب إبداعية، تسويق رقمي، وتنفيذ ميداني.',
+      en: 'Tasami Group: Graphics House — Real Estate Visual Launch System; Bees Motion — AI Creative Production; Turriva — physical and interior execution.',
+      ar: 'مجموعة تسامي: جرافيكس هاوس — نظام الإطلاق البصري العقاري؛ بيز موشن — إنتاج إبداعي بالذكاء الاصطناعي؛ توريفا — التنفيذ الميداني والداخلي.',
     },
   },
 }
 
 export const brandSites = {
   graphicsHouse: 'https://3dgraphicshouse.com',
-  beesMotion: 'https://www.beesmotion.com',
+  graphicsHouseOffer: 'https://3dgraphicshouse.com/real-estate/',
+  beesMotion: 'https://beesmotion.com',
+  beesMotionOffer: 'https://beesmotion.com/ai-creative-production/',
   turriva: 'https://turriva.com',
 } as const
 
 export const groupCompanies = [
   {
     id: 'graphics-house' as const,
-    href: brandSites.graphicsHouse,
+    href: brandSites.graphicsHouseOffer,
+    homeHref: brandSites.graphicsHouse,
     name: t.brands.ghName,
     verb: t.brands.ghVerb,
     role: t.brands.ghRole,
@@ -250,10 +256,12 @@ export const groupCompanies = [
     lead: t.brands.ghLead,
     tone: 'gh' as const,
     alt: 'Graphics House',
+    offerKind: 'flagship' as const,
   },
   {
     id: 'bees-motion' as const,
-    href: brandSites.beesMotion,
+    href: brandSites.beesMotionOffer,
+    homeHref: brandSites.beesMotion,
     name: t.brands.bmName,
     verb: t.brands.bmVerb,
     role: t.brands.bmRole,
@@ -261,10 +269,12 @@ export const groupCompanies = [
     lead: t.brands.bmLead,
     tone: 'bm' as const,
     alt: 'Bees Motion',
+    offerKind: 'flagship' as const,
   },
   {
     id: 'turriva' as const,
     href: brandSites.turriva,
+    homeHref: brandSites.turriva,
     name: t.brands.tuName,
     verb: t.brands.tuVerb,
     role: t.brands.tuRole,
@@ -272,6 +282,7 @@ export const groupCompanies = [
     lead: t.brands.tuLead,
     tone: 'tu' as const,
     alt: 'Turriva',
+    offerKind: 'execution' as const,
   },
 ]
 

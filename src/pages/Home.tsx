@@ -53,6 +53,7 @@ function CompanyPlate({
   role,
   market,
   lead,
+  offerKind,
 }: {
   id: string
   href: string
@@ -64,6 +65,7 @@ function CompanyPlate({
   role: string
   market: string
   lead: string
+  offerKind: 'flagship' | 'execution'
 }) {
   const { lang } = useLang()
   return (
@@ -72,12 +74,15 @@ function CompanyPlate({
         <img src={src} alt={alt} decoding="async" />
       </a>
       <div className="company-body">
+        <p className="company-offer-kind">
+          {tx(offerKind === 'flagship' ? t.brands.flagship : t.brands.execution, lang)}
+        </p>
         <p className="company-verb">{verb}</p>
         <h3 className="company-name">{name}</h3>
         <p className="company-role">{role}</p>
         <p className="company-market">{market}</p>
         <p className="company-lead">{lead}</p>
-        <VisitLink href={href} label={tx(t.brands.visit, lang)} light />
+        <VisitLink href={href} label={tx(offerKind === 'flagship' ? t.brands.visit : t.brands.visitHome, lang)} light />
       </div>
     </article>
   )
@@ -239,6 +244,7 @@ export default function Home() {
                   role={tx(c.role, lang)}
                   market={tx(c.market, lang)}
                   lead={tx(c.lead, lang)}
+                  offerKind={c.offerKind}
                 />
               </Reveal>
             ))}

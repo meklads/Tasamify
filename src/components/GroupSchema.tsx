@@ -18,7 +18,7 @@ export default function GroupSchema() {
       subOrganization: groupCompanies.map((c) => ({
         '@type': 'Organization',
         name: c.alt,
-        url: c.href,
+        url: c.homeHref,
         parentOrganization: {
           '@type': 'Organization',
           name: 'Tasami Group',
@@ -28,24 +28,20 @@ export default function GroupSchema() {
       knowsAbout:
         lang === 'ar'
           ? [
-              'شركات متخصصة',
-              'تجارب إبداعية وبصرية',
-              'تسويق رقمي',
-              'إنتاج إبداعي',
-              'تنفيذ فراغي',
-              'تسليم ميداني',
-              'التقنية والذكاء الاصطناعي',
-              'تجارب ذكية',
+              'نظام الإطلاق البصري العقاري',
+              'إنتاج إبداعي بالذكاء الاصطناعي',
+              'التنفيذ الميداني والداخلي',
+              'جرافيكس هاوس',
+              'بيز موشن',
+              'توريفا',
             ]
           : [
-              'Specialized companies',
-              'Creative and visual experiences',
-              'Digital marketing',
-              'Creative production',
-              'Spatial execution',
-              'Physical delivery',
-              'Technology and AI',
-              'Smart experiences',
+              'Real Estate Visual Launch System',
+              'AI Creative Production',
+              'Physical and interior execution',
+              'Graphics House',
+              'Bees Motion',
+              'Turriva',
             ],
     }
 
