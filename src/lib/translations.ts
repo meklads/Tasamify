@@ -241,7 +241,7 @@ export const brandSites = {
   graphicsHouseOffer: 'https://3dgraphicshouse.com/real-estate/',
   beesMotion: 'https://beesmotion.com',
   beesMotionOffer: 'https://beesmotion.com/ai-creative-production/',
-  turriva: 'https://turriva.com',
+  turriva: 'https://turriva.com/en',
 } as const
 
 export const groupCompanies = [
