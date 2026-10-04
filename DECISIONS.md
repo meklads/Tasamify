@@ -31,6 +31,6 @@
 
 Root `package.json` / `nixpacks.toml` / `Dockerfile` build from `site/` so Coolify serves Next.js without removing old Vite sources.
 
-- Prefer Coolify **Build Pack = Dockerfile**, **Port = 3000**, and **disable static site** (old Vite used nginx/`dist`).
-- Nixpacks failures that stop at `load metadata for ghcr.io/railwayapp/nixpacks` are usually GHCR auth on the server (`docker logout ghcr.io` / refresh GitHub token), not app code — Dockerfile avoids that base image.
+- Coolify must leave the old Vite static setup. Logs that pull `nginx:alpine` + `ghcr.io/railwayapp/nixpacks` mean **Nixpacks + static site** is still on — Next.js (API routes) cannot deploy that way.
+- Coolify checklist: Build Pack = **Dockerfile**, Base Directory = `/` (use root `Dockerfile`) or `/site` (use `site/Dockerfile`), Ports Exposes = **3000**, **Is it a static site? = OFF**.
 - Next.js uses `output: "standalone"` for the Docker image.
