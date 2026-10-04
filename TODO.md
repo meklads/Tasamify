@@ -18,6 +18,5 @@
 
 ## Deploy
 
-- In Coolify: Build Pack = **Dockerfile**, Port Exposes = **3000**, turn off “Is it a static site?”
+- Coolify: **Is it a static site? = OFF**, Port = **3000**, remove custom Nginx / `/dist` publish dir from Vite era
 - Set `RESEND_API_KEY` and `RESEND_FROM` in production env
-- If keeping Nixpacks and pull fails on `ghcr.io/railwayapp/nixpacks`: `docker logout ghcr.io` on the VPS / refresh GitHub token

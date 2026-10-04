@@ -14,5 +14,4 @@ src
 public
 index.html
 vite.config.ts
-nginx.conf
 dist
