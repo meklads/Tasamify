@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "siteName": "Tasami Group",
+    "homeTitle": "Tasami Group | Three specialist companies and an AI arm",
+    "homeDescription": "Tasami Group brings together Graphics House, Bees Motion, and Turriva, with Tasami AI transforming company operations into working intelligent systems.",
+    "aiTitle": "Tasami AI | Intelligent systems for your operations",
+    "aiDescription": "We turn repetitive sales, support, and operations work into AI systems that run inside your company.",
+    "diagnosisTitle": "Free diagnosis + savings calculator | Tasami AI",
+    "diagnosisDescription": "Estimate savings and book a free diagnosis for your company operations with Tasami AI.",
+    "caseStudiesTitle": "Case studies | Tasami AI",
+    "caseStudiesDescription": "Systems we actually built: real-estate outreach automation, DotForLife content ops, and a cinematic YouTube AI pipeline.",
+    "insightsTitle": "Insights | Tasami Group",
+    "insightsDescription": "Direct articles on AI automation for sales and operations in the Saudi market.",
+    "companiesTitle": "Group companies | Tasami Group",
+    "companiesDescription": "Graphics House, Bees Motion, and Turriva under Tasami Group.",
+    "aboutTitle": "About | Tasami Group",
+    "aboutDescription": "Tasami Group: a parent brand for creative, marketing, spatial delivery, and AI transformation companies.",
+    "contactTitle": "Contact | Tasami Group",
+    "contactDescription": "Contact Tasami Group or book a free Tasami AI diagnosis.",
+    "privacyTitle": "Privacy | Tasami Group",
+    "privacyDescription": "Tasami Group privacy policy and PDPL commitment."
+  },
+  "nav": {
+    "home": "Home",
+    "ai": "Tasami AI",
+    "services": "Services",
+    "caseStudies": "Case studies",
+    "diagnosis": "Free diagnosis",
+    "insights": "Insights",
+    "companies": "Companies",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "book": "Book a free diagnosis",
+    "language": "العربية"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "fromPrice": "Starting from",
+    "sar": "SAR",
+    "weeks": "weeks",
+    "replay": "Replay",
+    "whatsapp": "WhatsApp",
+    "estimateNote": "This is an indicative estimate, not a quotation.",
+    "required": "Required",
+    "submit": "Submit request",
+    "sending": "Sending…",
+    "success": "We received your request. We will contact you shortly.",
+    "error": "Could not send. Try again or message us on WhatsApp.",
+    "backHome": "Back home"
+  },
+  "home": {
+    "kicker": "Tasami Group",
+    "title": "Three specialist companies. A fourth arm that turns operations into intelligent systems.",
+    "body": "Tasami Group brings together visual creativity, digital marketing, and spatial delivery — and Tasami AI as the commercial front for operational transformation.",
+    "ctaPrimary": "Explore Tasami AI",
+    "ctaSecondary": "Group companies",
+    "aiBandTitle": "Tasami AI",
+    "aiBandBody": "We turn communication, sales, and reporting into intelligent systems that cut repetitive work and show a clear result.",
+    "aiBandCta": "Book a free diagnosis",
+    "companiesTitle": "Group companies",
+    "companiesBody": "Each company operates independently. The group connects them when a project needs more than one specialty."
+  },
+  "ai": {
+    "heroTitle": "We turn your company's repetitive operations into intelligent systems that work like a full team",
+    "heroSubtitle": "From customer communication to sales and reporting, we build AI systems that actually run inside your company — not demo decks.",
+    "ctaPrimary": "Book a free diagnosis",
+    "ctaSecondary": "See how it works",
+    "flowLabel": "Lead journey for a real-estate company",
+    "flowSteps": {
+      "whatsapp": "WhatsApp message arrives",
+      "classify": "Agent classifies the request",
+      "crm": "Lead enters the CRM",
+      "meeting": "Meeting is booked"
+    },
+    "servicesTitle": "Specific solutions for specific problems",
+    "servicesBody": "We do not sell “AI” as an idea. We sell systems for the repetitive work slowing your team down.",
+    "methodTitle": "How we work",
+    "methodIntro": "A real sequence from diagnosis to support.",
+    "method": {
+      "diagnose": {
+        "title": "Diagnose",
+        "body": "We find where time and money leak in daily operations."
+      },
+      "prototype": {
+        "title": "Prototype",
+        "body": "We ship a small testable path within weeks."
+      },
+      "build": {
+        "title": "Build",
+        "body": "We connect the system to your tools and hand it over ready to run."
+      },
+      "support": {
+        "title": "Support",
+        "body": "We tune performance and train your team for daily use."
+      }
+    },
+    "casesTitle": "Systems we actually built",
+    "casesBody": "Examples from real work. No invented metrics.",
+    "trustTitle": "Why Tasami",
+    "trustYears": "{years}+ years of experience in the Saudi market",
+    "trustCompanies": "A group of {count} operating companies",
+    "privacyTitle": "Your data and privacy",
+    "privacyBody": "We follow the principles of Saudi Arabia’s Personal Data Protection Law (PDPL) for collection, use, and retention. Final legal wording is under review.",
+    "privacyTodo": "[Legal review for PDPL wording]"
+  },
+  "services": {
+    "sales-automation": {
+      "name": "Sales & outreach automation",
+      "summary": "Lead capture and follow-up that does not drop requests.",
+      "problem": "Sales teams lose hours every day on repetitive replies and manual follow-up, so opportunities cool before a meeting is set.",
+      "build": "We build a classify-and-follow path across WhatsApp, web, and email, connected to your CRM.",
+      "deliver": "Classification rules, controlled auto-replies, an opportunity board, and operational handover.",
+      "faqs": [
+        {
+          "q": "Does this replace the sales team?",
+          "a": "No. It removes repetitive work while decisions stay with your team."
+        },
+        {
+          "q": "Does it work with our WhatsApp?",
+          "a": "Yes. We design around your current channels where possible."
+        },
+        {
+          "q": "When do we see first results?",
+          "a": "Usually during the prototype weeks, then we expand after validation."
+        },
+        {
+          "q": "Who owns the data?",
+          "a": "You do. Data ownership and hosting are defined in the agreement."
+        }
+      ]
+    },
+    "ai-agents": {
+      "name": "AI agents for customer service",
+      "summary": "WhatsApp and website agents that reply, route, and book within your rules.",
+      "problem": "Slow replies outside office hours lose ready-to-buy customers.",
+      "build": "We design an agent in your brand voice that asks the right questions and escalates sensitive cases.",
+      "deliver": "An agent on selected channels, conversation logs, and clear escalation limits.",
+      "faqs": [
+        {
+          "q": "Will it answer everything?",
+          "a": "Only inside the approved knowledge and rules."
+        },
+        {
+          "q": "What about mistakes?",
+          "a": "We add human escalation and ongoing quality checks."
+        },
+        {
+          "q": "Does it support Arabic?",
+          "a": "Yes. Arabic is the primary operating language."
+        },
+        {
+          "q": "How long to launch?",
+          "a": "Depends on knowledge scope and channels; see the service card for guidance."
+        }
+      ]
+    },
+    "ops-automation": {
+      "name": "Internal operations automation",
+      "summary": "Reports, invoices, and documents that move without repeated manual copy-paste.",
+      "problem": "Teams rewrite the same reports and gather data from scattered files every week.",
+      "build": "We connect sources and automate recurring paths: reports, alerts, and routine documents.",
+      "deliver": "Documented workflows, scheduled reports, and clear reduction in manual hours.",
+      "faqs": [
+        {
+          "q": "Do we replace our systems?",
+          "a": "No. We prefer integrating with what you already use when safe and practical."
+        },
+        {
+          "q": "Is this for smaller companies?",
+          "a": "Yes when weekly repetitive tasks are clear."
+        },
+        {
+          "q": "How do we measure impact?",
+          "a": "By freed hours and on-time delivery accuracy."
+        },
+        {
+          "q": "Does it include invoices?",
+          "a": "Yes within the agreed operations scope."
+        }
+      ]
+    },
+    "ai-content": {
+      "name": "AI content & marketing",
+      "summary": "A content production line that keeps your brand voice and speeds publishing.",
+      "problem": "Content production is slow and irregular, so brand presence weakens without steady marketing output.",
+      "build": "We build a production and review system based on your brand guides — not random copy.",
+      "deliver": "Templates, approval flow, and publish-ready assets for selected channels.",
+      "faqs": [
+        {
+          "q": "Does it publish automatically?",
+          "a": "Only if you choose. Human approval can stay in the loop."
+        },
+        {
+          "q": "Is it fit for real estate?",
+          "a": "Yes. We often start with developer and project content."
+        },
+        {
+          "q": "Who owns the content?",
+          "a": "You do. We hand over assets and workflows."
+        },
+        {
+          "q": "Arabic only?",
+          "a": "Arabic is primary; English is available when needed."
+        }
+      ]
+    },
+    "interactive-ai": {
+      "name": "Interactive AI experiences",
+      "summary": "Interactive experiences that help buyers understand and decide faster.",
+      "problem": "Static decks do not answer buyer questions or convert interest into a next step.",
+      "build": "We design an interactive experience or smart model that explains the offer and captures interest.",
+      "deliver": "A published experience, a clear conversion path, and followable interest data.",
+      "faqs": [
+        {
+          "q": "Is this a 3D maquette?",
+          "a": "It may include a visual or interactive layer depending on the project."
+        },
+        {
+          "q": "Who is it for?",
+          "a": "Especially developers, exhibitions, and project launches."
+        },
+        {
+          "q": "Does it connect to sales?",
+          "a": "Yes. The goal is a ready follow-up opportunity for your team."
+        },
+        {
+          "q": "Where is it hosted?",
+          "a": "On your infrastructure or agreed hosting."
+        }
+      ]
+    },
+    "team-training": {
+      "name": "Team training on AI tools",
+      "summary": "Practical training so teams use tools daily — not as a trial.",
+      "problem": "AI tools get purchased and then unused because teams do not know where to start.",
+      "build": "We design workshops on your real tasks, with a short operating guide.",
+      "deliver": "Training sessions, a usage guide, and initial adoption signals.",
+      "faqs": [
+        {
+          "q": "Is training theoretical?",
+          "a": "No. We work on your actual tasks in-session."
+        },
+        {
+          "q": "How many people?",
+          "a": "We agree the count by target departments."
+        },
+        {
+          "q": "Is follow-up included?",
+          "a": "Follow-up can be added in the agreement."
+        },
+        {
+          "q": "For non-technical teams?",
+          "a": "Yes. We start from daily use, not technical complexity."
+        }
+      ]
+    }
+  },
+  "cases": {
+    "title": "Case studies",
+    "intro": "Three systems from real work. Metrics are completed after internal measurement is approved.",
+    "items": [
+      {
+        "id": "realestate-outreach",
+        "title": "Automated outreach for real-estate developers",
+        "body": "A capture, classify, and follow-up path built to help sales teams pick up real-estate demand faster without dropped messages.",
+        "metric": "[أدخل الرقم الحقيقي]"
+      },
+      {
+        "id": "dotforlife",
+        "title": "Content automation for DotForLife",
+        "body": "A content production line that helps the platform keep a steady publishing cadence with human review before release.",
+        "metric": "[أدخل الرقم الحقيقي]"
+      },
+      {
+        "id": "youtube-cinema",
+        "title": "Cinematic YouTube production line with AI",
+        "body": "A production system that speeds prep and early edit stages while final creative decisions stay with the team.",
+        "metric": "[أدخل الرقم الحقيقي]"
+      }
+    ]
+  },
+  "diagnosis": {
+    "title": "Estimate savings and book a free diagnosis",
+    "intro": "The calculator runs on your device only and does not send calculation data. The form below books the diagnosis session.",
+    "calculatorTitle": "Savings calculator",
+    "employees": "Number of employees",
+    "weeklyHours": "Repetitive task hours per week",
+    "hourlyCost": "Average hourly cost (SAR)",
+    "sector": "Sector",
+    "monthlySave": "Estimated monthly savings",
+    "yearlySave": "Estimated yearly savings",
+    "formTitle": "Book the free diagnosis",
+    "name": "Name",
+    "company": "Company",
+    "companySize": "Company size",
+    "phone": "Mobile / WhatsApp",
+    "challenge": "Challenge description",
+    "sectors": {
+      "realestate": "Real estate & development",
+      "retail": "Retail",
+      "healthcare": "Healthcare",
+      "other": "Other"
+    },
+    "sizes": {
+      "1-10": "1–10",
+      "11-50": "11–50",
+      "51-200": "51–200",
+      "200+": "200+"
+    }
+  },
+  "insights": {
+    "title": "Insights",
+    "intro": "Direct articles on work automation in Saudi and Gulf markets.",
+    "read": "Read article"
+  },
+  "companiesPage": {
+    "title": "Group companies",
+    "intro": "Three specialist companies under Tasami Group. Tasami AI is the fourth arm for operational transformation.",
+    "visit": "Visit site"
+  },
+  "about": {
+    "title": "About us",
+    "body": "Tasami Group is a parent brand for specialist companies: Graphics House for visual creativity, Bees Motion for marketing and creative production, and Turriva for spatial execution and physical delivery. Tasami AI adds operational transformation into intelligent systems.",
+    "body2": "We speak to executives and business owners in Saudi Arabia and the Gulf, often starting with developer and real-estate needs where communication, sales, and operations repeat every week."
+  },
+  "contact": {
+    "title": "Contact us",
+    "body": "Talk about a group project or book a Tasami AI diagnosis.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "book": "Book diagnosis"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "body": "We only collect data needed to respond to contact and diagnosis requests. We do not sell your data. We handle data under the principles of Saudi Arabia’s Personal Data Protection Law (PDPL).",
+    "body2": "For privacy questions, email us via the contact page. [Legal review for PDPL wording]"
+  },
+  "footer": {
+    "tagline": "A specialist group. An arm that turns operations into systems.",
+    "rights": "All rights reserved."
+  },
+  "servicePage": {
+    "problem": "The problem your team lives with",
+    "build": "What we build",
+    "deliver": "What you receive",
+    "faq": "FAQ"
+  }
+}

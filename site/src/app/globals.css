@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --petrol: #0f3d3e;
+  --mist: #edf1f2;
+  --ink: #16212b;
+  --slate: #5b6b76;
+  --amber: #e39a2d;
+  --line: #cbd5da;
+  --surface: #ffffff;
+  --font-size-body: 1.0625rem;
+  --measure: 38rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--mist);
+  color: var(--ink);
+  font-size: var(--font-size-body);
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--amber) 35%, white);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.container-page {
+  width: min(72rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.prose-measure {
+  max-width: var(--measure);
+}
+
+.section-y {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--slate);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.display {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 0;
+  color: var(--slate);
+  max-width: var(--measure);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.875rem;
+  padding-inline: 1.35rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: #1a1408;
+  border: 1px solid color-mix(in srgb, var(--amber) 70%, #8a5a10);
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--amber) 88%, #fff);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--petrol);
+  color: var(--petrol);
+}
+
+.btn-on-petrol {
+  background: var(--amber);
+  color: #1a1408;
+  border: 1px solid transparent;
+}
+
+.btn-ghost-on-petrol {
+  background: transparent;
+  color: #f4f7f7;
+  border: 1px solid color-mix(in srgb, #fff 35%, transparent);
+}
+
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  border: 0;
+}
+
+.flow-stage {
+  opacity: 0.35;
+}
+
+.flow-stage.is-active {
+  opacity: 1;
+}
+
+@keyframes flowPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.flow-dot.is-active {
+  animation: flowPulse 0.9s ease-in-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot.is-active {
+    animation: none;
+  }
+}

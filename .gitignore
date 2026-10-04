@@ -4,3 +4,7 @@ dist/
 *.log
 .env
 .env.local
+
+site/node_modules/
+site/.next/
+site/.env.local

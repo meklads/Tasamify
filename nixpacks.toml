@@ -2,7 +2,10 @@
 nixPkgs = ["nodejs_20"]
 
 [phases.install]
-cmds = ["npm install --legacy-peer-deps"]
+cmds = ["npm install --prefix site"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["npm run build --prefix site"]
+
+[start]
+cmd = "npm run start --prefix site"
