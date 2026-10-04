@@ -12,9 +12,9 @@
 
 ## Commercial config
 
-- Confirm WhatsApp number in `site/src/config/business.ts` (`whatsappE164` / `whatsappDisplay`)
+- Confirm WhatsApp display formatting stays correct in `site/src/config/business.ts`
 - Confirm diagnosis inbox email and Resend sender domain
-- Confirm service “from” prices and duration ranges in `business.ts`
+- Confirm service duration ranges in `business.ts`
 
 ## Deploy
 

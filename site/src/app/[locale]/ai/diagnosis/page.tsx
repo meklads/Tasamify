@@ -30,12 +30,14 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
   setRequestLocale(locale);
   const t = await getTranslations("diagnosis");
   const common = await getTranslations("common");
+  const ai = await getTranslations("ai");
 
   return (
     <section className="section-y">
       <div className="container-page">
         <h1 className="display text-4xl max-w-measure">{t("title")}</h1>
         <p className="lede mt-4">{t("intro")}</p>
+        <p className="lede mt-3 text-sm">{t("pricingNote")}</p>
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
           <SavingsCalculator
             locale={locale}
@@ -48,6 +50,8 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
               monthlySave: t("monthlySave"),
               yearlySave: t("yearlySave"),
               estimateNote: common("estimateNote"),
+              whatsappQuote: common("whatsappQuote"),
+              orBookForm: common("orBookForm"),
               sectors: t.raw("sectors") as Record<string, string>,
             }}
           />
@@ -61,6 +65,8 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
               companySize: t("companySize"),
               phone: t("phone"),
               challenge: t("challenge"),
+              budget: t("budget"),
+              budgetOptional: t("budgetOptional"),
               submit: common("submit"),
               sending: common("sending"),
               success: common("success"),
@@ -69,6 +75,10 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
               sizes: t.raw("sizes") as Record<string, string>,
             }}
           />
+        </div>
+        <div className="mt-12 max-w-measure">
+          <h2 className="display text-2xl">{ai("pricingTitle")}</h2>
+          <p className="lede mt-3">{t("pricingNote")}</p>
         </div>
       </div>
     </section>

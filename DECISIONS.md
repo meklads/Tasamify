@@ -20,8 +20,11 @@
 - Insights are MDX files under `site/content/insights/*.mdx`.
 - Design tokens follow the brief literally (Petrol / Mist / Ink / Slate / Amber / Line). No cream/terracotta or neon dark themes.
 - Fonts: Readex Pro (headings) + IBM Plex Sans Arabic (body) via `next/font/google`.
-- WhatsApp number placeholder: set in `business.ts` as `+966500000000` until the real number is confirmed.
-- Diagnosis pricing “from” values are editorial starting prices in SAR, editable in `business.ts`.
+- WhatsApp SSOT in `business.ts`: `whatsappIntl` `966502786513`, display `+966 50 278 6513`, link `https://wa.me/966502786513`, JSON-LD `telephone` `+966502786513`. No hardcoded numbers in components.
+- Predefined WhatsApp `?text=` messages live in `business.whatsappMessages` (general / service / calculator).
+- **No public service prices.** Commercial decision: pricing only after free diagnosis; UI shows estimated duration only; no JSON-LD `offers` / `price` / `priceRange`.
+- Optional diagnosis form field `budget` options and service durations editable in `business.ts`.
+- Diagnosis email includes `Source page:` from submitted `pathname`.
 - Keep company links to live sites; Turriva points to `https://www.turriva.com/en` (working entry).
 
 ## Deploy assumption

@@ -3,6 +3,8 @@ import { z } from "zod";
 import { Resend } from "resend";
 import { business } from "@/config/business";
 
+const budgetIds = business.diagnosis.budgetOptions.map((o) => o.id) as [string, ...string[]];
+
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
   company: z.string().trim().min(2).max(160),
@@ -10,8 +12,10 @@ const schema = z.object({
   companySize: z.string().trim().min(1).max(40),
   phone: z.string().trim().min(8).max(40),
   challenge: z.string().trim().min(10).max(4000),
+  budget: z.enum(budgetIds).or(z.literal("")).optional(),
+  pathname: z.string().trim().max(300).optional(),
   locale: z.enum(["ar", "en"]).optional(),
-  website: z.string().optional(), // honeypot
+  website: z.string().optional(),
 });
 
 const hits = new Map<string, { count: number; reset: number }>();
@@ -26,6 +30,13 @@ function rateLimit(ip: string): boolean {
   if (row.count >= 5) return false;
   row.count += 1;
   return true;
+}
+
+function budgetLabel(id: string | undefined, locale: string): string {
+  if (!id) return "—";
+  const row = business.diagnosis.budgetOptions.find((o) => o.id === id);
+  if (!row) return id;
+  return locale === "ar" ? row.ar : row.en;
 }
 
 export async function POST(request: Request) {
@@ -50,13 +61,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const { name, company, sector, companySize, phone, challenge, locale } = parsed.data;
+  const { name, company, sector, companySize, phone, challenge, budget, pathname, locale } = parsed.data;
   const subject = `[Tasami AI Diagnosis] ${company} — ${name}`;
   const body = [
+    `Source page: ${pathname || "unknown"}`,
     `Name: ${name}`,
     `Company: ${company}`,
     `Sector: ${sector}`,
     `Size: ${companySize}`,
+    `Budget: ${budgetLabel(budget, locale ?? "ar")}`,
     `Phone: ${phone}`,
     `Locale: ${locale ?? "ar"}`,
     "",

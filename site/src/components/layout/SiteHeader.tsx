@@ -1,9 +1,10 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { business } from "@/config/business";
+import { business, whatsappHref } from "@/config/business";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
+  const common = await getTranslations("common");
   const locale = await getLocale();
   const other = locale === "ar" ? "en" : "ar";
 
@@ -19,7 +20,7 @@ export async function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line bg-mist/95 backdrop-blur">
       <div className="container-page flex flex-wrap items-center gap-3 py-3 md:gap-5">
         <Link href="/" className="font-display text-lg font-semibold text-petrol no-underline">
-          {business.brand.groupNameAr && locale === "ar" ? business.brand.groupNameAr : business.brand.groupName}
+          {locale === "ar" ? business.brand.groupNameAr : business.brand.groupName}
         </Link>
         <nav className="ms-auto flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium text-ink">
           {links.map((link) => (
@@ -27,6 +28,14 @@ export async function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={whatsappHref(business.whatsappMessages.general)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline text-slate hover:text-petrol"
+          >
+            {common("whatsapp")}
+          </a>
           <Link href="/" locale={other} className="no-underline text-slate hover:text-petrol">
             {t("language")}
           </Link>

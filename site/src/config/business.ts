@@ -9,9 +9,16 @@ export const business = {
   },
   contact: {
     email: "hello@tasamify.com",
-    whatsappE164: "+966500000000",
-    whatsappDisplay: "+966 50 000 0000",
+    whatsappIntl: "966502786513",
+    whatsappDisplay: "+966 50 278 6513",
+    whatsappLink: "https://wa.me/966502786513",
+    telephone: "+966502786513",
     diagnosisInbox: "hello@tasamify.com",
+  },
+  whatsappMessages: {
+    general: "السلام عليكم، أرغب بحجز تشخيص مجاني لشركتي.",
+    calculator: "السلام عليكم، استخدمت حاسبة التوفير وأرغب بمناقشة النتيجة.",
+    service: (serviceName: string) => `السلام عليكم، أرغب بالاستفسار عن خدمة ${serviceName}.`,
   },
   trust: {
     yearsExperience: 15,
@@ -22,14 +29,39 @@ export const business = {
     defaultWeeklyHours: 20,
     defaultEmployees: 8,
     automationCaptureRate: 0.45,
+    budgetOptions: [
+      { id: "under-25", ar: "أقل من 25 ألف ريال", en: "Under 25k SAR" },
+      { id: "25-75", ar: "من 25 إلى 75 ألف ريال", en: "25k to 75k SAR" },
+      { id: "75-200", ar: "من 75 إلى 200 ألف ريال", en: "75k to 200k SAR" },
+      { id: "over-200", ar: "أكثر من 200 ألف ريال", en: "Over 200k SAR" },
+      { id: "undecided", ar: "لم أحدد بعد", en: "Not decided yet" },
+    ] as const,
   },
   services: {
-    "sales-automation": { fromPriceSar: 18000, durationWeeks: "4–8" },
-    "ai-agents": { fromPriceSar: 22000, durationWeeks: "5–10" },
-    "ops-automation": { fromPriceSar: 16000, durationWeeks: "4–8" },
-    "ai-content": { fromPriceSar: 12000, durationWeeks: "3–6" },
-    "interactive-ai": { fromPriceSar: 25000, durationWeeks: "6–12" },
-    "team-training": { fromPriceSar: 8000, durationWeeks: "2–4" },
+    "sales-automation": {
+      durationAr: "من 4 إلى 8 أسابيع",
+      durationEn: "4 to 8 weeks",
+    },
+    "ai-agents": {
+      durationAr: "من 5 إلى 10 أسابيع",
+      durationEn: "5 to 10 weeks",
+    },
+    "ops-automation": {
+      durationAr: "من 4 إلى 8 أسابيع",
+      durationEn: "4 to 8 weeks",
+    },
+    "ai-content": {
+      durationAr: "من 3 إلى 6 أسابيع",
+      durationEn: "3 to 6 weeks",
+    },
+    "interactive-ai": {
+      durationAr: "من 6 إلى 12 أسبوعاً",
+      durationEn: "6 to 12 weeks",
+    },
+    "team-training": {
+      durationAr: "من 2 إلى 4 أسابيع",
+      durationEn: "2 to 4 weeks",
+    },
   },
   companies: [
     {
@@ -70,12 +102,10 @@ export const business = {
 export type ServiceSlug = (typeof business.serviceSlugs)[number];
 
 export function whatsappHref(message: string): string {
-  const digits = business.contact.whatsappE164.replace(/\D/g, "");
-  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
+  return `${business.contact.whatsappLink}?text=${encodeURIComponent(message)}`;
 }
 
-export function whatsappDefaultMessage(locale: string): string {
-  return locale === "ar"
-    ? `مرحباً، أرغب بحجز تشخيص مجاني مع ${business.brand.aiNameAr}.`
-    : `Hello, I would like to book a free diagnosis with ${business.brand.aiName}.`;
+export function serviceDuration(slug: ServiceSlug, locale: string): string {
+  const row = business.services[slug];
+  return locale === "ar" ? row.durationAr : row.durationEn;
 }

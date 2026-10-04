@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { business } from "@/config/business";
 
 type Labels = {
   formTitle: string;
@@ -10,6 +11,8 @@ type Labels = {
   companySize: string;
   phone: string;
   challenge: string;
+  budget: string;
+  budgetOptional: string;
   submit: string;
   sending: string;
   success: string;
@@ -30,7 +33,11 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
       const res = await fetch("/api/diagnosis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, locale }),
+        body: JSON.stringify({
+          ...payload,
+          locale,
+          pathname: typeof window !== "undefined" ? window.location.pathname : "",
+        }),
       });
       setStatus(res.ok ? "ok" : "err");
     } catch {
@@ -43,9 +50,8 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
   }
 
   return (
-    <form onSubmit={onSubmit} className="surface-card grid gap-4 p-5 md:p-7">
+    <form id="diagnosis-form" onSubmit={onSubmit} className="surface-card grid gap-4 p-5 md:p-7">
       <h2 className="display text-2xl m-0">{labels.formTitle}</h2>
-      {/* honeypot */}
       <input
         type="text"
         name="website"
@@ -84,6 +90,19 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
           </select>
         </label>
       </div>
+      <label className="grid gap-1 text-sm">
+        <span>
+          {labels.budget} <span className="text-slate">({labels.budgetOptional})</span>
+        </span>
+        <select name="budget" className="min-h-11 rounded-lg border border-line bg-mist px-3" defaultValue="">
+          <option value="">—</option>
+          {business.diagnosis.budgetOptions.map((opt) => (
+            <option key={opt.id} value={opt.id}>
+              {locale === "ar" ? opt.ar : opt.en}
+            </option>
+          ))}
+        </select>
+      </label>
       <label className="grid gap-1 text-sm">
         <span>{labels.phone}</span>
         <input required name="phone" type="tel" className="min-h-11 rounded-lg border border-line bg-mist px-3" dir="ltr" />

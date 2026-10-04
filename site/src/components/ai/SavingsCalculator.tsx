@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { business } from "@/config/business";
-import { formatSar } from "@/lib/utils";
+import { business, whatsappHref } from "@/config/business";
+import { formatEstimate } from "@/lib/utils";
 
 export function SavingsCalculator({
   locale,
@@ -18,6 +18,8 @@ export function SavingsCalculator({
     monthlySave: string;
     yearlySave: string;
     estimateNote: string;
+    whatsappQuote: string;
+    orBookForm: string;
     sectors: Record<string, string>;
   };
 }) {
@@ -85,14 +87,27 @@ export function SavingsCalculator({
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl border border-line bg-mist p-4">
           <p className="eyebrow m-0">{labels.monthlySave}</p>
-          <p className="display mt-2 text-3xl text-petrol">{formatSar(monthly, locale)}</p>
+          <p className="display mt-2 text-3xl text-petrol">{formatEstimate(monthly, locale)}</p>
         </div>
         <div className="rounded-xl border border-line bg-mist p-4">
           <p className="eyebrow m-0">{labels.yearlySave}</p>
-          <p className="display mt-2 text-3xl text-petrol">{formatSar(yearly, locale)}</p>
+          <p className="display mt-2 text-3xl text-petrol">{formatEstimate(yearly, locale)}</p>
         </div>
       </div>
       <p className="mt-4 text-sm text-slate m-0">{labels.estimateNote}</p>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <a
+          href={whatsappHref(business.whatsappMessages.calculator)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
+          {labels.whatsappQuote}
+        </a>
+        <a href="#diagnosis-form" className="btn btn-secondary">
+          {labels.orBookForm}
+        </a>
+      </div>
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { business } from "@/config/business";
+import { business, whatsappHref } from "@/config/business";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
   const nav = await getTranslations("nav");
+  const common = await getTranslations("common");
 
   return (
     <footer className="border-t border-line bg-white">
@@ -12,6 +13,14 @@ export async function SiteFooter() {
         <div>
           <p className="font-display text-xl font-semibold text-petrol m-0">{business.brand.groupName}</p>
           <p className="lede mt-3">{t("tagline")}</p>
+          <a
+            href={whatsappHref(business.whatsappMessages.general)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block font-semibold text-petrol"
+          >
+            {common("whatsapp")}: {business.contact.whatsappDisplay}
+          </a>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
           <Link href="/ai">{nav("ai")}</Link>

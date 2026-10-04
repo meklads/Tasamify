@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { business, type ServiceSlug } from "@/config/business";
+import { business, serviceDuration, whatsappHref, type ServiceSlug } from "@/config/business";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { formatSar } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -43,8 +42,8 @@ export default async function ServicePage({ params }: Props) {
   const common = await getTranslations("common");
   const ai = await getTranslations("ai");
   const page = await getTranslations("servicePage");
-  const cfg = business.services[slug as ServiceSlug];
   const faqs = services.raw(`${slug}.faqs`) as Array<{ q: string; a: string }>;
+  const serviceName = services(`${slug}.name`);
 
   return (
     <>
@@ -53,9 +52,13 @@ export default async function ServicePage({ params }: Props) {
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: services(`${slug}.name`),
+            name: serviceName,
             description: services(`${slug}.summary`),
-            provider: { "@type": "Organization", name: business.brand.aiName },
+            provider: {
+              "@type": "Organization",
+              name: business.brand.aiName,
+              telephone: business.contact.telephone,
+            },
             areaServed: "SA",
           },
           {
@@ -72,7 +75,7 @@ export default async function ServicePage({ params }: Props) {
       <article className="section-y">
         <div className="container-page max-w-3xl">
           <p className="eyebrow">{business.brand.aiName}</p>
-          <h1 className="display mt-3 text-4xl">{services(`${slug}.name`)}</h1>
+          <h1 className="display mt-3 text-4xl">{serviceName}</h1>
           <p className="lede mt-4">{services(`${slug}.summary`)}</p>
 
           <h2 className="display mt-12 text-2xl">{page("problem")}</h2>
@@ -84,9 +87,8 @@ export default async function ServicePage({ params }: Props) {
           <h2 className="display mt-10 text-2xl">{page("deliver")}</h2>
           <p className="lede mt-3">{services(`${slug}.deliver`)}</p>
 
-          <p className="mt-10 text-lg font-semibold text-petrol m-0">
-            {common("fromPrice")} {formatSar(cfg.fromPriceSar, locale)} · {cfg.durationWeeks} {common("weeks")}
-          </p>
+          <h2 className="display mt-10 text-2xl">{page("duration")}</h2>
+          <p className="lede mt-3">{serviceDuration(slug as ServiceSlug, locale)}</p>
 
           <h2 className="display mt-12 text-2xl">{page("faq")}</h2>
           <dl className="mt-6 grid gap-5">
@@ -98,9 +100,19 @@ export default async function ServicePage({ params }: Props) {
             ))}
           </dl>
 
-          <Link href="/ai/diagnosis" className="btn btn-primary mt-10">
-            {ai("ctaPrimary")}
-          </Link>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href="/ai/diagnosis" className="btn btn-primary">
+              {ai("ctaPrimary")}
+            </Link>
+            <a
+              href={whatsappHref(business.whatsappMessages.service(serviceName))}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              {common("whatsapp")}
+            </a>
+          </div>
         </div>
       </article>
     </>

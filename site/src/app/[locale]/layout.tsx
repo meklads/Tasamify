@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { business, whatsappDefaultMessage } from "@/config/business";
+import { business } from "@/config/business";
 import "../globals.css";
 
 const readex = Readex_Pro({
@@ -64,6 +64,7 @@ export default async function LocaleLayout({
               alternateName: business.brand.groupNameAr,
               url: business.brand.domain,
               email: business.contact.email,
+              telephone: business.contact.telephone,
               subOrganization: business.companies.map((c) => ({
                 "@type": "Organization",
                 name: c.nameEn,
@@ -74,7 +75,7 @@ export default async function LocaleLayout({
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
-          <WhatsAppFloat label={t("whatsapp")} message={whatsappDefaultMessage(locale)} />
+          <WhatsAppFloat label={t("whatsapp")} message={business.whatsappMessages.general} />
         </NextIntlClientProvider>
       </body>
     </html>

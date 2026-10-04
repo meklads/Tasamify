@@ -32,7 +32,7 @@ Without `RESEND_API_KEY`, `/api/diagnosis` still validates and logs the payload 
 
 ## Edit commercial values
 
-All prices, durations, WhatsApp number, and company links: `src/config/business.ts`
+Durations, WhatsApp number, budget options, and company links: `src/config/business.ts` (no public service prices)
 
 All UI copy: `messages/ar.json` and `messages/en.json`
 

@@ -36,8 +36,6 @@
   },
   "common": {
     "learnMore": "Learn more",
-    "fromPrice": "Starting from",
-    "sar": "SAR",
     "weeks": "weeks",
     "replay": "Replay",
     "whatsapp": "WhatsApp",
@@ -47,7 +45,10 @@
     "sending": "Sending…",
     "success": "We received your request. We will contact you shortly.",
     "error": "Could not send. Try again or message us on WhatsApp.",
-    "backHome": "Back home"
+    "backHome": "Back home",
+    "estimatedDuration": "Estimated duration",
+    "whatsappQuote": "Get a detailed proposal after the free diagnosis",
+    "orBookForm": "Or book via the form"
   },
   "home": {
     "kicker": "Tasami Group",
@@ -102,7 +103,9 @@
     "trustCompanies": "A group of {count} operating companies",
     "privacyTitle": "Your data and privacy",
     "privacyBody": "We follow the principles of Saudi Arabia’s Personal Data Protection Law (PDPL) for collection, use, and retention. Final legal wording is under review.",
-    "privacyTodo": "[Legal review for PDPL wording]"
+    "privacyTodo": "[Legal review for PDPL wording]",
+    "pricingTitle": "How we set the fee",
+    "pricingBody": "We do not sell fixed packages, because every company has its own operations. The fee depends on project scope, the systems we connect, and daily volume. After the free diagnosis you receive a written proposal with a fixed scope and fee before any work starts."
   },
   "services": {
     "sales-automation": {
@@ -127,6 +130,10 @@
         {
           "q": "Who owns the data?",
           "a": "You do. Data ownership and hosting are defined in the agreement."
+        },
+        {
+          "q": "How much does this service cost?",
+          "a": "Cost depends on project scope and your current systems. We define it with you in a free diagnosis meeting, then you receive a written proposal with a fixed fee."
         }
       ]
     },
@@ -152,6 +159,10 @@
         {
           "q": "How long to launch?",
           "a": "Depends on knowledge scope and channels; see the service card for guidance."
+        },
+        {
+          "q": "How much does this service cost?",
+          "a": "Cost depends on project scope and your current systems. We define it with you in a free diagnosis meeting, then you receive a written proposal with a fixed fee."
         }
       ]
     },
@@ -177,6 +188,10 @@
         {
           "q": "Does it include invoices?",
           "a": "Yes within the agreed operations scope."
+        },
+        {
+          "q": "How much does this service cost?",
+          "a": "Cost depends on project scope and your current systems. We define it with you in a free diagnosis meeting, then you receive a written proposal with a fixed fee."
         }
       ]
     },
@@ -202,6 +217,10 @@
         {
           "q": "Arabic only?",
           "a": "Arabic is primary; English is available when needed."
+        },
+        {
+          "q": "How much does this service cost?",
+          "a": "Cost depends on project scope and your current systems. We define it with you in a free diagnosis meeting, then you receive a written proposal with a fixed fee."
         }
       ]
     },
@@ -227,6 +246,10 @@
         {
           "q": "Where is it hosted?",
           "a": "On your infrastructure or agreed hosting."
+        },
+        {
+          "q": "How much does this service cost?",
+          "a": "Cost depends on project scope and your current systems. We define it with you in a free diagnosis meeting, then you receive a written proposal with a fixed fee."
         }
       ]
     },
@@ -252,6 +275,10 @@
         {
           "q": "For non-technical teams?",
           "a": "Yes. We start from daily use, not technical complexity."
+        },
+        {
+          "q": "How much does this service cost?",
+          "a": "Cost depends on project scope and your current systems. We define it with you in a free diagnosis meeting, then you receive a written proposal with a fixed fee."
         }
       ]
     }
@@ -286,7 +313,7 @@
     "calculatorTitle": "Savings calculator",
     "employees": "Number of employees",
     "weeklyHours": "Repetitive task hours per week",
-    "hourlyCost": "Average hourly cost (SAR)",
+    "hourlyCost": "Average hourly cost",
     "sector": "Sector",
     "monthlySave": "Estimated monthly savings",
     "yearlySave": "Estimated yearly savings",
@@ -307,7 +334,10 @@
       "11-50": "11–50",
       "51-200": "51–200",
       "200+": "200+"
-    }
+    },
+    "pricingNote": "No fixed packages: after diagnosis you receive a written proposal with fixed scope and fee before work starts.",
+    "budget": "Estimated budget",
+    "budgetOptional": "Optional"
   },
   "insights": {
     "title": "Insights",
@@ -329,7 +359,8 @@
     "body": "Talk about a group project or book a Tasami AI diagnosis.",
     "email": "Email",
     "whatsapp": "WhatsApp",
-    "book": "Book diagnosis"
+    "book": "Book diagnosis",
+    "phone": "Phone"
   },
   "privacy": {
     "title": "Privacy policy",
@@ -344,6 +375,7 @@
     "problem": "The problem your team lives with",
     "build": "What we build",
     "deliver": "What you receive",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "duration": "Estimated duration"
   }
 }

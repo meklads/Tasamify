@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { business, type ServiceSlug } from "@/config/business";
+import { business, serviceDuration, type ServiceSlug } from "@/config/business";
 import { HeroFlow } from "@/components/ai/HeroFlow";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { formatSar } from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -81,22 +80,18 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
           <h2 className="display text-3xl">{t("servicesTitle")}</h2>
           <p className="lede mt-3">{t("servicesBody")}</p>
           <ul className="mt-10 grid gap-8 p-0 md:grid-cols-2">
-            {business.serviceSlugs.map((slug) => {
-              const price = business.services[slug as ServiceSlug].fromPriceSar;
-              return (
-                <li key={slug} className="list-none border-b border-line pb-6">
-                  <h3 className="display text-2xl m-0">{services(`${slug}.name`)}</h3>
-                  <p className="mt-2 text-slate m-0">{services(`${slug}.summary`)}</p>
-                  <p className="mt-3 text-sm text-ink m-0">
-                    {common("fromPrice")} {formatSar(price, locale)} · {business.services[slug].durationWeeks}{" "}
-                    {common("weeks")}
-                  </p>
-                  <Link href={`/ai/services/${slug}`} className="mt-4 inline-block font-semibold text-petrol">
-                    {common("learnMore")}
-                  </Link>
-                </li>
-              );
-            })}
+            {business.serviceSlugs.map((slug) => (
+              <li key={slug} className="list-none border-b border-line pb-6">
+                <h3 className="display text-2xl m-0">{services(`${slug}.name`)}</h3>
+                <p className="mt-2 text-slate m-0">{services(`${slug}.summary`)}</p>
+                <p className="mt-3 text-sm text-ink m-0">
+                  {common("estimatedDuration")}: {serviceDuration(slug as ServiceSlug, locale)}
+                </p>
+                <Link href={`/ai/services/${slug}`} className="mt-4 inline-block font-semibold text-petrol">
+                  {common("learnMore")}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -146,6 +141,13 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
           <h3 className="display mt-10 text-2xl">{t("privacyTitle")}</h3>
           <p className="lede mt-3">{t("privacyBody")}</p>
           <p className="mt-2 text-sm text-slate">{t("privacyTodo")}</p>
+        </div>
+      </section>
+
+      <section className="section-y bg-white border-t border-line">
+        <div className="container-page max-w-3xl">
+          <h2 className="display text-3xl">{t("pricingTitle")}</h2>
+          <p className="lede mt-4">{t("pricingBody")}</p>
           <Link href="/ai/diagnosis" className="btn btn-primary mt-8">
             {t("ctaPrimary")}
           </Link>
