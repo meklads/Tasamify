@@ -3,9 +3,13 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "npm install --prefix site --include=dev",
     "dev": "npm run dev --prefix site",
     "build": "npm run build --prefix site",
     "start": "npm run start --prefix site",
     "lint": "npm run lint --prefix site"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

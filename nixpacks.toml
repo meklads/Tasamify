@@ -1,9 +1,9 @@
-# Fallback if Coolify stays on Nixpacks. Prefer root Dockerfile (Port 3000).
+# Coolify currently runs Nixpacks (not Dockerfile). Install must populate site/node_modules.
 [phases.setup]
 nixPkgs = ["nodejs_20", "npm-10_x"]
 
 [phases.install]
-cmds = ["npm ci --prefix site"]
+cmds = ["npm install --prefix site --include=dev"]
 
 [phases.build]
 cmds = ["npm run build --prefix site"]
