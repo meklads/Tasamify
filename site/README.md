@@ -44,6 +44,13 @@ npm run build
 npm run start
 ```
 
+## Coolify
+
+1. Build Pack: **Dockerfile** (root `Dockerfile`)
+2. Ports Exposes: **3000**
+3. Disable “Is it a static site?” (legacy Vite/nginx)
+4. Env: `RESEND_API_KEY`, `RESEND_FROM` (optional locally)
+
 ## Notes
 
 - The previous Vite SPA remains in the repo root for reference; production deploy builds from `site/`.

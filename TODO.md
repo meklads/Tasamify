@@ -18,5 +18,6 @@
 
 ## Deploy
 
-- Point Coolify build to `site/` (root `nixpacks.toml` updated)
+- In Coolify: Build Pack = **Dockerfile**, Port Exposes = **3000**, turn off “Is it a static site?”
 - Set `RESEND_API_KEY` and `RESEND_FROM` in production env
+- If keeping Nixpacks and pull fails on `ghcr.io/railwayapp/nixpacks`: `docker logout ghcr.io` on the VPS / refresh GitHub token
