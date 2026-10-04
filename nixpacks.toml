@@ -1,4 +1,5 @@
-# Coolify currently runs Nixpacks (not Dockerfile). Install must populate site/node_modules.
+# Coolify UI often overrides install to plain `npm install` (root has no deps).
+# Build script itself installs site/ so `next` is always available.
 [phases.setup]
 nixPkgs = ["nodejs_20", "npm-10_x"]
 
@@ -6,7 +7,7 @@ nixPkgs = ["nodejs_20", "npm-10_x"]
 cmds = ["npm install --prefix site --include=dev"]
 
 [phases.build]
-cmds = ["npm run build --prefix site"]
+cmds = ["npm run build"]
 
 [start]
 cmd = "npm run start --prefix site"
