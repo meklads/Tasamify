@@ -68,7 +68,7 @@ export default async function LocaleLayout({
               subOrganization: business.companies.map((c) => ({
                 "@type": "Organization",
                 name: c.nameEn,
-                url: c.href,
+                url: c.href.startsWith("/") ? `${business.brand.domain}${c.href}` : c.href,
               })),
             }}
           />

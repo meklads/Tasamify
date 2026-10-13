@@ -6,12 +6,10 @@ export function GET() {
 > Parent group for specialist companies and Tasami AI.
 
 ## Companies
-- Graphics House: ${business.companies[0].href}
-- Bees Motion: ${business.companies[1].href}
-- Turriva: ${business.companies[2].href}
+${business.companies.map((c) => `- ${c.nameEn}: ${c.href.startsWith("/") ? `${business.brand.domain}/ar${c.href}` : c.href}`).join("\n")}
 
 ## Tasami AI
-Commercial arm for turning repetitive company operations into working intelligent systems.
+AI transformation for companies: from the first assessment to a team that uses it every day.
 Primary CTA: free diagnosis at ${business.brand.domain}/ar/ai/diagnosis
 
 ## Services

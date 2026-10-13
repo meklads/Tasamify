@@ -30,6 +30,11 @@ export async function generateMetadata({
       locale: locale === "ar" ? "ar_SA" : "en_US",
       type: "website",
     },
+    twitter: {
+      card: "summary",
+      title: t("homeTitle"),
+      description: t("homeDescription"),
+    },
   };
 }
 
@@ -86,11 +91,26 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <ul className="mt-10 grid gap-6 p-0 md:grid-cols-3">
             {business.companies.map((company) => (
               <li key={company.id} className="list-none border-s-2 border-petrol ps-4">
+                <p className="eyebrow m-0">
+                  {company.id === "tasami-ai"
+                    ? isAr
+                      ? "تسامي AI · تحويل"
+                      : "Tasami AI · TRANSFORM"
+                    : isAr
+                      ? company.verbAr
+                      : company.verbEn}
+                </p>
                 <h3 className="display text-xl m-0">{isAr ? company.nameAr : company.nameEn}</h3>
                 <p className="mt-2 text-slate m-0">{isAr ? company.roleAr : company.roleEn}</p>
-                <a href={company.href} className="mt-4 inline-block text-petrol font-semibold" target="_blank" rel="noopener noreferrer">
-                  {company.href.replace(/^https?:\/\//, "")}
-                </a>
+                {company.href.startsWith("/") ? (
+                  <Link href={company.href} className="mt-4 inline-block text-petrol font-semibold">
+                    {isAr ? "تواصل معنا" : "Talk to us"}
+                  </Link>
+                ) : (
+                  <a href={company.href} className="mt-4 inline-block text-petrol font-semibold" target="_blank" rel="noopener noreferrer">
+                    {company.href.replace(/^https?:\/\//, "")}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
