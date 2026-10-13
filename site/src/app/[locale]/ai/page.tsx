@@ -56,23 +56,24 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
         }}
       />
       <section className="page-hero">
-        <div className="container-page grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
-          <div>
-            <p className="hero-kicker mb-4">{business.brand.aiName}</p>
-            <h1 className="page-hero-title m-0 max-w-none">{t("heroTitle")}</h1>
-            <p className="page-hero-lede">{t("heroSubtitle")}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/ai/diagnosis" className="btn btn-on-petrol">
-                {t("ctaPrimary")}
-              </Link>
-              <a href="#how-it-works" className="btn btn-ghost-on-petrol">
-                {t("ctaSecondary")}
-              </a>
-            </div>
+        <div className="container-page">
+          <p className="hero-kicker mb-4">{locale === "ar" ? business.brand.aiNameAr : business.brand.aiName}</p>
+          <h1 className="page-hero-title m-0 max-w-none">{t("heroTitle")}</h1>
+          <p className="page-hero-lede">{t("heroSubtitle")}</p>
+          <p className="page-hero-lede mt-3">{t("audience")}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/ai/diagnosis" className="btn btn-on-petrol">
+              {t("ctaPrimary")}
+            </Link>
+            <a href="#how-it-works" className="btn btn-ghost-on-petrol">
+              {t("ctaSecondary")}
+            </a>
           </div>
-          <div id="how-it-works">
-            <HeroFlow label={t("flowLabel")} steps={steps} replayLabel={common("replay")} />
-          </div>
+        </div>
+      </section>
+      <section id="how-it-works" className="section-y">
+        <div className="container-page">
+          <HeroFlow label={t("flowLabel")} steps={steps} replayLabel={common("replay")} />
         </div>
       </section>
 
@@ -111,6 +112,7 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
                 <p className="method-num" dir="ltr">{`0${index + 1}`}</p>
                 <h3 className="method-title">{t(`method.${key}.title`)}</h3>
                 <p className="method-body">{t(`method.${key}.body`)}</p>
+                <p className="method-deliver">{t(`method.${key}.deliver`)}</p>
               </li>
             ))}
           </ol>
@@ -145,7 +147,6 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
           </ul>
           <h3 className="display mt-10 text-2xl">{t("privacyTitle")}</h3>
           <p className="lede mt-3">{t("privacyBody")}</p>
-          <p className="mt-2 text-sm text-slate">{t("privacyTodo")}</p>
         </div>
       </section>
 

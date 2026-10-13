@@ -33,10 +33,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <PageHero kicker={t("kicker")} title={t("title")} lede={t("body")} />
+      <PageHero kicker={t("kicker")} title={t("title")} lede={t("routeQuestion")} />
       <section className="section-y">
         <div className="container-page grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
+            <p className="prose-hold mb-8">{t("body")}</p>
             <ul className="mt-0 grid gap-6 p-0">
               <li className="list-none">
                 <span className="eyebrow">{t("email")}</span>

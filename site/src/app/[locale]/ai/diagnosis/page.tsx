@@ -36,9 +36,10 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
     <>
     <section className="page-hero">
       <div className="container-page">
-        <p className="hero-kicker mb-4">{business.brand.aiName}</p>
+        <p className="hero-kicker mb-4">{locale === "ar" ? business.brand.aiNameAr : business.brand.aiName}</p>
         <h1 className="page-hero-title">{t("title")}</h1>
         <p className="page-hero-lede">{t("intro")}</p>
+        <p className="page-hero-lede mt-3">{t("deliverBody")}</p>
         <p className="page-hero-lede mt-3 text-sm">{t("pricingNote")}</p>
       </div>
     </section>

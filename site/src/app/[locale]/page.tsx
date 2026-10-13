@@ -64,7 +64,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <h1 className="hero-subhead">{t("title")}</h1>
           <p className="hero-support mx-auto">{t("body")}</p>
           <div className="hero-actions">
-            <Link href="/ai" className="btn hero-cta--solid">
+            <Link href="/ai/diagnosis" className="btn hero-cta--solid">
               {t("ctaPrimary")}
             </Link>
             <Link href="/companies" className="btn hero-cta--ghost">
@@ -79,6 +79,34 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </a>
             ))}
           </nav>
+        </div>
+      </section>
+
+      <section className="band-navy section-y">
+        <div className="container-page">
+          <p className="hero-kicker mb-4">{t("aiKicker")}</p>
+          <h2 className="section-title m-0">{t("aiBandTitle")}</h2>
+          <p className="mt-5 max-w-3xl text-[16px] md:text-[18px] leading-[1.9] font-light m-0" style={{ color: "rgba(246,243,236,0.68)" }}>
+            {t("aiBandBody")}
+          </p>
+          <ol className="method-grid mt-12">
+            {methodKeys.map((key, index) => (
+              <li key={key}>
+                <p className="method-num" dir="ltr">{`0${index + 1}`}</p>
+                <h3 className="method-title">{ai(`method.${key}.title`)}</h3>
+                <p className="method-body">{ai(`method.${key}.body`)}</p>
+                <p className="method-deliver">{ai(`method.${key}.deliver`)}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="method-actions">
+            <Link href="/ai/diagnosis" className="btn btn-on-petrol">
+              {t("aiBandCta")}
+            </Link>
+            <Link href="/ai" className="btn btn-ghost-on-petrol">
+              {t("ctaExplore")}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -109,35 +137,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <section className="band-navy section-y">
         <div className="container-page">
-          <p className="hero-kicker mb-4">{t("aiKicker")}</p>
-          <h2 className="section-title m-0 text-[#f6f3ec]">{t("aiBandTitle")}</h2>
-          <p className="mt-5 max-w-3xl text-[16px] md:text-[18px] leading-[1.9] font-light m-0" style={{ color: "rgba(246,243,236,0.68)" }}>
-            {t("aiBandBody")}
-          </p>
-          <ol className="method-grid mt-12">
-            {methodKeys.map((key, index) => (
-              <li key={key}>
-                <p className="method-num" dir="ltr">{`0${index + 1}`}</p>
-                <h3 className="method-title">{ai(`method.${key}.title`)}</h3>
-                <p className="method-body">{ai(`method.${key}.body`)}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/ai/diagnosis" className="btn btn-on-petrol">
-              {t("aiBandCta")}
-            </Link>
-            <Link href="/ai" className="btn btn-ghost-on-petrol">
-              {t("ctaPrimary")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="band-navy pb-20 md:pb-28">
-        <div className="container-page">
           <p className="hero-kicker mb-4">{t("umbrellaKicker")}</p>
-          <h2 className="section-title m-0 mb-5 text-[#f6f3ec]">{t("umbrellaTitle")}</h2>
+          <h2 className="section-title m-0 mb-5">{t("umbrellaTitle")}</h2>
           <p className="max-w-3xl mb-10 md:mb-14 text-[16px] md:text-[18px] leading-[1.9] font-light m-0" style={{ color: "rgba(246,243,236,0.68)" }}>
             {t("umbrellaBody")}
           </p>

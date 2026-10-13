@@ -52,7 +52,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </li>
               ))}
             </ul>
-            <Link href="/ai" className="btn btn-primary mt-8">
+            <Link href="/ai/diagnosis" className="btn btn-primary mt-8">
               {home("ctaPrimary")}
             </Link>
           </aside>

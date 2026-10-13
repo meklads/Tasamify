@@ -40,10 +40,10 @@ export function SiteHeader() {
           <Link href="/" locale={other}>
             {t("language")}
           </Link>
-          <Link href="/ai/diagnosis" className="btn btn-primary text-sm">
-            {t("book")}
-          </Link>
         </nav>
+        <Link href="/ai/diagnosis" className="btn btn-primary text-sm header-cta" onClick={() => setOpen(false)}>
+          {t("book")}
+        </Link>
         <button type="button" className="nav-toggle" aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen((v) => !v)}>
           <span className="sr-only">{open ? "Close" : "Menu"}</span>
           <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden>

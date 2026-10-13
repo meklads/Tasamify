@@ -1,12 +1,12 @@
 {
   "meta": {
     "siteName": "Tasami Group",
-    "homeTitle": "Tasami Group | Umbrella of three companies, and AI transformation for businesses.",
-    "homeDescription": "Tasami Group is the umbrella of Graphics House, Bees Motion and Turriva, and offers AI transformation services for companies.",
-    "aiTitle": "Tasami AI | Intelligent systems for your operations",
-    "aiDescription": "We turn repetitive sales, support, and operations work into AI systems that run inside your company.",
-    "diagnosisTitle": "Free diagnosis + savings calculator | Tasami AI",
-    "diagnosisDescription": "Estimate savings and book a free diagnosis for your company operations with Tasami AI.",
+    "homeTitle": "Tasami Group | We change how your company works with AI",
+    "homeDescription": "Tasami Group is the umbrella of Graphics House, Bees Motion and Turriva. Under the group name we convert companies to work with AI, from assessment to daily use.",
+    "aiTitle": "Tasami AI | Systems that run inside your company",
+    "aiDescription": "We start from repetitive work in communication, sales and reporting, and build systems connected to WhatsApp, your site and follow-up tools.",
+    "diagnosisTitle": "Free diagnosis of a repeating workflow | Tasami AI",
+    "diagnosisDescription": "A 45–60 minute session, then a written summary of the first path — with no obligation.",
     "caseStudiesTitle": "Case studies | Tasami AI",
     "caseStudiesDescription": "Systems we actually built: real-estate outreach automation, DotForLife content ops, and a cinematic YouTube AI pipeline.",
     "insightsTitle": "Insights | Tasami Group",
@@ -14,9 +14,9 @@
     "companiesTitle": "Group companies | Tasami Group",
     "companiesDescription": "Graphics House, Bees Motion and Turriva: three specialised companies under the Tasami Group umbrella.",
     "aboutTitle": "About | Tasami Group",
-    "aboutDescription": "Tasami Group is the umbrella of three specialised companies, and offers AI transformation for businesses under its own name.",
+    "aboutDescription": "Tasami Group is the umbrella of Graphics House, Bees Motion and Turriva. It raises the standard of the work under one roof, and offers AI transformation under its own name.",
     "contactTitle": "Contact | Tasami Group",
-    "contactDescription": "Contact Tasami Group or book a free Tasami AI diagnosis.",
+    "contactDescription": "Need one of the three companies, or a change in how the company itself works? We route you, or open a diagnosis.",
     "privacyTitle": "Privacy | Tasami Group",
     "privacyDescription": "Tasami Group privacy policy and PDPL commitment."
   },
@@ -31,7 +31,7 @@
     "about": "About",
     "contact": "Contact",
     "privacy": "Privacy",
-    "book": "Book a free diagnosis",
+    "book": "Book diagnosis",
     "language": "العربية"
   },
   "common": {
@@ -53,18 +53,19 @@
   "home": {
     "kicker": "Tasami Group",
     "groupWord": "Group",
-    "title": "An umbrella for three specialised companies, and AI transformation for businesses.",
-    "body": "Graphics House, Bees Motion and Turriva operate under Tasami Group — each with its own name and discipline. Under the group name, Tasami AI converts companies to work with artificial intelligence.",
-    "ctaPrimary": "Explore Tasami AI",
+    "title": "We change how your company works with AI.",
+    "body": "Graphics House, Bees Motion and Turriva sit under the Tasami Group umbrella. Under the group name we build systems that leadership and operations teams use every day — from the first assessment to adoption.",
+    "ctaPrimary": "Book a free diagnosis",
     "ctaSecondary": "The three companies",
+    "ctaExplore": "Explore Tasami AI",
     "storyKicker": "Our story",
     "storyTitle": "One umbrella. Three companies. A transformation offer.",
-    "storyBody": "Tasami Group stands behind Graphics House, Bees Motion and Turriva. Each company keeps its name, its market and its expertise. The group brings them together when a project needs more than one discipline, and raises the standard of the work under a single umbrella.",
-    "storyBody2": "Under its own name, the group also offers Tasami AI: converting companies to work with artificial intelligence, from the first assessment to a team that uses it every day.",
+    "storyBody": "Tasami Group began in real-estate visual launch, then grew into marketing and field execution. Today it stands behind Graphics House, Bees Motion and Turriva. Each company keeps its name, its market and its expertise. The group connects them when a project needs more than one discipline, and raises the standard of the work under a single roof.",
+    "storyBody2": "Under its own name, the group offers Tasami AI: converting companies to work with artificial intelligence, from the first assessment to a team that uses it every day.",
     "storyMore": "Vision, mission, and objectives",
     "aiKicker": "Tasami AI",
-    "aiBandTitle": "AI transformation for companies",
-    "aiBandBody": "We turn communication, sales, operations and reporting into intelligent systems that cut repetitive work and show a clear result — not a demo deck.",
+    "aiBandTitle": "We do not sell an idea. We sell a path that runs inside your company.",
+    "aiBandBody": "We learn how you work, design the first path, build it inside your tools, and train the team until they use it. Not slides. Not a generic chat sitting beside the business.",
     "aiBandCta": "Book a free diagnosis",
     "companiesKicker": "The three companies",
     "companiesTitle": "Different brands. Different expertise. One group.",
@@ -75,8 +76,9 @@
     "umbrellaBody": "A developer launching a project may need launch visuals from Graphics House, a campaign from Bees Motion, and the sales gallery from Turriva. Tasami Group coordinates that as one engagement — and Tasami AI transforms how the company itself works."
   },
   "ai": {
-    "heroTitle": "We turn your company's repetitive operations into intelligent systems that work like a full team",
-    "heroSubtitle": "From customer communication to sales and reporting, we build AI systems that actually run inside your company — not demo decks.",
+    "heroTitle": "Systems that run inside your company. Not a deck that is shown and forgotten.",
+    "heroSubtitle": "Most companies try a generic chat beside the work. We start from the repeating tasks in communication, sales and reporting, and build a path connected to WhatsApp, your site, email and follow-up tools.",
+    "audience": "For business owners and managers in Saudi Arabia and the Gulf, often in real-estate development and services.",
     "ctaPrimary": "Book a free diagnosis",
     "ctaSecondary": "See how it works",
     "flowLabel": "Lead journey for a real-estate company",
@@ -90,24 +92,28 @@
     "servicesTitle": "Specific solutions for specific problems",
     "servicesBody": "We do not sell “AI” as an idea. We sell systems for the repetitive work slowing your team down.",
     "methodKicker": "How we work",
-    "methodTitle": "Tasami AI services",
-    "methodIntro": "Assess, design, build, then adopt — with no published prices.",
+    "methodTitle": "How we convert the company",
+    "methodIntro": "Four stages. Each one has a deliverable you see before we move on.",
     "method": {
       "diagnose": {
         "title": "Assess",
-        "body": "Map how the company works and find where AI saves time and cost."
+        "body": "Map how the company works and find where time is lost.",
+        "deliver": "You receive: a written summary of the first path."
       },
       "prototype": {
         "title": "Design",
-        "body": "Choose the right tools and agree a practical roadmap."
+        "body": "Choose tools, connections and scope before we build.",
+        "deliver": "You receive: a work map and a fixed fee."
       },
       "build": {
         "title": "Build",
-        "body": "AI assistants, agents and automations connected to existing systems."
+        "body": "An assistant, agent or automation on your channels, with human review.",
+        "deliver": "You receive: a system connected to what you already use."
       },
       "support": {
         "title": "Adopt",
-        "body": "Train the team and measure the results."
+        "body": "Train the team until the path is part of daily work.",
+        "deliver": "You receive: training and an agreed usage measure."
       }
     },
     "casesTitle": "Systems we actually built",
@@ -119,7 +125,7 @@
     "privacyBody": "We follow the principles of Saudi Arabia’s Personal Data Protection Law (PDPL) for collection, use, and retention. Final legal wording is under review.",
     "privacyTodo": "[Legal review for PDPL wording]",
     "pricingTitle": "How we set the fee",
-    "pricingBody": "Pricing follows a first meeting."
+    "pricingBody": "No published prices. After the diagnosis you receive a written scope and a fixed fee before any build."
   },
   "services": {
     "sales-automation": {
@@ -299,31 +305,32 @@
   },
   "cases": {
     "title": "Case studies",
-    "intro": "Three systems from real work. Metrics are completed after internal measurement is approved.",
+    "intro": "Three systems from real work. No invented numbers.",
     "items": [
       {
         "id": "realestate-outreach",
         "title": "Automated outreach for real-estate developers",
         "body": "A capture, classify, and follow-up path built to help sales teams pick up real-estate demand faster without dropped messages.",
-        "metric": "[أدخل الرقم الحقيقي]"
+        "metric": "Result: the request is captured without a lost message."
       },
       {
         "id": "dotforlife",
         "title": "Content automation for DotForLife",
         "body": "A content production line that helps the platform keep a steady publishing cadence with human review before release.",
-        "metric": "[أدخل الرقم الحقيقي]"
+        "metric": "Result: regular publishing with human review."
       },
       {
         "id": "youtube-cinema",
         "title": "Cinematic YouTube production line with AI",
         "body": "A production system that speeds prep and early edit stages while final creative decisions stay with the team.",
-        "metric": "[أدخل الرقم الحقيقي]"
+        "metric": "Result: faster prep, with the creative decision still with the team."
       }
     ]
   },
   "diagnosis": {
-    "title": "Estimate savings and book a free diagnosis",
-    "intro": "The calculator runs on your device only and does not send calculation data. The form below books the diagnosis session.",
+    "title": "A free diagnosis of a repeating workflow in your company.",
+    "intro": "A 45–60 minute session. We ask about channels, the team, and what repeats every week. The calculator is an on-device estimate and does not send its numbers.",
+    "deliverBody": "Afterwards you receive a written diagnosis summary: the proposed path, what to build first, and what not to build. No obligation.",
     "calculatorTitle": "Savings calculator",
     "employees": "Number of employees",
     "weeklyHours": "Repetitive task hours per week",
@@ -349,7 +356,7 @@
       "51-200": "51–200",
       "200+": "200+"
     },
-    "pricingNote": "No fixed packages: after diagnosis you receive a written proposal with fixed scope and fee before work starts.",
+    "pricingNote": "If you continue with us, you receive a written scope and a fixed fee before any build.",
     "budget": "Estimated budget",
     "budgetOptional": "Optional"
   },
@@ -365,20 +372,21 @@
     "visit": "Visit site",
     "talk": "Talk to us",
     "aiTitle": "And under the group name: AI transformation for companies",
-    "aiBody": "Tasami AI is not a fourth sister company. It is the group’s offer to convert companies to work with artificial intelligence — assessment, design, build, and daily adoption.",
+    "aiBody": "Tasami AI is not a fourth sister company. It is the group’s offer: we learn how you work, design the first path, build it inside your tools, and train the team until they use it.",
     "aiCta": "Explore Tasami AI"
   },
   "about": {
     "kicker": "The group",
     "title": "About us",
-    "body": "Tasami Group is the umbrella of three specialised companies: Graphics House, Bees Motion and Turriva. Each keeps its name, its market and its expertise. The group connects them when a project needs more than one discipline, and raises the standard of the work under a single roof.",
+    "body": "Tasami Group is the umbrella of Graphics House, Bees Motion and Turriva. It is not an agency that sells their work in their place. Each company keeps its name, its market and its expertise. The group connects them when a project needs more than one discipline, and raises the standard of the work under a single roof.",
     "body2": "We speak to executives and business owners in Saudi Arabia and the Gulf, often starting with developer and real-estate needs where communication, sales, and operations repeat every week.",
     "body3": "Under its own name, the group offers Tasami AI: converting companies to work with artificial intelligence, from the first assessment to a team that uses it every day."
   },
   "contact": {
     "kicker": "Start here",
     "title": "Contact us",
-    "body": "Write to Tasami Group. We will route you to Graphics House, Bees Motion or Turriva — or open a Tasami AI diagnosis if the need is transformation.",
+    "body": "If the project is a visual launch, marketing or field execution, we route you to the company. If the company’s own operations repeat and cost the team time, the diagnosis is the door.",
+    "routeQuestion": "Do you need one of the three companies, or a change in how the company itself works?",
     "route": "The three companies",
     "aiOption": "Tasami AI — company transformation",
     "email": "Email",
@@ -392,7 +400,7 @@
     "body2": "For privacy questions, email us via the contact page. [Legal review for PDPL wording]"
   },
   "footer": {
-    "tagline": "The umbrella of three specialised companies. And an offer that converts companies to work with AI.",
+    "tagline": "Tasami Group — the umbrella of Graphics House, Bees Motion and Turriva. And Tasami AI to convert companies to work with AI.",
     "companies": "The companies",
     "group": "The group",
     "rights": "All rights reserved."
