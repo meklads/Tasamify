@@ -33,11 +33,17 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
   const ai = await getTranslations("ai");
 
   return (
+    <>
+    <section className="page-hero">
+      <div className="container-page">
+        <p className="hero-kicker mb-4">{business.brand.aiName}</p>
+        <h1 className="page-hero-title">{t("title")}</h1>
+        <p className="page-hero-lede">{t("intro")}</p>
+        <p className="page-hero-lede mt-3 text-sm">{t("pricingNote")}</p>
+      </div>
+    </section>
     <section className="section-y">
       <div className="container-page">
-        <h1 className="display text-4xl max-w-measure">{t("title")}</h1>
-        <p className="lede mt-4">{t("intro")}</p>
-        <p className="lede mt-3 text-sm">{t("pricingNote")}</p>
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
           <SavingsCalculator
             locale={locale}
@@ -82,5 +88,6 @@ export default async function DiagnosisPage({ params }: { params: Promise<{ loca
         </div>
       </div>
     </section>
+    </>
   );
 }

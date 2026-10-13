@@ -72,13 +72,17 @@ export default async function ServicePage({ params }: Props) {
           },
         ]}
       />
-      <article className="section-y">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow">{business.brand.aiName}</p>
-          <h1 className="display mt-3 text-4xl">{serviceName}</h1>
-          <p className="lede mt-4">{services(`${slug}.summary`)}</p>
+      <article>
+        <section className="page-hero">
+          <div className="container-page">
+            <p className="hero-kicker mb-4">{business.brand.aiName}</p>
+            <h1 className="page-hero-title">{serviceName}</h1>
+            <p className="page-hero-lede">{services(`${slug}.summary`)}</p>
+          </div>
+        </section>
+        <div className="container-page max-w-3xl section-y">
 
-          <h2 className="display mt-12 text-2xl">{page("problem")}</h2>
+          <h2 className="display mt-0 text-2xl">{page("problem")}</h2>
           <p className="lede mt-3">{services(`${slug}.problem`)}</p>
 
           <h2 className="display mt-10 text-2xl">{page("build")}</h2>

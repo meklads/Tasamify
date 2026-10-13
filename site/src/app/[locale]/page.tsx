@@ -2,7 +2,9 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
-import { business } from "@/config/business";
+import { business, groupCompanies } from "@/config/business";
+import { TasamiLogo } from "@/components/brand/TasamiLogo";
+import { CompanyGrid } from "@/components/brand/CompanyGrid";
 
 export async function generateMetadata({
   params,
@@ -42,78 +44,112 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const ai = await getTranslations("ai");
   const isAr = locale === "ar";
+  const methodKeys = ["diagnose", "prototype", "build", "support"] as const;
 
   return (
     <>
-      <section className="section-y">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow">{t("kicker")}</p>
-          <h1 className="display mt-4 text-4xl md:text-5xl">{t("title")}</h1>
-          <p className="lede mt-5 text-body">{t("body")}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/ai" className="btn btn-primary">
+      <section className="hero-stage">
+        <div className="container-page hero-stage-inner">
+          <p className="hero-kicker mb-8 md:mb-10">{t("kicker")}</p>
+          <div className="m-0 flex flex-col items-center">
+            <TasamiLogo
+              variant="hero"
+              alt={isAr ? business.brand.groupNameAr : business.brand.groupName}
+              priority
+            />
+            <span className="hero-group">{t("groupWord")}</span>
+          </div>
+          <h1 className="hero-subhead">{t("title")}</h1>
+          <p className="hero-support mx-auto">{t("body")}</p>
+          <div className="hero-actions">
+            <Link href="/ai" className="btn hero-cta--solid">
               {t("ctaPrimary")}
             </Link>
-            <Link href="/companies" className="btn btn-secondary">
+            <Link href="/companies" className="btn hero-cta--ghost">
               {t("ctaSecondary")}
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-petrol text-white">
-        <div className="container-page section-y grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-          <div>
-            <h2 className="display text-3xl text-white m-0">{t("aiBandTitle")}</h2>
-            <p className="mt-4 max-w-measure text-[1.05rem] leading-relaxed text-white/75 m-0">{t("aiBandBody")}</p>
-            <Link href="/ai/diagnosis" className="btn btn-on-petrol mt-7">
-              {t("aiBandCta")}
-            </Link>
-          </div>
-          <div className="rounded-2xl border border-white/15 bg-white p-2">
-            <Image
-              src="/Tasami Group.png"
-              alt={isAr ? "هيكل مجموعة تسامي" : "Tasami Group structure"}
-              width={1536}
-              height={1024}
-              className="h-auto w-full rounded-xl"
-              priority
-            />
-          </div>
+          <nav className="arch-nav" aria-label={t("companiesTitle")}>
+            {groupCompanies.map((company) => (
+              <a key={company.id} href={`#${company.id}`} className="arch-nav-item">
+                <span className="arch-nav-name">{isAr ? company.nameAr : company.nameEn}</span>
+                <span className="arch-nav-verb">{isAr ? company.verbAr : company.verbEn}</span>
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
       <section className="section-y">
+        <div className="container-page grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-16">
+          <div className="lg:col-span-5">
+            <p className="section-kicker mb-4">{t("storyKicker")}</p>
+            <h2 className="section-title m-0">{t("storyTitle")}</h2>
+          </div>
+          <div className="lg:col-span-7 lg:pt-10">
+            <p className="prose-hold m-0 mb-6">{t("storyBody")}</p>
+            <p className="prose-hold m-0 mb-8">{t("storyBody2")}</p>
+            <Link href="/about" className="house-cta">
+              {t("storyMore")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="companies" className="pb-16 md:pb-28">
         <div className="container-page">
-          <h2 className="display text-3xl">{t("companiesTitle")}</h2>
-          <p className="lede mt-3">{t("companiesBody")}</p>
-          <ul className="mt-10 grid gap-6 p-0 md:grid-cols-3">
-            {business.companies.map((company) => (
-              <li key={company.id} className="list-none border-s-2 border-petrol ps-4">
-                <p className="eyebrow m-0">
-                  {company.id === "tasami-ai"
-                    ? isAr
-                      ? "تسامي AI · تحويل"
-                      : "Tasami AI · TRANSFORM"
-                    : isAr
-                      ? company.verbAr
-                      : company.verbEn}
-                </p>
-                <h3 className="display text-xl m-0">{isAr ? company.nameAr : company.nameEn}</h3>
-                <p className="mt-2 text-slate m-0">{isAr ? company.roleAr : company.roleEn}</p>
-                {company.href.startsWith("/") ? (
-                  <Link href={company.href} className="mt-4 inline-block text-petrol font-semibold">
-                    {isAr ? "تواصل معنا" : "Talk to us"}
-                  </Link>
-                ) : (
-                  <a href={company.href} className="mt-4 inline-block text-petrol font-semibold" target="_blank" rel="noopener noreferrer">
-                    {company.href.replace(/^https?:\/\//, "")}
-                  </a>
-                )}
+          <p className="section-kicker mb-4">{t("companiesKicker")}</p>
+          <h2 className="section-title m-0 mb-4">{t("companiesTitle")}</h2>
+          <p className="lede mb-10 md:mb-14">{t("companiesBody")}</p>
+          <CompanyGrid locale={locale} visitLabel={t("visit")} />
+        </div>
+      </section>
+
+      <section className="band-navy section-y">
+        <div className="container-page">
+          <p className="hero-kicker mb-4">{t("aiKicker")}</p>
+          <h2 className="section-title m-0 text-[#f6f3ec]">{t("aiBandTitle")}</h2>
+          <p className="mt-5 max-w-3xl text-[16px] md:text-[18px] leading-[1.9] font-light m-0" style={{ color: "rgba(246,243,236,0.68)" }}>
+            {t("aiBandBody")}
+          </p>
+          <ol className="method-grid mt-12">
+            {methodKeys.map((key, index) => (
+              <li key={key}>
+                <p className="method-num" dir="ltr">{`0${index + 1}`}</p>
+                <h3 className="method-title">{ai(`method.${key}.title`)}</h3>
+                <p className="method-body">{ai(`method.${key}.body`)}</p>
               </li>
             ))}
-          </ul>
+          </ol>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href="/ai/diagnosis" className="btn btn-on-petrol">
+              {t("aiBandCta")}
+            </Link>
+            <Link href="/ai" className="btn btn-ghost-on-petrol">
+              {t("ctaPrimary")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="band-navy pb-20 md:pb-28">
+        <div className="container-page">
+          <p className="hero-kicker mb-4">{t("umbrellaKicker")}</p>
+          <h2 className="section-title m-0 mb-5 text-[#f6f3ec]">{t("umbrellaTitle")}</h2>
+          <p className="max-w-3xl mb-10 md:mb-14 text-[16px] md:text-[18px] leading-[1.9] font-light m-0" style={{ color: "rgba(246,243,236,0.68)" }}>
+            {t("umbrellaBody")}
+          </p>
+          <figure className="group-structure-figure m-0">
+            <Image
+              src="/Tasami Group.png"
+              alt={isAr ? "هيكل مجموعة تسامي: جرافيكس هاوس وبيز موشن وتوريفا" : "Tasami Group structure: Graphics House, Bees Motion, and Turriva"}
+              width={1536}
+              height={1024}
+              className="group-structure-img"
+            />
+          </figure>
         </div>
       </section>
     </>

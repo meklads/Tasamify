@@ -55,16 +55,17 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
           ],
         }}
       />
-      <section className="section-y">
+      <section className="page-hero">
         <div className="container-page grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
-            <h1 className="display text-4xl md:text-5xl">{t("heroTitle")}</h1>
-            <p className="lede mt-5 text-body">{t("heroSubtitle")}</p>
+            <p className="hero-kicker mb-4">{business.brand.aiName}</p>
+            <h1 className="page-hero-title m-0 max-w-none">{t("heroTitle")}</h1>
+            <p className="page-hero-lede">{t("heroSubtitle")}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/ai/diagnosis" className="btn btn-primary">
+              <Link href="/ai/diagnosis" className="btn btn-on-petrol">
                 {t("ctaPrimary")}
               </Link>
-              <a href="#how-it-works" className="btn btn-secondary">
+              <a href="#how-it-works" className="btn btn-ghost-on-petrol">
                 {t("ctaSecondary")}
               </a>
             </div>
@@ -75,9 +76,10 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
         </div>
       </section>
 
-      <section className="section-y border-t border-line">
+      <section className="section-y">
         <div className="container-page">
-          <h2 className="display text-3xl">{t("servicesTitle")}</h2>
+          <p className="section-kicker mb-4">{t("servicesKicker")}</p>
+          <h2 className="section-title m-0">{t("servicesTitle")}</h2>
           <p className="lede mt-3">{t("servicesBody")}</p>
           <ul className="mt-10 grid gap-8 p-0 md:grid-cols-2">
             {business.serviceSlugs.map((slug) => (
@@ -87,7 +89,7 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
                 <p className="mt-3 text-sm text-ink m-0">
                   {common("estimatedDuration")}: {serviceDuration(slug as ServiceSlug, locale)}
                 </p>
-                <Link href={`/ai/services/${slug}`} className="mt-4 inline-block font-semibold text-petrol">
+                <Link href={`/ai/services/${slug}`} className="house-cta mt-4">
                   {common("learnMore")}
                 </Link>
               </li>
@@ -96,16 +98,19 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
         </div>
       </section>
 
-      <section className="section-y bg-white">
+      <section className="band-navy section-y">
         <div className="container-page">
-          <h2 className="display text-3xl">{t("methodTitle")}</h2>
-          <p className="lede mt-3">{t("methodIntro")}</p>
-          <ol className="mt-10 grid gap-6 p-0 md:grid-cols-4">
+          <p className="hero-kicker mb-4">{t("methodKicker")}</p>
+          <h2 className="section-title m-0 text-[#f6f3ec]">{t("methodTitle")}</h2>
+          <p className="mt-4 max-w-3xl m-0 text-[16px] md:text-[18px] leading-[1.9] font-light" style={{ color: "rgba(246,243,236,0.68)" }}>
+            {t("methodIntro")}
+          </p>
+          <ol className="method-grid mt-10">
             {methodKeys.map((key, index) => (
-              <li key={key} className="list-none">
-                <p className="text-sm font-semibold text-amber m-0">{index + 1}</p>
-                <h3 className="display mt-2 text-xl">{t(`method.${key}.title`)}</h3>
-                <p className="mt-2 text-slate m-0">{t(`method.${key}.body`)}</p>
+              <li key={key}>
+                <p className="method-num" dir="ltr">{`0${index + 1}`}</p>
+                <h3 className="method-title">{t(`method.${key}.title`)}</h3>
+                <p className="method-body">{t(`method.${key}.body`)}</p>
               </li>
             ))}
           </ol>
@@ -114,14 +119,14 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
 
       <section className="section-y">
         <div className="container-page">
-          <h2 className="display text-3xl">{t("casesTitle")}</h2>
+          <h2 className="section-title m-0">{t("casesTitle")}</h2>
           <p className="lede mt-3">{t("casesBody")}</p>
           <ul className="mt-8 grid gap-6 p-0 md:grid-cols-3">
             {(cases.raw("items") as Array<{ id: string; title: string; body: string; metric: string }>).map((item) => (
               <li key={item.id} className="list-none surface-card p-5">
                 <h3 className="display text-xl m-0">{item.title}</h3>
                 <p className="mt-3 text-slate m-0">{item.body}</p>
-                <p className="mt-4 text-sm font-semibold text-petrol m-0">{item.metric}</p>
+                <p className="mt-4 text-sm font-semibold text-gold m-0">{item.metric}</p>
               </li>
             ))}
           </ul>
@@ -133,7 +138,7 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
 
       <section className="section-y border-t border-line">
         <div className="container-page max-w-3xl">
-          <h2 className="display text-3xl">{t("trustTitle")}</h2>
+          <h2 className="section-title m-0">{t("trustTitle")}</h2>
           <ul className="mt-6 grid gap-3 p-0">
             <li className="list-none text-ink">{t("trustYears", { years: business.trust.yearsExperience })}</li>
             <li className="list-none text-ink">{t("trustCompanies", { count: business.trust.companiesCount })}</li>
@@ -144,11 +149,13 @@ export default async function AiPage({ params }: { params: Promise<{ locale: str
         </div>
       </section>
 
-      <section className="section-y bg-white border-t border-line">
+      <section className="band-navy section-y">
         <div className="container-page max-w-3xl">
-          <h2 className="display text-3xl">{t("pricingTitle")}</h2>
-          <p className="lede mt-4">{t("pricingBody")}</p>
-          <Link href="/ai/diagnosis" className="btn btn-primary mt-8">
+          <h2 className="section-title m-0 text-[#f6f3ec]">{t("pricingTitle")}</h2>
+          <p className="mt-4 m-0 text-[16px] md:text-[18px] leading-[1.9] font-light" style={{ color: "rgba(246,243,236,0.68)" }}>
+            {t("pricingBody")}
+          </p>
+          <Link href="/ai/diagnosis" className="btn btn-on-petrol mt-8">
             {t("ctaPrimary")}
           </Link>
         </div>

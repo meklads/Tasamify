@@ -29,12 +29,18 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   const t = await getTranslations("privacy");
 
   return (
-    <section className="section-y">
-      <div className="container-page max-w-3xl">
-        <h1 className="display text-4xl">{t("title")}</h1>
-        <p className="lede mt-5">{t("body")}</p>
-        <p className="lede mt-4">{t("body2")}</p>
-      </div>
-    </section>
+    <>
+      <section className="page-hero">
+        <div className="container-page">
+          <h1 className="page-hero-title">{t("title")}</h1>
+          <p className="page-hero-lede">{t("body")}</p>
+        </div>
+      </section>
+      <section className="section-y">
+        <div className="container-page max-w-3xl">
+          <p className="lede">{t("body2")}</p>
+        </div>
+      </section>
+    </>
   );
 }

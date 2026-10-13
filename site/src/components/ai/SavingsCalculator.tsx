@@ -46,7 +46,7 @@ export function SavingsCalculator({
             min={1}
             value={employees}
             onChange={(e) => setEmployees(Number(e.target.value) || 0)}
-            className="min-h-11 rounded-lg border border-line bg-mist px-3"
+            className="field"
           />
         </label>
         <label className="grid gap-1 text-sm">
@@ -56,7 +56,7 @@ export function SavingsCalculator({
             min={1}
             value={weeklyHours}
             onChange={(e) => setWeeklyHours(Number(e.target.value) || 0)}
-            className="min-h-11 rounded-lg border border-line bg-mist px-3"
+            className="field"
           />
         </label>
         <label className="grid gap-1 text-sm">
@@ -66,7 +66,7 @@ export function SavingsCalculator({
             min={1}
             value={hourlyCost}
             onChange={(e) => setHourlyCost(Number(e.target.value) || 0)}
-            className="min-h-11 rounded-lg border border-line bg-mist px-3"
+            className="field"
           />
         </label>
         <label className="grid gap-1 text-sm">
@@ -74,7 +74,7 @@ export function SavingsCalculator({
           <select
             value={sector}
             onChange={(e) => setSector(e.target.value)}
-            className="min-h-11 rounded-lg border border-line bg-mist px-3"
+            className="field"
           >
             {Object.entries(labels.sectors).map(([value, text]) => (
               <option key={value} value={value}>
@@ -85,13 +85,13 @@ export function SavingsCalculator({
         </label>
       </div>
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-xl border border-line bg-mist p-4">
+        <div className="border border-line bg-cream p-4">
           <p className="eyebrow m-0">{labels.monthlySave}</p>
-          <p className="display mt-2 text-3xl text-petrol">{formatEstimate(monthly, locale)}</p>
+          <p className="display mt-2 text-3xl text-navy">{formatEstimate(monthly, locale)}</p>
         </div>
-        <div className="rounded-xl border border-line bg-mist p-4">
+        <div className="border border-line bg-cream p-4">
           <p className="eyebrow m-0">{labels.yearlySave}</p>
-          <p className="display mt-2 text-3xl text-petrol">{formatEstimate(yearly, locale)}</p>
+          <p className="display mt-2 text-3xl text-navy">{formatEstimate(yearly, locale)}</p>
         </div>
       </div>
       <p className="mt-4 text-sm text-slate m-0">{labels.estimateNote}</p>

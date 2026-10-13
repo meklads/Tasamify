@@ -46,7 +46,7 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
   }
 
   if (status === "ok") {
-    return <p className="surface-card p-6 text-petrol font-semibold">{labels.success}</p>;
+    return <p className="surface-card p-6 text-navy font-semibold">{labels.success}</p>;
   }
 
   return (
@@ -62,16 +62,16 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
       />
       <label className="grid gap-1 text-sm">
         <span>{labels.name}</span>
-        <input required name="name" className="min-h-11 rounded-lg border border-line bg-mist px-3" />
+        <input required name="name" className="field" />
       </label>
       <label className="grid gap-1 text-sm">
         <span>{labels.company}</span>
-        <input required name="company" className="min-h-11 rounded-lg border border-line bg-mist px-3" />
+        <input required name="company" className="field" />
       </label>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-1 text-sm">
           <span>{labels.sector}</span>
-          <select required name="sector" className="min-h-11 rounded-lg border border-line bg-mist px-3">
+          <select required name="sector" className="field">
             {Object.entries(labels.sectors).map(([value, text]) => (
               <option key={value} value={value}>
                 {text}
@@ -81,7 +81,7 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
         </label>
         <label className="grid gap-1 text-sm">
           <span>{labels.companySize}</span>
-          <select required name="companySize" className="min-h-11 rounded-lg border border-line bg-mist px-3">
+          <select required name="companySize" className="field">
             {Object.entries(labels.sizes).map(([value, text]) => (
               <option key={value} value={value}>
                 {text}
@@ -94,7 +94,7 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
         <span>
           {labels.budget} <span className="text-slate">({labels.budgetOptional})</span>
         </span>
-        <select name="budget" className="min-h-11 rounded-lg border border-line bg-mist px-3" defaultValue="">
+        <select name="budget" className="field" defaultValue="">
           <option value="">—</option>
           {business.diagnosis.budgetOptions.map((opt) => (
             <option key={opt.id} value={opt.id}>
@@ -105,11 +105,11 @@ export function DiagnosisForm({ labels, locale }: { labels: Labels; locale: stri
       </label>
       <label className="grid gap-1 text-sm">
         <span>{labels.phone}</span>
-        <input required name="phone" type="tel" className="min-h-11 rounded-lg border border-line bg-mist px-3" dir="ltr" />
+        <input required name="phone" type="tel" className="field" dir="ltr" />
       </label>
       <label className="grid gap-1 text-sm">
         <span>{labels.challenge}</span>
-        <textarea required name="challenge" rows={4} className="rounded-lg border border-line bg-mist px-3 py-2" />
+        <textarea required name="challenge" rows={4} className="field min-h-[88px] resize-none" />
       </label>
       <button type="submit" className="btn btn-primary justify-self-start" disabled={status === "loading"}>
         {status === "loading" ? labels.sending : labels.submit}

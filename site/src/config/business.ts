@@ -1,4 +1,76 @@
 /** Single source of truth for commercial values — edit here only. */
+export const groupCompanies = [
+  {
+    id: "graphics-house",
+    nameEn: "Graphics House",
+    nameAr: "جرافيكس هاوس",
+    verbEn: "CREATE",
+    verbAr: "ابتكار",
+    roleEn: "Marketing tools & visual content production",
+    roleAr: "أدوات تسويقية وإنتاج محتوى بصري",
+    marketEn: "Real Estate Developers / Marketing Teams",
+    marketAr: "المطورون العقاريون / فرق التسويق",
+    leadEn:
+      "A complete visual system that turns architectural information into market-ready launch assets — CGI, cinematic film, sales visuals, and digital campaign materials.",
+    leadAr:
+      "منظومة بصرية متكاملة تحوّل المعلومات المعمارية إلى أصول إطلاق جاهزة للسوق — إظهار معماري، أفلام سينمائية، مواد بيع، وأصول حملات رقمية.",
+    href: "https://3dgraphicshouse.com",
+    tone: "gh" as const,
+    logo: "/brands/graphics-house.png",
+  },
+  {
+    id: "bees-motion",
+    nameEn: "Bees Motion",
+    nameAr: "بيز موشن",
+    verbEn: "PRODUCE",
+    verbAr: "إنتاج",
+    roleEn: "Marketing & Content Production",
+    roleAr: "التسويق والإنتاج الفني للمحتوى",
+    marketEn: "Brands / Marketing & Campaign Teams",
+    marketAr: "العلامات / فرق التسويق والحملات",
+    leadEn:
+      "Campaign-ready marketing and content under one production team — film, product video, social creative, and motion.",
+    leadAr:
+      "تسويق ومحتوى جاهز للحملة تحت فريق إنتاج واحد — أفلام، فيديو المنتجات، محتوى السوشيال، والموشن.",
+    href: "https://beesmotion.com",
+    tone: "bm" as const,
+    logo: "/brands/bees-motion.png",
+  },
+  {
+    id: "turriva",
+    nameEn: "Turriva",
+    nameAr: "توريفا",
+    verbEn: "EXECUTE",
+    verbAr: "تنفيذ",
+    roleEn: "Spatial execution & physical delivery",
+    roleAr: "تنفيذ مكاني وتسليم مادي",
+    marketEn: "Interior / Exhibitions / Furnishing",
+    marketAr: "الداخلي والمعارض والتأثيث",
+    leadEn:
+      "Physical delivery when the project needs installation and field execution — interiors, exhibitions, and on-site finish.",
+    leadAr:
+      "تسليم ميداني حين يحتاج المشروع التركيب والتنفيذ — الداخلي والمعارض والإنهاء في الموقع.",
+    href: "https://www.turriva.com/en",
+    tone: "tu" as const,
+    logo: "/brands/turriva.png",
+  },
+] as const;
+
+export const tasamiAi = {
+  id: "tasami-ai",
+  nameEn: "Tasami AI",
+  nameAr: "تسامي AI",
+  verbEn: "TRANSFORM",
+  verbAr: "تحويل",
+  roleEn: "AI Transformation for Companies",
+  roleAr: "تحويل الشركات للعمل بالذكاء الاصطناعي",
+  audienceEn: "Companies / Leadership & Operations Teams",
+  audienceAr: "الشركات / الإدارة وفرق التشغيل",
+  leadEn: "We help companies work with AI, from the first assessment to a team that uses it every day.",
+  leadAr: "نساعد الشركات على العمل بالذكاء الاصطناعي، من التقييم الأول حتى فريق يستخدمه كل يوم.",
+  href: "/ai",
+} as const;
+
 export const business = {
   brand: {
     groupName: "Tasami Group",
@@ -22,7 +94,7 @@ export const business = {
   },
   trust: {
     yearsExperience: 15,
-    companiesCount: 4,
+    companiesCount: 3,
   },
   diagnosis: {
     defaultHourlyCostSar: 80,
@@ -63,52 +135,8 @@ export const business = {
       durationEn: "2 to 4 weeks",
     },
   },
-  companies: [
-    {
-      id: "graphics-house",
-      nameEn: "Graphics House",
-      nameAr: "جرافيكس هاوس",
-      verbEn: "CREATE",
-      verbAr: "ابتكار",
-      roleEn: "Marketing tools & visual content production",
-      roleAr: "أدوات تسويقية وإنتاج محتوى بصري",
-      href: "https://3dgraphicshouse.com",
-    },
-    {
-      id: "bees-motion",
-      nameEn: "Bees Motion",
-      nameAr: "بيز موشن",
-      verbEn: "PRODUCE",
-      verbAr: "إنتاج",
-      roleEn: "Marketing & Content Production",
-      roleAr: "التسويق والإنتاج الفني للمحتوى",
-      href: "https://beesmotion.com",
-    },
-    {
-      id: "turriva",
-      nameEn: "Turriva",
-      nameAr: "توريفا",
-      verbEn: "EXECUTE",
-      verbAr: "تنفيذ",
-      roleEn: "Spatial execution & physical delivery",
-      roleAr: "تنفيذ مكاني وتسليم مادي",
-      href: "https://www.turriva.com/en",
-    },
-    {
-      id: "tasami-ai",
-      nameEn: "Tasami AI",
-      nameAr: "تسامي AI",
-      verbEn: "TRANSFORM",
-      verbAr: "تحويل",
-      roleEn: "AI Transformation for Companies",
-      roleAr: "تحويل الشركات للعمل بالذكاء الاصطناعي",
-      audienceEn: "Companies / Leadership & Operations Teams",
-      audienceAr: "الشركات / الإدارة وفرق التشغيل",
-      leadEn: "We help companies work with AI, from the first assessment to a team that uses it every day.",
-      leadAr: "نساعد الشركات على العمل بالذكاء الاصطناعي، من التقييم الأول حتى فريق يستخدمه كل يوم.",
-      href: "/contact",
-    },
-  ],
+  companies: groupCompanies,
+  tasamiAi,
   serviceSlugs: [
     "sales-automation",
     "ai-agents",

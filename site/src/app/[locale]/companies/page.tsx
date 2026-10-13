@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { business } from "@/config/business";
+import { PageHero } from "@/components/brand/PageHero";
+import { CompanyGrid } from "@/components/brand/CompanyGrid";
 
 export async function generateMetadata({
   params,
@@ -28,40 +30,27 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("companiesPage");
-  const isAr = locale === "ar";
 
   return (
-    <section className="section-y">
-      <div className="container-page">
-        <h1 className="display text-4xl">{t("title")}</h1>
-        <p className="lede mt-4">{t("intro")}</p>
-        <ul className="mt-10 grid gap-8 p-0 md:grid-cols-3">
-          {business.companies.map((c) => (
-            <li key={c.id} className="list-none border-t-2 border-petrol pt-5">
-              {"verbEn" in c && c.verbEn ? (
-                <p className="eyebrow m-0">{isAr ? c.verbAr : c.verbEn}</p>
-              ) : null}
-              <h2 className="display text-2xl m-0">{isAr ? c.nameAr : c.nameEn}</h2>
-              <p className="mt-3 text-slate m-0">{isAr ? c.roleAr : c.roleEn}</p>
-              {"audienceEn" in c && c.audienceEn ? (
-                <p className="mt-2 text-slate m-0">{isAr ? c.audienceAr : c.audienceEn}</p>
-              ) : null}
-              {"leadEn" in c && c.leadEn ? (
-                <p className="mt-2 text-slate m-0">{isAr ? c.leadAr : c.leadEn}</p>
-              ) : null}
-              {c.href.startsWith("/") ? (
-                <Link href={c.href} className="btn btn-secondary mt-5">
-                  {t("talk")}
-                </Link>
-              ) : (
-                <a href={c.href} target="_blank" rel="noopener noreferrer" className="btn btn-secondary mt-5">
-                  {t("visit")}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <>
+      <PageHero kicker={t("kicker")} title={t("title")} lede={t("intro")} />
+      <section className="section-y">
+        <div className="container-page">
+          <CompanyGrid locale={locale} visitLabel={t("visit")} />
+        </div>
+      </section>
+      <section className="band-navy section-y">
+        <div className="container-page max-w-3xl">
+          <p className="hero-kicker mb-4">{locale === "ar" ? business.brand.aiNameAr : business.brand.aiName}</p>
+          <h2 className="section-title m-0 text-[#f6f3ec]">{t("aiTitle")}</h2>
+          <p className="mt-5 m-0 text-[16px] md:text-[18px] leading-[1.9] font-light" style={{ color: "rgba(246,243,236,0.68)" }}>
+            {t("aiBody")}
+          </p>
+          <Link href="/ai" className="btn btn-on-petrol mt-8">
+            {t("aiCta")}
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

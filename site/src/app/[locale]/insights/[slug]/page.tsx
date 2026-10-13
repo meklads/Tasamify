@@ -38,13 +38,17 @@ export default async function InsightArticlePage({ params }: Props) {
   if (!article) notFound();
 
   return (
-    <article className="section-y">
-      <div className="container-page max-w-3xl">
-        <p className="eyebrow">{article.meta.date}</p>
-        <h1 className="display mt-3 text-4xl">{article.meta.title}</h1>
-        <p className="lede mt-4">{article.meta.description}</p>
+    <article>
+      <section className="page-hero">
+        <div className="container-page">
+          <p className="hero-kicker mb-4">{article.meta.date}</p>
+          <h1 className="page-hero-title">{article.meta.title}</h1>
+          <p className="page-hero-lede">{article.meta.description}</p>
+        </div>
+      </section>
+      <div className="container-page max-w-3xl section-y">
         <div
-          className="prose-measure mt-10 space-y-4 text-body text-ink [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-semibold [&_ol]:ps-5 [&_ul]:ps-5"
+          className="prose-measure space-y-4 text-body text-ink [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-semibold [&_ol]:ps-5 [&_ul]:ps-5"
           dangerouslySetInnerHTML={{ __html: article.html }}
         />
       </div>

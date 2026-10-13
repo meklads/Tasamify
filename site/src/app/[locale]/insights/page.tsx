@@ -32,22 +32,28 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
   const items = getInsights(locale as "ar" | "en");
 
   return (
-    <section className="section-y">
-      <div className="container-page">
-        <h1 className="display text-4xl">{t("title")}</h1>
-        <p className="lede mt-4">{t("intro")}</p>
-        <ul className="mt-10 grid gap-6 p-0">
-          {items.map((item) => (
-            <li key={item.slug} className="list-none border-b border-line pb-6">
-              <h2 className="display text-2xl m-0">{item.title}</h2>
-              <p className="mt-2 text-slate m-0">{item.description}</p>
-              <Link href={`/insights/${item.slug}`} className="mt-4 inline-block font-semibold text-petrol">
-                {t("read")}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <>
+      <section className="page-hero">
+        <div className="container-page">
+          <h1 className="page-hero-title">{t("title")}</h1>
+          <p className="page-hero-lede">{t("intro")}</p>
+        </div>
+      </section>
+      <section className="section-y">
+        <div className="container-page">
+          <ul className="mt-0 grid gap-6 p-0">
+            {items.map((item) => (
+              <li key={item.slug} className="list-none border-b border-line pb-6">
+                <h2 className="display text-2xl m-0">{item.title}</h2>
+                <p className="mt-2 text-slate m-0">{item.description}</p>
+                <Link href={`/insights/${item.slug}`} className="house-cta mt-4">
+                  {t("read")}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
   );
 }

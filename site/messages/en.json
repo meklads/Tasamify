@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Tasami Group",
-    "homeTitle": "Tasami Group | One group. Four specialised arms.",
+    "homeTitle": "Tasami Group | Umbrella of three companies, and AI transformation for businesses.",
     "homeDescription": "Tasami Group is the umbrella of Graphics House, Bees Motion and Turriva, and offers AI transformation services for companies.",
     "aiTitle": "Tasami AI | Intelligent systems for your operations",
     "aiDescription": "We turn repetitive sales, support, and operations work into AI systems that run inside your company.",
@@ -12,9 +12,9 @@
     "insightsTitle": "Insights | Tasami Group",
     "insightsDescription": "Direct articles on AI automation for sales and operations in the Saudi market.",
     "companiesTitle": "Group companies | Tasami Group",
-    "companiesDescription": "Graphics House, Bees Motion, Turriva and Tasami AI: four specialised arms under Tasami Group.",
+    "companiesDescription": "Graphics House, Bees Motion and Turriva: three specialised companies under the Tasami Group umbrella.",
     "aboutTitle": "About | Tasami Group",
-    "aboutDescription": "Tasami Group: a parent brand for creative, marketing, spatial delivery, and AI transformation companies.",
+    "aboutDescription": "Tasami Group is the umbrella of three specialised companies, and offers AI transformation for businesses under its own name.",
     "contactTitle": "Contact | Tasami Group",
     "contactDescription": "Contact Tasami Group or book a free Tasami AI diagnosis.",
     "privacyTitle": "Privacy | Tasami Group",
@@ -52,15 +52,27 @@
   },
   "home": {
     "kicker": "Tasami Group",
-    "title": "A group of specialised companies, and AI transformation for businesses.",
-    "body": "Graphics House leads real estate visual launches, Bees Motion runs marketing and content production, Turriva delivers interior execution, and Tasami transforms companies to work with AI.",
+    "groupWord": "Group",
+    "title": "An umbrella for three specialised companies, and AI transformation for businesses.",
+    "body": "Graphics House, Bees Motion and Turriva operate under Tasami Group — each with its own name and discipline. Under the group name, Tasami AI converts companies to work with artificial intelligence.",
     "ctaPrimary": "Explore Tasami AI",
-    "ctaSecondary": "Group companies",
-    "aiBandTitle": "Tasami AI",
-    "aiBandBody": "We turn communication, sales, and reporting into intelligent systems that cut repetitive work and show a clear result.",
+    "ctaSecondary": "The three companies",
+    "storyKicker": "Our story",
+    "storyTitle": "One umbrella. Three companies. A transformation offer.",
+    "storyBody": "Tasami Group stands behind Graphics House, Bees Motion and Turriva. Each company keeps its name, its market and its expertise. The group brings them together when a project needs more than one discipline, and raises the standard of the work under a single umbrella.",
+    "storyBody2": "Under its own name, the group also offers Tasami AI: converting companies to work with artificial intelligence, from the first assessment to a team that uses it every day.",
+    "storyMore": "Vision, mission, and objectives",
+    "aiKicker": "Tasami AI",
+    "aiBandTitle": "AI transformation for companies",
+    "aiBandBody": "We turn communication, sales, operations and reporting into intelligent systems that cut repetitive work and show a clear result — not a demo deck.",
     "aiBandCta": "Book a free diagnosis",
-    "companiesTitle": "Group companies",
-    "companiesBody": "Each company keeps its name, its market and its expertise. Tasami Group connects them when a project needs more than one, and offers AI transformation services under its own name."
+    "companiesKicker": "The three companies",
+    "companiesTitle": "Different brands. Different expertise. One group.",
+    "companiesBody": "Three specialised companies under the Tasami Group umbrella. Each keeps its market. The group connects them when the work requires it.",
+    "visit": "Visit company",
+    "umbrellaKicker": "How they sit together",
+    "umbrellaTitle": "Tasami Group is the umbrella. The three companies sit under it.",
+    "umbrellaBody": "A developer launching a project may need launch visuals from Graphics House, a campaign from Bees Motion, and the sales gallery from Turriva. Tasami Group coordinates that as one engagement — and Tasami AI transforms how the company itself works."
   },
   "ai": {
     "heroTitle": "We turn your company's repetitive operations into intelligent systems that work like a full team",
@@ -74,8 +86,10 @@
       "crm": "Lead enters the CRM",
       "meeting": "Meeting is booked"
     },
+    "servicesKicker": "What we sell",
     "servicesTitle": "Specific solutions for specific problems",
     "servicesBody": "We do not sell “AI” as an idea. We sell systems for the repetitive work slowing your team down.",
+    "methodKicker": "How we work",
     "methodTitle": "Tasami AI services",
     "methodIntro": "Assess, design, build, then adopt — with no published prices.",
     "method": {
@@ -100,7 +114,7 @@
     "casesBody": "Examples from real work. No invented metrics.",
     "trustTitle": "Why Tasami",
     "trustYears": "{years}+ years of experience in the Saudi market",
-    "trustCompanies": "A group of {count} operating companies",
+    "trustCompanies": "{count} specialised companies under one umbrella",
     "privacyTitle": "Your data and privacy",
     "privacyBody": "We follow the principles of Saudi Arabia’s Personal Data Protection Law (PDPL) for collection, use, and retention. Final legal wording is under review.",
     "privacyTodo": "[Legal review for PDPL wording]",
@@ -345,19 +359,28 @@
     "read": "Read article"
   },
   "companiesPage": {
-    "title": "Group companies",
-    "intro": "Four specialised arms under Tasami Group: Graphics House, Bees Motion, Turriva, and Tasami AI.",
+    "kicker": "Tasami Group",
+    "title": "The three companies",
+    "intro": "Graphics House, Bees Motion and Turriva sit under the Tasami Group umbrella. Each keeps its name, its market and its expertise.",
     "visit": "Visit site",
-    "talk": "Talk to us"
+    "talk": "Talk to us",
+    "aiTitle": "And under the group name: AI transformation for companies",
+    "aiBody": "Tasami AI is not a fourth sister company. It is the group’s offer to convert companies to work with artificial intelligence — assessment, design, build, and daily adoption.",
+    "aiCta": "Explore Tasami AI"
   },
   "about": {
+    "kicker": "The group",
     "title": "About us",
-    "body": "Each company keeps its name, its market and its expertise. Tasami Group connects them when a project needs more than one, and offers AI transformation services under its own name.",
-    "body2": "We speak to executives and business owners in Saudi Arabia and the Gulf, often starting with developer and real-estate needs where communication, sales, and operations repeat every week."
+    "body": "Tasami Group is the umbrella of three specialised companies: Graphics House, Bees Motion and Turriva. Each keeps its name, its market and its expertise. The group connects them when a project needs more than one discipline, and raises the standard of the work under a single roof.",
+    "body2": "We speak to executives and business owners in Saudi Arabia and the Gulf, often starting with developer and real-estate needs where communication, sales, and operations repeat every week.",
+    "body3": "Under its own name, the group offers Tasami AI: converting companies to work with artificial intelligence, from the first assessment to a team that uses it every day."
   },
   "contact": {
+    "kicker": "Start here",
     "title": "Contact us",
-    "body": "Write to Tasami Group. Choose Graphics House, Bees Motion, Turriva, or Tasami AI.",
+    "body": "Write to Tasami Group. We will route you to Graphics House, Bees Motion or Turriva — or open a Tasami AI diagnosis if the need is transformation.",
+    "route": "The three companies",
+    "aiOption": "Tasami AI — company transformation",
     "email": "Email",
     "whatsapp": "WhatsApp",
     "book": "Book diagnosis",
@@ -369,7 +392,9 @@
     "body2": "For privacy questions, email us via the contact page. [Legal review for PDPL wording]"
   },
   "footer": {
-    "tagline": "A specialist group. An arm that turns operations into systems.",
+    "tagline": "The umbrella of three specialised companies. And an offer that converts companies to work with AI.",
+    "companies": "The companies",
+    "group": "The group",
     "rights": "All rights reserved."
   },
   "servicePage": {

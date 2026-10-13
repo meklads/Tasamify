@@ -3,10 +3,10 @@ import { business } from "@/config/business";
 export function GET() {
   const body = `# Tasami Group
 
-> Parent group for specialist companies and Tasami AI.
+> Tasami Group is the umbrella of three specialised companies, and offers AI transformation for businesses.
 
-## Companies
-${business.companies.map((c) => `- ${c.nameEn}: ${c.href.startsWith("/") ? `${business.brand.domain}/ar${c.href}` : c.href}`).join("\n")}
+## Group companies
+${business.companies.map((c) => `- ${c.nameEn}: ${c.href}`).join("\n")}
 
 ## Tasami AI
 AI transformation for companies: from the first assessment to a team that uses it every day.

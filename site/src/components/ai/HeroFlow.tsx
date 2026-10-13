@@ -59,8 +59,8 @@ export function HeroFlow({
       <svg viewBox="0 0 640 160" className="h-auto w-full" role="img" aria-hidden>
         <defs>
           <linearGradient id="flowLine" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="#0F3D3E" />
-            <stop offset="100%" stopColor="#E39A2D" />
+            <stop offset="0%" stopColor="#10182A" />
+            <stop offset="100%" stopColor="#C9A24B" />
           </linearGradient>
         </defs>
         <path
@@ -81,14 +81,14 @@ export function HeroFlow({
                 cy={80}
                 r={16}
                 className={`flow-dot ${index === active ? "is-active" : ""}`}
-                fill={on ? "#E39A2D" : "#CBD5DA"}
+                fill={on ? "#C9A24B" : "#D8D0C0"}
               />
               <text
                 x={x}
                 y={120}
                 textAnchor="middle"
                 fontSize="12"
-                fill="#16212B"
+                fill="#10182A"
                 fontFamily="var(--font-body), sans-serif"
               >
                 {step.label}
@@ -103,7 +103,7 @@ export function HeroFlow({
           <li
             key={step.key}
             className={`list-none rounded-xl border px-3 py-3 text-sm ${
-              index <= active ? "border-amber bg-white text-ink" : "border-line text-slate"
+              index <= active ? "border-gold bg-cream text-ink" : "border-line text-slate"
             }`}
           >
             {step.label}

@@ -1,12 +1,18 @@
-import { getTranslations, getLocale } from "next-intl/server";
+"use client";
+
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { business, whatsappHref } from "@/config/business";
+import { TasamiLogo } from "@/components/brand/TasamiLogo";
 
-export async function SiteHeader() {
-  const t = await getTranslations("nav");
-  const common = await getTranslations("common");
-  const locale = await getLocale();
+export function SiteHeader() {
+  const t = useTranslations("nav");
+  const common = useTranslations("common");
+  const locale = useLocale();
   const other = locale === "ar" ? "en" : "ar";
+  const [open, setOpen] = useState(false);
+  const brandAlt = locale === "ar" ? business.brand.groupNameAr : business.brand.groupName;
 
   const links = [
     { href: "/ai", label: t("ai") },
@@ -17,33 +23,50 @@ export async function SiteHeader() {
   ] as const;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-mist/95 backdrop-blur">
-      <div className="container-page flex flex-wrap items-center gap-3 py-3 md:gap-5">
-        <Link href="/" className="font-display text-lg font-semibold text-petrol no-underline">
-          {locale === "ar" ? business.brand.groupNameAr : business.brand.groupName}
+    <header className={`site-header${open ? " is-open" : ""}`}>
+      <div className="container-page site-header-inner">
+        <Link href="/" className="inline-flex no-underline" onClick={() => setOpen(false)}>
+          <TasamiLogo variant="navbar" alt={brandAlt} priority />
         </Link>
-        <nav className="ms-auto flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium text-ink">
+        <nav className="site-nav" aria-label={brandAlt}>
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="no-underline hover:text-petrol">
+            <Link key={link.href} href={link.href}>
               {link.label}
             </Link>
           ))}
-          <a
-            href={whatsappHref(business.whatsappMessages.general)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline text-slate hover:text-petrol"
-          >
+          <a href={whatsappHref(business.whatsappMessages.general)} target="_blank" rel="noopener noreferrer">
             {common("whatsapp")}
           </a>
-          <Link href="/" locale={other} className="no-underline text-slate hover:text-petrol">
+          <Link href="/" locale={other}>
             {t("language")}
           </Link>
           <Link href="/ai/diagnosis" className="btn btn-primary text-sm">
             {t("book")}
           </Link>
         </nav>
+        <button type="button" className="nav-toggle" aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen((v) => !v)}>
+          <span className="sr-only">{open ? "Close" : "Menu"}</span>
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden>
+            <path d={open ? "M1 1L17 11M17 1L1 11" : "M0 1H18M0 6H18M0 11H18"} stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+        </button>
       </div>
+      <nav id="mobile-nav" className="container-page site-nav-mobile">
+        {links.map((link) => (
+          <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            {link.label}
+          </Link>
+        ))}
+        <a href={whatsappHref(business.whatsappMessages.general)} target="_blank" rel="noopener noreferrer">
+          {common("whatsapp")}
+        </a>
+        <Link href="/" locale={other} onClick={() => setOpen(false)}>
+          {t("language")}
+        </Link>
+        <Link href="/ai/diagnosis" className="btn btn-primary mt-2 self-start" onClick={() => setOpen(false)}>
+          {t("book")}
+        </Link>
+      </nav>
     </header>
   );
 }

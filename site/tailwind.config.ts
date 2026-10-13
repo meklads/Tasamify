@@ -5,15 +5,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        petrol: "#0F3D3E",
-        mist: "#EDF1F2",
-        ink: "#16212B",
-        slate: "#5B6B76",
-        amber: "#E39A2D",
-        line: "#CBD5DA",
+        navy: "#10182A",
+        gold: "#C9A24B",
+        cream: "#F6F3EC",
+        petrol: "#10182A",
+        mist: "#F6F3EC",
+        ink: "#10182A",
+        slate: "#5C6170",
+        amber: "#C9A24B",
+        line: "#D8D0C0",
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       fontSize: {
